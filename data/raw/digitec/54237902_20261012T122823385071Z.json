@@ -1,0 +1,74 @@
+{
+    "metadata": {
+        "source": "digitec",
+        "source_type": "retailer",
+        "source_product_id": "54237902",
+        "source_url": "https://www.digitec.ch/en/s1/product/asus-rog-astral-geforce-rtx-5090-oc-32-gb-gddr7-graphics-card-54237902",
+        "access_method": null,
+        "collected_at": "2026-10-12T12:28:23.385041+00:00"
+    },
+    "brand": {
+        "brand_id": null,
+        "name": null
+    },
+    "category": {
+        "category_id": null,
+        "name": null
+    },
+    "retailer": {
+        "retailer_id": null,
+        "name": "Digitec",
+        "website": "https://www.digitec.ch"
+    },
+    "product": {
+        "product_id": null,
+        "brand_id": null,
+        "category_id": null,
+        "product_name": null,
+        "ean": null,
+        "mpn": null,
+        "release_date": null,
+        "model": null,
+        "series": null,
+        "generation": null,
+        "msrp_chf": null,
+        "manufacturer_url": null,
+        "created_at": null,
+        "updated_at": null
+    },
+    "retailer_product": {
+        "retailer_product_id": null,
+        "product_id": null,
+        "retailer_id": null,
+        "retailer_sku": "54237902",
+        "retailer_product_name": null,
+        "product_url": "https://www.digitec.ch/en/s1/product/asus-rog-astral-geforce-rtx-5090-oc-32-gb-gddr7-graphics-card-54237902",
+        "first_seen_at": null,
+        "last_seen_at": null
+    },
+    "price_history": {
+        "price_id": null,
+        "retailer_product_id": null,
+        "price_chf": null,
+        "original_price_chf": null,
+        "discount_percent": null,
+        "availability": null,
+        "collected_at": "2026-10-12T12:28:23.385041+00:00"
+    },
+    "gpu_details": {
+        "gpu_details_id": null,
+        "product_id": null,
+        "gpu_model": null,
+        "gpu_architecture": null,
+        "vram_gb": null,
+        "vram_type": null,
+        "clock_mhz": null,
+        "boost_clock_mhz": null,
+        "pcie_interface": null,
+        "tdp_watts": null,
+        "cooling_variant": null
+    },
+    "ram_details": null,
+    "ssd_details": null,
+    "raw_payload": null
+}
