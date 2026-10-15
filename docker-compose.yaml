@@ -1,4 +1,74 @@
 services:
+
+  scrape_digitec:
+    build: ./backend/scrapeDigitec
+    ports:
+      - "8010:5000"
+    networks:
+      - deng-project-network
+
+  ingest_digitec:
+    build: ./backend/ingestDigitec
+    ports:
+      - "8011:5000"
+    networks:
+      - deng-project-network
+
+  scrape_mediamarkt:
+    build: ./backend/scrapeMediamarkt
+    ports:
+      - "8020:5000"
+    networks:
+      - deng-project-network
+
+  ingest_mediamarkt:
+    build: ./backend/ingestMediamarkt
+    ports:
+      - "8021:5000"
+    networks:
+      - deng-project-network
+
+  scrape_brack:
+    build: ./backend/scrapeMediamarkt
+    ports:
+      - "8030:5000"
+    networks:
+      - deng-project-network
+
+  ingest_brack:
+    build: ./backend/ingestMediamarkt
+    ports:
+      - "8031:5000"
+    networks:
+      - deng-project-network
+
+  scrape_interdiscount:
+    build: ./backend/scrapeMediamarkt
+    ports:
+      - "8040:5000"
+    networks:
+      - deng-project-network
+
+  ingest_interdiscount:
+    build: ./backend/ingestMediamarkt
+    ports:
+      - "8041:5000"
+    networks:
+      - deng-project-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      ORIGIN: http://localhost:3000
+    networks:
+      - deng-project-network
+
   postgres:
     image: postgres:18.6-bookworm
     environment:
@@ -15,10 +85,12 @@ services:
       start_period: 10s
     ports:
       - "5432:5432"
+    networks:
+      - deng-project-network
 
 volumes:
   postgres_data:
 
 networks:
-  default:
-    name: deng-project-network
+  deng-project-network:
+    driver: bridge
