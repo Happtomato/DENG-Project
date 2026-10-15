@@ -1,0 +1,744 @@
+{
+    "metadata": {
+        "source": "mediamarkt",
+        "source_type": "retailer",
+        "source_product_id": "2230728",
+        "source_url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+        "access_method": "public_html",
+        "collected_at": "2026-10-15T06:43:41.070011+00:00",
+        "category_code": "ram",
+        "quality_warnings": [],
+        "ram_speed_normalization": "Vendor effective DDR rate labelled MHz; confirmed in model name",
+        "item_condition": "https://schema.org/NewCondition",
+        "scope_status": "accepted",
+        "scope_reason": "in_scope",
+        "run_id": "20261015T064322224653Z",
+        "observation_day": "2026-10-15"
+    },
+    "brand": {
+        "brand_id": null,
+        "name": "CORSAIR"
+    },
+    "category": {
+        "category_id": null,
+        "name": "Arbeitsspeicher (RAM)"
+    },
+    "retailer": {
+        "retailer_id": null,
+        "name": "MediaMarkt",
+        "website": "https://www.mediamarkt.ch"
+    },
+    "product": {
+        "product_id": null,
+        "brand_id": null,
+        "category_id": null,
+        "product_name": "CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher",
+        "ean": "0840006671732",
+        "mpn": "CMK64GX5M2B6000Z30",
+        "release_date": null,
+        "model": "CMK64GX5M2B6000Z30 DDR5 2X32GB 6000 DIMM",
+        "series": "VENGEANCE® (DDR5)",
+        "generation": "DDR5",
+        "msrp_chf": null,
+        "manufacturer_url": null,
+        "created_at": null,
+        "updated_at": null
+    },
+    "retailer_product": {
+        "retailer_product_id": null,
+        "product_id": null,
+        "retailer_id": null,
+        "retailer_sku": "2230728",
+        "retailer_product_name": "CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher",
+        "product_url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+        "first_seen_at": "2026-10-15T06:43:21.348595+00:00",
+        "last_seen_at": "2026-10-15T06:43:41.070011+00:00"
+    },
+    "price_history": {
+        "price_id": null,
+        "retailer_product_id": null,
+        "price_chf": 259.95,
+        "original_price_chf": null,
+        "discount_percent": null,
+        "availability": "OutOfStock",
+        "collected_at": "2026-10-15T06:43:41.070011+00:00"
+    },
+    "gpu_details": {
+        "gpu_details_id": null,
+        "product_id": null,
+        "gpu_model": null,
+        "gpu_architecture": null,
+        "vram_gb": null,
+        "vram_type": null,
+        "clock_mhz": null,
+        "boost_clock_mhz": null,
+        "pcie_interface": null,
+        "tdp_watts": null,
+        "cooling_variant": null
+    },
+    "ram_details": {
+        "ram_details_id": null,
+        "product_id": null,
+        "ram_type": "DDR5",
+        "total_capacity_gb": 64,
+        "module_count": 2,
+        "capacity_per_module_gb": 32,
+        "speed_mts": 6000,
+        "cas_latency": "30",
+        "voltage": 1.4,
+        "ecc": null,
+        "rgb": null
+    },
+    "ssd_details": {
+        "ssd_details_id": null,
+        "product_id": null,
+        "capacity_gb": null,
+        "interface": null,
+        "pcie_generation": null,
+        "form_factor": null,
+        "nand_type": null,
+        "controller": null,
+        "read_speed_mbps": null,
+        "write_speed_mbps": null,
+        "tbw": null,
+        "dram_cache": null
+    },
+    "raw_payload": {
+        "@type": "Product",
+        "brand": {
+            "@type": "Brand",
+            "name": "CORSAIR"
+        },
+        "description": "CORSAIR VENGEANCE (DDR5) | Arbeitsspeicher im Onlineshop von MediaMarkt kaufen. Jetzt bequem online bestellen.",
+        "sku": "2230728",
+        "gtin13": "0840006671732",
+        "image": [
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202583/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202584/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202585/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202586/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202587/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202588/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202589/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202590/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202591/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202592/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_137202593/fee_786_587_png"
+        ],
+        "name": "CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher",
+        "url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CHF",
+            "price": 259.95,
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/OutOfStock",
+            "url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                },
+                "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": 0,
+                    "currency": "CHF"
+                },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 0,
+                        "unitCode": "DAY"
+                    }
+                }
+            },
+            "hasMerchantReturnPolicy": [
+                {
+                    "@type": "MerchantReturnPolicy",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                    "merchantReturnDays": 14,
+                    "merchantReturnLink": "https://www.mediamarkt.ch/de/service/retouren",
+                    "returnFees": "https://schema.org/ReturnShippingFees",
+                    "returnMethod": [
+                        "https://schema.org/ReturnInStore",
+                        "https://schema.org/ReturnByMail"
+                    ],
+                    "refundType": "https://schema.org/FullRefund",
+                    "applicableCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    },
+                    "returnPolicyCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                },
+                {
+                    "@type": "MerchantReturnPolicy",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                    "merchantReturnDays": 28,
+                    "merchantReturnLink": "https://www.mediamarkt.ch/de/service/retouren",
+                    "returnFees": "https://schema.org/ReturnShippingFees",
+                    "returnMethod": [
+                        "https://schema.org/ReturnInStore",
+                        "https://schema.org/ReturnByMail"
+                    ],
+                    "refundType": "https://schema.org/FullRefund",
+                    "applicableCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    },
+                    "returnPolicyCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                }
+            ],
+            "addOn": [
+                {
+                    "@type": "Offer",
+                    "name": "Transportversicherung",
+                    "priceCurrency": "CHF",
+                    "price": 4.95,
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Transportversicherung",
+                        "serviceType": "WARRANTY",
+                        "areaServed": {
+                            "@type": "Country",
+                            "name": "CH"
+                        }
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Garantieverlängerung 2 + 2 inkl. Transportversicherung",
+                    "priceCurrency": "CHF",
+                    "price": 49.95,
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Garantieverlängerung 2 + 2 inkl. Transportversicherung",
+                        "serviceType": "WARRANTY",
+                        "areaServed": {
+                            "@type": "Country",
+                            "name": "CH"
+                        }
+                    }
+                }
+            ],
+            "priceSpecification": [
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "Standard price (non-loyalty members)",
+                    "price": "259.95",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Non-loyalty members"
+                    }
+                },
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "Standard price (loyalty members)",
+                    "price": "259.95",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Loyalty member"
+                    }
+                },
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "MyMediaMarkt points earned",
+                    "price": "259.95",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Loyalty member"
+                    },
+                    "membershipPointsEarned": {
+                        "@type": "QuantitativeValue",
+                        "value": 2600,
+                        "unitText": "points"
+                    }
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "MyMediaMarkt",
+                "url": "https://www.mediamarkt.ch/de/myaccount/loyalty-benefits"
+            }
+        },
+        "memberOf": {
+            "@type": "MemberProgram",
+            "name": "MyMediaMarkt",
+            "url": "https://www.mediamarkt.ch/de/myaccount/loyalty-benefits",
+            "hasTier": [
+                {
+                    "@type": "MemberProgramTier",
+                    "name": "Non-loyalty members"
+                },
+                {
+                    "@type": "MemberProgramTier",
+                    "name": "Loyalty member"
+                }
+            ]
+        }
+    },
+    "technical_payload": {
+        "product_id": "2230728",
+        "kind_of_product": "RAM",
+        "raw_title": "CMK64GX5M2B6000Z30 DDR5 2X32GB 6000 DIMM",
+        "features": [
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10990",
+                "order": 10,
+                "name": "Produkttyp",
+                "type": null,
+                "unit": null,
+                "value": "Arbeitsspeicher",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Arbeitsspeicher",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16042",
+                "order": 90,
+                "name": "Serie",
+                "type": null,
+                "unit": null,
+                "value": "VENGEANCE® (DDR5)",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "VENGEANCE® (DDR5)",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15969",
+                "order": 20,
+                "name": "Arbeitsspeicher-Typ",
+                "type": null,
+                "unit": null,
+                "value": "DDR5",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "60",
+                        "value": "DDR5",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16526",
+                "order": 140,
+                "name": "Speichertechnologie",
+                "type": null,
+                "unit": null,
+                "value": "UDIMM (Unbuffered DIMM)",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "10",
+                        "value": "UDIMM (Unbuffered DIMM)",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10303",
+                "order": 110,
+                "name": "Anzahl PINs",
+                "type": null,
+                "unit": null,
+                "value": "288",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "288",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16047",
+                "order": 50,
+                "name": "Taktfrequenz",
+                "type": null,
+                "unit": "MHz",
+                "value": "6000",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "6000",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11184",
+                "order": 30,
+                "name": "Arbeitsspeicher-Größe",
+                "type": null,
+                "unit": "GB",
+                "value": "64",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "64",
+                        "unit": "GB",
+                        "unitUnece": "unece.unit.E34"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12704",
+                "order": 60,
+                "name": "Datenrate",
+                "type": null,
+                "unit": null,
+                "value": "PC5-48000 (6000 MHz)",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "PC5-48000 (6000 MHz)",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15332",
+                "order": 70,
+                "name": "Latenzzeit",
+                "type": null,
+                "unit": null,
+                "value": "30-36-36-76",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "30-36-36-76",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12033",
+                "order": 80,
+                "name": "Spannung",
+                "type": null,
+                "unit": "V",
+                "value": "1.40",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "1.40",
+                        "unit": "V",
+                        "unitUnece": "unece.unit.VLT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16043",
+                "order": 100,
+                "name": "CAS Latency (CL)",
+                "type": null,
+                "unit": null,
+                "value": "30",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "30",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16044",
+                "order": 150,
+                "name": "RAS-to-CAS-Delay (tRCD)",
+                "type": null,
+                "unit": null,
+                "value": "36",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "36",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16045",
+                "order": 160,
+                "name": "RAS-Precharge-Time (tRP)",
+                "type": null,
+                "unit": null,
+                "value": "36",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "36",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16046",
+                "order": 120,
+                "name": "Speicher Architektur",
+                "type": null,
+                "unit": null,
+                "value": "DIMM",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "10",
+                        "value": "DIMM",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12359",
+                "order": 40,
+                "name": "Kompatibilität",
+                "type": null,
+                "unit": null,
+                "value": "AMD® 600 Series",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "AMD® 600 Series",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16110",
+                "order": 240,
+                "name": "Breite",
+                "type": null,
+                "unit": "mm",
+                "value": "135",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "135",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16111",
+                "order": 200,
+                "name": "Höhe",
+                "type": null,
+                "unit": "mm",
+                "value": "35",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "35",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16112",
+                "order": 250,
+                "name": "Tiefe",
+                "type": null,
+                "unit": "mm",
+                "value": "7",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "7",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11011",
+                "order": 220,
+                "name": "Gewicht (laut Hersteller)",
+                "type": null,
+                "unit": null,
+                "value": "ca. 37 g (2 Stück)",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "ca. 37 g (2 Stück)",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16333",
+                "order": 230,
+                "name": "Gewicht",
+                "type": null,
+                "unit": "g",
+                "value": "37",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "37",
+                        "unit": "g",
+                        "unitUnece": "unece.unit.GRM"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13366",
+                "order": 260,
+                "name": "Besondere Merkmale",
+                "type": null,
+                "unit": null,
+                "value": "Custom AMD® EXPO Profiles, Wärmeverteiler aus Massivem Aluminium, Optimiert für AMD® DDR5-Motherboards",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Custom AMD® EXPO Profiles, Wärmeverteiler aus Massivem Aluminium, Optimiert für AMD® DDR5-Motherboards",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15552",
+                "order": 130,
+                "name": "Modulanzahl",
+                "type": null,
+                "unit": null,
+                "value": "2x 32 GB",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2x 32 GB",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_00002",
+                "order": 390,
+                "name": "Manufacturer Part Number (MPN)",
+                "type": null,
+                "unit": null,
+                "value": "CMK64GX5M2B6000Z30",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "CMK64GX5M2B6000Z30",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_750531",
+                "name": "Computer & Software"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751013",
+                "name": "PC-Komponenten"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751074",
+                "name": "Arbeitsspeicher (RAM)"
+            }
+        ]
+    }
+}

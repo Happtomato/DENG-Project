@@ -1,0 +1,304 @@
+{
+    "metadata": {
+        "source": "mediamarkt",
+        "source_type": "retailer",
+        "source_product_id": "2277751",
+        "source_url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277751.html",
+        "access_method": "public_html",
+        "collected_at": "2026-10-15T06:28:24.014125+00:00"
+    },
+    "brand": {
+        "brand_id": null,
+        "name": "ASUS"
+    },
+    "category": {
+        "category_id": null,
+        "name": "Grafikkarten"
+    },
+    "retailer": {
+        "retailer_id": null,
+        "name": "MediaMarkt",
+        "website": "https://www.mediamarkt.ch"
+    },
+    "product": {
+        "product_id": null,
+        "brand_id": null,
+        "category_id": null,
+        "product_name": "ASUS PRIME GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)",
+        "ean": "4711387837832",
+        "mpn": "90YV0M11-M0NA00",
+        "release_date": null,
+        "model": "GEFORCE RTX5070 12G PRIME",
+        "series": "RTX™ 50",
+        "generation": "NVIDIA Blackwell",
+        "msrp_chf": null,
+        "manufacturer_url": null,
+        "created_at": null,
+        "updated_at": null
+    },
+    "retailer_product": {
+        "retailer_product_id": null,
+        "product_id": null,
+        "retailer_id": null,
+        "retailer_sku": "2277751",
+        "retailer_product_name": "ASUS PRIME GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)",
+        "product_url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277751.html",
+        "first_seen_at": null,
+        "last_seen_at": null
+    },
+    "price_history": {
+        "price_id": null,
+        "retailer_product_id": null,
+        "price_chf": 547,
+        "original_price_chf": 588,
+        "discount_percent": 6.97,
+        "availability": "OutOfStock",
+        "collected_at": "2026-10-15T06:28:24.014125+00:00"
+    },
+    "gpu_details": {
+        "gpu_details_id": null,
+        "product_id": null,
+        "gpu_model": "GeForce RTX™ 5070",
+        "gpu_architecture": "NVIDIA Blackwell",
+        "vram_gb": 12,
+        "vram_type": "GDDR7",
+        "clock_mhz": null,
+        "boost_clock_mhz": 2542,
+        "pcie_interface": "PCI Express 5.0 x16",
+        "tdp_watts": null,
+        "cooling_variant": "Luftkühlung aktiv"
+    },
+    "ram_details": {
+        "ram_details_id": null,
+        "product_id": null,
+        "ram_type": null,
+        "total_capacity_gb": null,
+        "module_count": null,
+        "capacity_per_module_gb": null,
+        "speed_mts": null,
+        "cas_latency": null,
+        "voltage": null,
+        "ecc": null,
+        "rgb": null
+    },
+    "ssd_details": {
+        "ssd_details_id": null,
+        "product_id": null,
+        "capacity_gb": null,
+        "interface": null,
+        "pcie_generation": null,
+        "form_factor": null,
+        "nand_type": null,
+        "controller": null,
+        "read_speed_mbps": null,
+        "write_speed_mbps": null,
+        "tbw": null,
+        "dram_cache": null
+    },
+    "raw_payload": {
+        "@type": "Product",
+        "brand": {
+            "@type": "Brand",
+            "name": "ASUS"
+        },
+        "description": "ASUS PRIME GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte) im Onlineshop von MediaMarkt kaufen. Jetzt bequem online bestellen.",
+        "sku": "2277751",
+        "gtin13": "4711387837832",
+        "image": [
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862015/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862016/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862029/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862031/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862032/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862033/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862034/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862036/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862040/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862042/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_153862045/fee_786_587_png"
+        ],
+        "name": "ASUS PRIME GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)",
+        "url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277751.html",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CHF",
+            "price": 547,
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/OutOfStock",
+            "url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277751.html",
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                },
+                "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": 0,
+                    "currency": "CHF"
+                },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 0,
+                        "unitCode": "DAY"
+                    }
+                }
+            },
+            "priceSpecification": [
+                {
+                    "@type": "UnitPriceSpecification",
+                    "priceType": "https://schema.org/StrikethroughPrice",
+                    "price": 588,
+                    "priceCurrency": "CHF"
+                },
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "Standard price (non-loyalty members)",
+                    "price": "547",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Non-loyalty members"
+                    }
+                },
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "Standard price (loyalty members)",
+                    "price": "547",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Loyalty member"
+                    }
+                },
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "MyMediaMarkt points earned",
+                    "price": "547",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Loyalty member"
+                    },
+                    "membershipPointsEarned": {
+                        "@type": "QuantitativeValue",
+                        "value": 5470,
+                        "unitText": "points"
+                    }
+                }
+            ],
+            "hasMerchantReturnPolicy": [
+                {
+                    "@type": "MerchantReturnPolicy",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                    "merchantReturnDays": 14,
+                    "merchantReturnLink": "https://www.mediamarkt.ch/de/service/retouren",
+                    "returnFees": "https://schema.org/ReturnShippingFees",
+                    "returnMethod": [
+                        "https://schema.org/ReturnInStore",
+                        "https://schema.org/ReturnByMail"
+                    ],
+                    "refundType": "https://schema.org/FullRefund",
+                    "applicableCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    },
+                    "returnPolicyCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                },
+                {
+                    "@type": "MerchantReturnPolicy",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                    "merchantReturnDays": 28,
+                    "merchantReturnLink": "https://www.mediamarkt.ch/de/service/retouren",
+                    "returnFees": "https://schema.org/ReturnShippingFees",
+                    "returnMethod": [
+                        "https://schema.org/ReturnInStore",
+                        "https://schema.org/ReturnByMail"
+                    ],
+                    "refundType": "https://schema.org/FullRefund",
+                    "applicableCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    },
+                    "returnPolicyCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                }
+            ],
+            "addOn": [
+                {
+                    "@type": "Offer",
+                    "name": "Transportversicherung",
+                    "priceCurrency": "CHF",
+                    "price": 9.95,
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277751.html",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Transportversicherung",
+                        "serviceType": "WARRANTY",
+                        "areaServed": {
+                            "@type": "Country",
+                            "name": "CH"
+                        }
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Garantieverlängerung 2 + 2 inkl. Transportversicherung",
+                    "priceCurrency": "CHF",
+                    "price": 89.95,
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277751.html",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Garantieverlängerung 2 + 2 inkl. Transportversicherung",
+                        "serviceType": "WARRANTY",
+                        "areaServed": {
+                            "@type": "Country",
+                            "name": "CH"
+                        }
+                    }
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "MyMediaMarkt",
+                "url": "https://www.mediamarkt.ch/de/myaccount/loyalty-benefits"
+            }
+        },
+        "memberOf": {
+            "@type": "MemberProgram",
+            "name": "MyMediaMarkt",
+            "url": "https://www.mediamarkt.ch/de/myaccount/loyalty-benefits",
+            "hasTier": [
+                {
+                    "@type": "MemberProgramTier",
+                    "name": "Non-loyalty members"
+                },
+                {
+                    "@type": "MemberProgramTier",
+                    "name": "Loyalty member"
+                }
+            ]
+        }
+    }
+}

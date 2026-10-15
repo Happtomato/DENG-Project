@@ -1,0 +1,862 @@
+{
+    "metadata": {
+        "source": "mediamarkt",
+        "source_type": "retailer",
+        "source_product_id": "160229354",
+        "source_url": "https://www.mediamarkt.ch/de/product/_gigabyte-geforce-rtx-5060-ti-windforce-max-oc-nvidia-grafikkarte-160229354.html",
+        "access_method": "public_html",
+        "collected_at": "2026-10-15T06:43:38.352714+00:00",
+        "category_code": "gpu",
+        "quality_warnings": [],
+        "item_condition": "https://schema.org/NewCondition",
+        "scope_status": "accepted",
+        "scope_reason": "in_scope",
+        "run_id": "20261015T064322224653Z",
+        "observation_day": "2026-10-15"
+    },
+    "brand": {
+        "brand_id": null,
+        "name": "GIGABYTE"
+    },
+    "category": {
+        "category_id": null,
+        "name": "Grafikkarten"
+    },
+    "retailer": {
+        "retailer_id": null,
+        "name": "MediaMarkt",
+        "website": "https://www.mediamarkt.ch"
+    },
+    "product": {
+        "product_id": null,
+        "brand_id": null,
+        "category_id": null,
+        "product_name": "GIGABYTE GeForce RTX 5060 Ti WINDFORCE MAX OC (NVIDIA, Grafikkarte)",
+        "ean": "4719331356682",
+        "mpn": null,
+        "release_date": "2025-08-07",
+        "model": "GeForce RTX 5060 Ti WINDFORCE MAX OC",
+        "series": "GeForce RTX 5060 Ti",
+        "generation": "RTX 50 Series",
+        "msrp_chf": null,
+        "manufacturer_url": "https://www.gigabyte.com/de/Support",
+        "created_at": null,
+        "updated_at": null
+    },
+    "retailer_product": {
+        "retailer_product_id": null,
+        "product_id": null,
+        "retailer_id": null,
+        "retailer_sku": "160229354",
+        "retailer_product_name": "GIGABYTE GeForce RTX 5060 Ti WINDFORCE MAX OC (NVIDIA, Grafikkarte)",
+        "product_url": "https://www.mediamarkt.ch/de/product/_gigabyte-geforce-rtx-5060-ti-windforce-max-oc-nvidia-grafikkarte-160229354.html",
+        "first_seen_at": "2026-10-15T06:43:27.359966+00:00",
+        "last_seen_at": "2026-10-15T06:43:38.352714+00:00"
+    },
+    "price_history": {
+        "price_id": null,
+        "retailer_product_id": null,
+        "price_chf": 405,
+        "original_price_chf": null,
+        "discount_percent": null,
+        "availability": "InStock",
+        "collected_at": "2026-10-15T06:43:38.352714+00:00"
+    },
+    "gpu_details": {
+        "gpu_details_id": null,
+        "product_id": null,
+        "gpu_model": "GeForce RTX™ 5060 Ti",
+        "gpu_architecture": null,
+        "vram_gb": 8,
+        "vram_type": "GDDR7",
+        "clock_mhz": null,
+        "boost_clock_mhz": null,
+        "pcie_interface": "PCI Express 5.0",
+        "tdp_watts": null,
+        "cooling_variant": "Luftkühlung aktiv"
+    },
+    "ram_details": {
+        "ram_details_id": null,
+        "product_id": null,
+        "ram_type": null,
+        "total_capacity_gb": null,
+        "module_count": null,
+        "capacity_per_module_gb": null,
+        "speed_mts": null,
+        "cas_latency": null,
+        "voltage": null,
+        "ecc": null,
+        "rgb": null
+    },
+    "ssd_details": {
+        "ssd_details_id": null,
+        "product_id": null,
+        "capacity_gb": null,
+        "interface": null,
+        "pcie_generation": null,
+        "form_factor": null,
+        "nand_type": null,
+        "controller": null,
+        "read_speed_mbps": null,
+        "write_speed_mbps": null,
+        "tbw": null,
+        "dram_cache": null
+    },
+    "raw_payload": {
+        "@type": "Product",
+        "brand": {
+            "@type": "Brand",
+            "name": "GIGABYTE"
+        },
+        "description": "GIGABYTE GeForce RTX 5060 Ti WINDFORCE MAX OC (NVIDIA, Grafikkarte) im Onlineshop von MediaMarkt kaufen. Jetzt bequem online bestellen.",
+        "sku": "160229354",
+        "gtin13": "4719331356682",
+        "image": [
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_160228887/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_160228888/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_160228890/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_160228891/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_160228892/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_160229358/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_160228896/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_160228894/fee_786_587_png"
+        ],
+        "name": "GIGABYTE GeForce RTX 5060 Ti WINDFORCE MAX OC (NVIDIA, Grafikkarte)",
+        "url": "https://www.mediamarkt.ch/de/product/_gigabyte-geforce-rtx-5060-ti-windforce-max-oc-nvidia-grafikkarte-160229354.html",
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": 405,
+                "priceCurrency": "CHF",
+                "itemCondition": "https://schema.org/NewCondition",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.mediamarkt.ch/de/product/_gigabyte-geforce-rtx-5060-ti-windforce-max-oc-nvidia-grafikkarte-160229354.html",
+                "seller": {
+                    "@type": "Organization",
+                    "name": "Buchmann",
+                    "id": "12146"
+                },
+                "shippingDetails": {
+                    "@type": "OfferShippingDetails",
+                    "shippingDestination": {
+                        "@type": "DefinedRegion",
+                        "addressCountry": {
+                            "@type": "Country",
+                            "name": "CH"
+                        }
+                    },
+                    "shippingRate": {
+                        "@type": "MonetaryAmount",
+                        "value": 6,
+                        "currency": "CHF"
+                    },
+                    "deliveryTime": {
+                        "@type": "ShippingDeliveryTime",
+                        "handlingTime": {
+                            "@type": "QuantitativeValue",
+                            "minValue": 0,
+                            "maxValue": 1,
+                            "unitCode": "DAY"
+                        },
+                        "transitTime": {
+                            "@type": "QuantitativeValue",
+                            "minValue": 4,
+                            "maxValue": 6,
+                            "unitCode": "DAY"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "technical_payload": {
+        "product_id": "160229354",
+        "kind_of_product": "GRAPHICS_CARD",
+        "raw_title": "GeForce RTX 5060 Ti WINDFORCE MAX OC",
+        "features": [
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10990",
+                "order": 10,
+                "name": "Produkttyp",
+                "type": null,
+                "unit": null,
+                "value": "Grafikkarte",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Grafikkarte",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15000",
+                "order": 60,
+                "name": "Grafik-Taktfrequenz",
+                "type": null,
+                "unit": "MHz",
+                "value": "2587",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2587",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16168",
+                "order": 20,
+                "name": "Grafikchipsatz-Hersteller",
+                "type": null,
+                "unit": null,
+                "value": "NVIDIA",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "20",
+                        "value": "NVIDIA",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16042",
+                "order": 80,
+                "name": "Serie",
+                "type": null,
+                "unit": null,
+                "value": "GeForce RTX 5060 Ti",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "GeForce RTX 5060 Ti",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16856",
+                "order": 9999,
+                "name": "Graphics Chipset",
+                "type": null,
+                "unit": null,
+                "value": "GeForce RTX™ 5060 Ti",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "4011",
+                        "value": "GeForce RTX™ 5060 Ti",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15146",
+                "order": 240,
+                "name": "Shader-Taktfrequenz",
+                "type": null,
+                "unit": "MHz",
+                "value": "2587",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2587",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10925",
+                "order": 270,
+                "name": "Funktionen",
+                "type": null,
+                "unit": null,
+                "value": "Nicht unterstützt",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Nicht unterstützt",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13488",
+                "order": 40,
+                "name": "Grafikspeicher",
+                "type": null,
+                "unit": "GB",
+                "value": "8",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "8",
+                        "unit": "GB",
+                        "unitUnece": "unece.unit.E34"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15159",
+                "order": 70,
+                "name": "Speicher-Taktfrequenz",
+                "type": null,
+                "unit": "MHz",
+                "value": "28000",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "28000",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12704",
+                "order": 150,
+                "name": "Datenrate",
+                "type": null,
+                "unit": null,
+                "value": "28 Gbit/s",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "28 Gbit/s",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16165",
+                "order": 100,
+                "name": "Grafikspeicher-Typ",
+                "type": null,
+                "unit": null,
+                "value": "GDDR7",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "150",
+                        "value": "GDDR7",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16166",
+                "order": 110,
+                "name": "Speicherschnittstelle",
+                "type": null,
+                "unit": "Bit",
+                "value": "128",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "128",
+                        "unit": "Bit",
+                        "unitUnece": "unece.unit.A99"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13334",
+                "order": 280,
+                "name": "API-Unterstützung",
+                "type": null,
+                "unit": null,
+                "value": "DirectX-Version:12.0, OpenGL-Version:4.6",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "DirectX-Version:12.0, OpenGL-Version:4.6",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11818",
+                "order": 160,
+                "name": "RAMDAC-Taktfrequenz",
+                "type": null,
+                "unit": "MHz",
+                "value": "2587",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2587",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_14940",
+                "order": 290,
+                "name": "Empfohlene Spannungsversorgung",
+                "type": null,
+                "unit": "W",
+                "value": "650",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "650",
+                        "unit": "W",
+                        "unitUnece": "unece.unit.WTT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_14949",
+                "order": 300,
+                "name": "erforderliches Betriebssystem",
+                "type": null,
+                "unit": null,
+                "value": "Windows, Mac, Linux",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Windows, Mac, Linux",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_14872",
+                "order": 170,
+                "name": "Benötigte Peripherie",
+                "type": null,
+                "unit": null,
+                "value": "Anzahl Slots:2",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Anzahl Slots:2",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_14943",
+                "order": 310,
+                "name": "Erforderliche Prozessorgeschwindigkeit",
+                "type": null,
+                "unit": "MHz",
+                "value": "2587",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2587",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12111",
+                "order": 50,
+                "name": "Steckplatz",
+                "type": null,
+                "unit": null,
+                "value": "PCI Express 5.0",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "PCI Express 5.0",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15551",
+                "order": 120,
+                "name": "Kühlung",
+                "type": null,
+                "unit": null,
+                "value": "Luftkühlung aktiv",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "20",
+                        "value": "Luftkühlung aktiv",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11520",
+                "order": 190,
+                "name": "Maximale Auflösung",
+                "type": null,
+                "unit": null,
+                "value": "7680 x 4320 Pixel",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "7680 x 4320 Pixel",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10134",
+                "order": 130,
+                "name": "Anschlüsse",
+                "type": null,
+                "unit": null,
+                "value": "HDMI: 1x 2.1b , DisplayPort: 3x 2.1b",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "HDMI: 1x 2.1b , DisplayPort: 3x 2.1b",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_14828",
+                "order": 320,
+                "name": "Anschluss Details",
+                "type": null,
+                "unit": null,
+                "value": "1x 8-pin",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "1x 8-pin",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16167",
+                "order": 330,
+                "name": "Maximal unterstützte Displays",
+                "type": null,
+                "unit": null,
+                "value": "4",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "4",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15009",
+                "order": 200,
+                "name": "HDCP kompatibel",
+                "type": null,
+                "unit": null,
+                "value": "Nein",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "0",
+                        "value": "Nein",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13366",
+                "order": 210,
+                "name": "Besondere Merkmale",
+                "type": null,
+                "unit": null,
+                "value": "NVIDIA G-SYNC, Kühltechnik:GIGABYTE WINDFORCE 2X",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "NVIDIA G-SYNC, Kühltechnik:GIGABYTE WINDFORCE 2X",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16110",
+                "order": 360,
+                "name": "Breite",
+                "type": null,
+                "unit": "mm",
+                "value": "212",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "212",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16111",
+                "order": 370,
+                "name": "Höhe",
+                "type": null,
+                "unit": "mm",
+                "value": "120",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "120",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16112",
+                "order": 380,
+                "name": "Tiefe",
+                "type": null,
+                "unit": "mm",
+                "value": "40",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "40",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11011",
+                "order": 140,
+                "name": "Gewicht (laut Hersteller)",
+                "type": null,
+                "unit": null,
+                "value": "0.58 kg",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "0.58 kg",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16333",
+                "order": 390,
+                "name": "Gewicht",
+                "type": null,
+                "unit": "g",
+                "value": "580",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "580",
+                        "unit": "g",
+                        "unitUnece": "unece.unit.GRM"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_18008",
+                "order": 450,
+                "name": "Ursprungsland/Herkunftsort",
+                "type": null,
+                "unit": null,
+                "value": "China",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "China",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11470",
+                "order": 90,
+                "name": "Lieferumfang",
+                "type": null,
+                "unit": null,
+                "value": "Grafikkarte, Zubehör",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Grafikkarte, Zubehör",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15516",
+                "order": 430,
+                "name": "Packmaße (B/H/T) (cm)",
+                "type": null,
+                "unit": null,
+                "value": "10 cm / 10 cm / 10 cm",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "10 cm / 10 cm / 10 cm",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16617",
+                "order": 5000,
+                "name": "Modelljahr",
+                "type": null,
+                "unit": null,
+                "value": "2025",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2025",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16746",
+                "order": 5010,
+                "name": "Produkt Einführungsdatum",
+                "type": null,
+                "unit": null,
+                "value": "2025-08-07",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2025-08-07",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16743",
+                "order": 5020,
+                "name": "Herstellerunterstützte Software updates",
+                "type": null,
+                "unit": null,
+                "value": "Unbekannt",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "2",
+                        "value": "Unbekannt",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_750531",
+                "name": "Computer & Software"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751013",
+                "name": "PC-Komponenten"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751073",
+                "name": "Grafikkarten"
+            }
+        ]
+    }
+}

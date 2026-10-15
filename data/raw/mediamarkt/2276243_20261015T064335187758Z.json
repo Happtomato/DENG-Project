@@ -1,0 +1,921 @@
+{
+    "metadata": {
+        "source": "mediamarkt",
+        "source_type": "retailer",
+        "source_product_id": "2276243",
+        "source_url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5080-16gb-gddr7-oc-edition-nvidia-grafikkarte-2276243.html",
+        "access_method": "public_html",
+        "collected_at": "2026-10-15T06:43:35.182357+00:00",
+        "category_code": "gpu",
+        "quality_warnings": [],
+        "item_condition": "https://schema.org/NewCondition",
+        "scope_status": "accepted",
+        "scope_reason": "in_scope",
+        "run_id": "20261015T064322224653Z",
+        "observation_day": "2026-10-15"
+    },
+    "brand": {
+        "brand_id": null,
+        "name": "ASUS"
+    },
+    "category": {
+        "category_id": null,
+        "name": "Grafikkarten"
+    },
+    "retailer": {
+        "retailer_id": null,
+        "name": "MediaMarkt",
+        "website": "https://www.mediamarkt.ch"
+    },
+    "product": {
+        "product_id": null,
+        "brand_id": null,
+        "category_id": null,
+        "product_name": "ASUS PRIME GeForce RTX 5080 16GB GDDR7 OC Edition (NVIDIA, Grafikkarte)",
+        "ean": "4711387837788",
+        "mpn": "90YV0LX0-M0NA00",
+        "release_date": null,
+        "model": "GEFORCE RTX 5080 PRIME OC ED",
+        "series": "RTX™ 50",
+        "generation": "RTX 50 Series",
+        "msrp_chf": null,
+        "manufacturer_url": null,
+        "created_at": null,
+        "updated_at": null
+    },
+    "retailer_product": {
+        "retailer_product_id": null,
+        "product_id": null,
+        "retailer_id": null,
+        "retailer_sku": "2276243",
+        "retailer_product_name": "ASUS PRIME GeForce RTX 5080 16GB GDDR7 OC Edition (NVIDIA, Grafikkarte)",
+        "product_url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5080-16gb-gddr7-oc-edition-nvidia-grafikkarte-2276243.html",
+        "first_seen_at": "2026-10-15T06:43:27.359952+00:00",
+        "last_seen_at": "2026-10-15T06:43:35.182357+00:00"
+    },
+    "price_history": {
+        "price_id": null,
+        "retailer_product_id": null,
+        "price_chf": 1499.95,
+        "original_price_chf": null,
+        "discount_percent": null,
+        "availability": "InStock",
+        "collected_at": "2026-10-15T06:43:35.182357+00:00"
+    },
+    "gpu_details": {
+        "gpu_details_id": null,
+        "product_id": null,
+        "gpu_model": "GeForce RTX™ 5080",
+        "gpu_architecture": "NVIDIA Blackwell",
+        "vram_gb": 16,
+        "vram_type": "GDDR7",
+        "clock_mhz": null,
+        "boost_clock_mhz": 2655,
+        "pcie_interface": "PCI Express 5.0 x16",
+        "tdp_watts": null,
+        "cooling_variant": "Luftkühlung aktiv"
+    },
+    "ram_details": {
+        "ram_details_id": null,
+        "product_id": null,
+        "ram_type": null,
+        "total_capacity_gb": null,
+        "module_count": null,
+        "capacity_per_module_gb": null,
+        "speed_mts": null,
+        "cas_latency": null,
+        "voltage": null,
+        "ecc": null,
+        "rgb": null
+    },
+    "ssd_details": {
+        "ssd_details_id": null,
+        "product_id": null,
+        "capacity_gb": null,
+        "interface": null,
+        "pcie_generation": null,
+        "form_factor": null,
+        "nand_type": null,
+        "controller": null,
+        "read_speed_mbps": null,
+        "write_speed_mbps": null,
+        "tbw": null,
+        "dram_cache": null
+    },
+    "raw_payload": {
+        "@type": "Product",
+        "brand": {
+            "@type": "Brand",
+            "name": "ASUS"
+        },
+        "description": "ASUS PRIME GeForce RTX 5080 16GB GDDR7 OC Edition (NVIDIA, Grafikkarte) im Onlineshop von MediaMarkt kaufen. Jetzt bequem online bestellen.",
+        "sku": "2276243",
+        "gtin13": "4711387837788",
+        "image": [
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327451/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327452/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327453/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327455/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327456/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327457/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327458/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327459/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327460/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327461/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327462/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151327463/fee_786_587_png"
+        ],
+        "name": "ASUS PRIME GeForce RTX 5080 16GB GDDR7 OC Edition (NVIDIA, Grafikkarte)",
+        "url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5080-16gb-gddr7-oc-edition-nvidia-grafikkarte-2276243.html",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "32"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 5
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Grimlock"
+                },
+                "datePublished": "2025-03-12T16:31:39.000+00:00",
+                "name": "Super, schnelle Lieferung. Danke",
+                "reviewBody": "Zuverlässige Lieferung und gute Qualität die rtx 5080 ist eine super Kauf gewesen und ich bin froh, dass es so schnelle geliefert worden ist"
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 5
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Sohail Dua"
+                },
+                "datePublished": "2026-09-26T23:03:15.000+00:00",
+                "name": "Sehr zufrieden mit dem ASUS ROG Prime",
+                "reviewBody": "Ich bin mit dem ASUS ROG Prime bisher sehr zufrieden. Die Verarbeitung wirkt hochwertig und das Design gefällt mir sehr gut. Die Einrichtung war unkompliziert und auch im täglichen Gebrauch funktioniert alles zuverlässig. Besonders positiv finde ich die Leistung und die vielen Einstellungsmöglichkeiten. Das Gerät läuft stabil und auch bei längerer Nutzung hatte ich bisher keine Probleme. Die Bedienung ist insgesamt einfach und verständlich, auch wenn man kein Experte ist. Für mich ist das Produkt eine gute Kombination aus Qualität, Leistung und einem ansprechenden Design. Insgesamt bin ich mit meinem Kauf zufrieden und würde das Produkt weiterempfehlen."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 5
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Kevinwarden93!"
+                },
+                "datePublished": "2026-09-23T16:07:57.000+00:00",
+                "name": "Top Highend Grafikkarte!",
+                "reviewBody": "Perfekt, absolut Highend und schnelle Lieferung. Top wie immer! Sage ich als Stammkunde :)))"
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 5
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Bill"
+                },
+                "datePublished": "2026-09-21T06:04:03.000+00:00",
+                "name": "Perfect for gaming",
+                "reviewBody": "Does everything I need it to do and more, great for gaming"
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 5
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Kovic"
+                },
+                "datePublished": "2026-09-06T23:24:21.000+00:00",
+                "name": "RTX 5080 Ein geiles Teil",
+                "reviewBody": "Mit der RTX 5080 holt man sich die aktuell 2. beste Grafikkarte ins Haus. Da die 5090 aktuell unbezahlbar ist musste die 5080 ran und ich bereue keinen cent, alle games laufen auf max. in 4k"
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 5
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Radek"
+                },
+                "datePublished": "2026-08-25T11:00:30.000+00:00",
+                "name": "Runs like true Hero!",
+                "reviewBody": "[This review was collected as part of a promotion.] Great graphic card! My GTA5 runs smooth in ultra settings! Looking forward to get 4K monitor to get full experience."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 5
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "JRhodes"
+                },
+                "datePublished": "2026-08-20T08:45:53.000+00:00",
+                "name": "Loving this.",
+                "reviewBody": "Quite powerful GPU in a relatively affordable price and reasonable support alongside an ASUS motherboard"
+            }
+        ],
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CHF",
+            "price": 1499.95,
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5080-16gb-gddr7-oc-edition-nvidia-grafikkarte-2276243.html",
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                },
+                "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": 0,
+                    "currency": "CHF"
+                },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 4,
+                        "unitCode": "DAY"
+                    }
+                }
+            },
+            "hasMerchantReturnPolicy": [
+                {
+                    "@type": "MerchantReturnPolicy",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                    "merchantReturnDays": 14,
+                    "merchantReturnLink": "https://www.mediamarkt.ch/de/service/retouren",
+                    "returnFees": "https://schema.org/ReturnShippingFees",
+                    "returnMethod": [
+                        "https://schema.org/ReturnInStore",
+                        "https://schema.org/ReturnByMail"
+                    ],
+                    "refundType": "https://schema.org/FullRefund",
+                    "applicableCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    },
+                    "returnPolicyCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                },
+                {
+                    "@type": "MerchantReturnPolicy",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                    "merchantReturnDays": 28,
+                    "merchantReturnLink": "https://www.mediamarkt.ch/de/service/retouren",
+                    "returnFees": "https://schema.org/ReturnShippingFees",
+                    "returnMethod": [
+                        "https://schema.org/ReturnInStore",
+                        "https://schema.org/ReturnByMail"
+                    ],
+                    "refundType": "https://schema.org/FullRefund",
+                    "applicableCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    },
+                    "returnPolicyCountry": {
+                        "@type": "Country",
+                        "name": "CH"
+                    }
+                }
+            ],
+            "addOn": [
+                {
+                    "@type": "Offer",
+                    "name": "Transportversicherung",
+                    "priceCurrency": "CHF",
+                    "price": 14.95,
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5080-16gb-gddr7-oc-edition-nvidia-grafikkarte-2276243.html",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Transportversicherung",
+                        "serviceType": "WARRANTY",
+                        "areaServed": {
+                            "@type": "Country",
+                            "name": "CH"
+                        }
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Garantieverlängerung 2 + 2 inkl. Transportversicherung",
+                    "priceCurrency": "CHF",
+                    "price": 209.95,
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5080-16gb-gddr7-oc-edition-nvidia-grafikkarte-2276243.html",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Garantieverlängerung 2 + 2 inkl. Transportversicherung",
+                        "serviceType": "WARRANTY",
+                        "areaServed": {
+                            "@type": "Country",
+                            "name": "CH"
+                        }
+                    }
+                }
+            ],
+            "priceSpecification": [
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "Standard price (non-loyalty members)",
+                    "price": "1499.95",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Non-loyalty members"
+                    }
+                },
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "Standard price (loyalty members)",
+                    "price": "1499.95",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Loyalty member"
+                    }
+                },
+                {
+                    "@type": "UnitPriceSpecification",
+                    "name": "MyMediaMarkt points earned",
+                    "price": "1499.95",
+                    "priceCurrency": "CHF",
+                    "validForMemberTier": {
+                        "@type": "MemberProgramTier",
+                        "name": "Loyalty member"
+                    },
+                    "membershipPointsEarned": {
+                        "@type": "QuantitativeValue",
+                        "value": 15000,
+                        "unitText": "points"
+                    }
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "MyMediaMarkt",
+                "url": "https://www.mediamarkt.ch/de/myaccount/loyalty-benefits"
+            }
+        },
+        "memberOf": {
+            "@type": "MemberProgram",
+            "name": "MyMediaMarkt",
+            "url": "https://www.mediamarkt.ch/de/myaccount/loyalty-benefits",
+            "hasTier": [
+                {
+                    "@type": "MemberProgramTier",
+                    "name": "Non-loyalty members"
+                },
+                {
+                    "@type": "MemberProgramTier",
+                    "name": "Loyalty member"
+                }
+            ]
+        }
+    },
+    "technical_payload": {
+        "product_id": "2276243",
+        "kind_of_product": "GRAPHICS_CARD",
+        "raw_title": "GEFORCE RTX 5080 PRIME OC ED",
+        "features": [
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10990",
+                "order": 10,
+                "name": "Produkttyp",
+                "type": null,
+                "unit": null,
+                "value": "Grafikkarte",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Grafikkarte",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15000",
+                "order": 60,
+                "name": "Grafik-Taktfrequenz",
+                "type": null,
+                "unit": "MHz",
+                "value": "2685",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2685",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16168",
+                "order": 20,
+                "name": "Grafikchipsatz-Hersteller",
+                "type": null,
+                "unit": null,
+                "value": "NVIDIA",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "20",
+                        "value": "NVIDIA",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16042",
+                "order": 80,
+                "name": "Serie",
+                "type": null,
+                "unit": null,
+                "value": "RTX™ 50",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "RTX™ 50",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16856",
+                "order": 9999,
+                "name": "Graphics Chipset",
+                "type": null,
+                "unit": null,
+                "value": "GeForce RTX™ 5080",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "3932",
+                        "value": "GeForce RTX™ 5080",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15145",
+                "order": 250,
+                "name": "Shader Model",
+                "type": null,
+                "unit": null,
+                "value": "6.8",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "6.8",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13488",
+                "order": 40,
+                "name": "Grafikspeicher",
+                "type": null,
+                "unit": "GB",
+                "value": "16",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "16",
+                        "unit": "GB",
+                        "unitUnece": "unece.unit.E34"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15159",
+                "order": 70,
+                "name": "Speicher-Taktfrequenz",
+                "type": null,
+                "unit": "MHz",
+                "value": "30000",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "30000",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16165",
+                "order": 100,
+                "name": "Grafikspeicher-Typ",
+                "type": null,
+                "unit": null,
+                "value": "GDDR7",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "150",
+                        "value": "GDDR7",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16166",
+                "order": 110,
+                "name": "Speicherschnittstelle",
+                "type": null,
+                "unit": "Bit",
+                "value": "256",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "256",
+                        "unit": "Bit",
+                        "unitUnece": "unece.unit.A99"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13334",
+                "order": 280,
+                "name": "API-Unterstützung",
+                "type": null,
+                "unit": null,
+                "value": "Microsoft® DirectX® 12 Ultimate, Vulkan 1.4, OpenCL™ 3.0, OpenGL® 4.6",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Microsoft® DirectX® 12 Ultimate, Vulkan 1.4, OpenCL™ 3.0, OpenGL® 4.6",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_14940",
+                "order": 290,
+                "name": "Empfohlene Spannungsversorgung",
+                "type": null,
+                "unit": "W",
+                "value": "850",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "850",
+                        "unit": "W",
+                        "unitUnece": "unece.unit.WTT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12111",
+                "order": 50,
+                "name": "Steckplatz",
+                "type": null,
+                "unit": null,
+                "value": "PCI Express 5.0 x16",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "PCI Express 5.0 x16",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15551",
+                "order": 120,
+                "name": "Kühlung",
+                "type": null,
+                "unit": null,
+                "value": "Luftkühlung aktiv",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "20",
+                        "value": "Luftkühlung aktiv",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11520",
+                "order": 190,
+                "name": "Maximale Auflösung",
+                "type": null,
+                "unit": null,
+                "value": "7.680 x 4.320 Pixel",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "7.680 x 4.320 Pixel",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10134",
+                "order": 130,
+                "name": "Anschlüsse",
+                "type": null,
+                "unit": null,
+                "value": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16167",
+                "order": 330,
+                "name": "Maximal unterstützte Displays",
+                "type": null,
+                "unit": null,
+                "value": "4",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "4",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15009",
+                "order": 200,
+                "name": "HDCP kompatibel",
+                "type": null,
+                "unit": null,
+                "value": "Ja",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "1",
+                        "value": "Ja",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10001",
+                "order": 340,
+                "name": "VR ready",
+                "type": null,
+                "unit": null,
+                "value": "Ja",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "10",
+                        "value": "Ja",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13366",
+                "order": 210,
+                "name": "Besondere Merkmale",
+                "type": null,
+                "unit": null,
+                "value": "NVIDIA® GeForce® Experience™, NVIDIA® Ansel, NVIDIA® FreeStyle, NVIDIA® ShadowPlay, NVIDIA® Reflex, NVIDIA® Broadcast, NVIDIA® Highlights, NVIDIA® G-SYNC®, NVIDIA® GPU Boost™, HDCP 2.3, Raytracing-Recheneinheiten (4. Generation), Tensor-Recheneinheiten (KI, 5. Generation), PCI Express Gen 5, NVIDIA® App, Game Ready Drivers, NVIDIA® Studio Drivers, NVIDIA® Omniverse, RTX Remix, Angetrieben von der NVIDIA Blackwell Architektur und DLSS 4, SFF-Ready GeForce Karte für Enthusiasten, kompatibel mit Small-Form-Factor-Gehäusen, Axial-Tech-Lüfter verfügen über eine kleinere Lüfternabe, die längere Flügel ermöglicht, und einen Sperrring, der den Luftdruck nach unten erhöht, Die Vapor Chamber sorgt für eine effiziente Wärmeübertragung für niedrigere GPU-Temperaturen, Das Phase-Change-GPU-Wärmeleitpad sorgt für eine optimale Wärmeübertragung und senkt die GPU-Temperaturen für mehr Leistung und Zuverlässigkeit, Das 2.5-Slot-Design ermöglicht eine grössere Kompatibilität mit verschiedenen Builds bei gleichbleibender Kühlleistung, Lüfter mit Doppelkugellager halten bis zu doppelt so lange wie Standard-Gleitlager, Mit der 0dB-Technologie kannst du leichte Spiele in relativer Stille geniessen, Mit dem Dual-BIOS-Schalter kannst du zwischen den BIOS-Profilen \"Leise\" und \"Leistung\" umschalten, Auto-Extreme Fertigungsverfahren für Präzision und Zuverlässigkeit, Die GPU Tweak III Software bietet intuitive Leistungsoptimierung, fortschrittliche Wärmekontrolle und Systemüberwachung, OC-Modus (Prozessortakt): 2685 MHz, Standardmodus (Prozessortakt): 2655 MHz (Boost-Takt), KI-Leistung: 1827 TOPS, CUDA-Kern(e): 10752",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "NVIDIA® GeForce® Experience™, NVIDIA® Ansel, NVIDIA® FreeStyle, NVIDIA® ShadowPlay, NVIDIA® Reflex, NVIDIA® Broadcast, NVIDIA® Highlights, NVIDIA® G-SYNC®, NVIDIA® GPU Boost™, HDCP 2.3, Raytracing-Recheneinheiten (4. Generation), Tensor-Recheneinheiten (KI, 5. Generation), PCI Express Gen 5, NVIDIA® App, Game Ready Drivers, NVIDIA® Studio Drivers, NVIDIA® Omniverse, RTX Remix, Angetrieben von der NVIDIA Blackwell Architektur und DLSS 4, SFF-Ready GeForce Karte für Enthusiasten, kompatibel mit Small-Form-Factor-Gehäusen, Axial-Tech-Lüfter verfügen über eine kleinere Lüfternabe, die längere Flügel ermöglicht, und einen Sperrring, der den Luftdruck nach unten erhöht, Die Vapor Chamber sorgt für eine effiziente Wärmeübertragung für niedrigere GPU-Temperaturen, Das Phase-Change-GPU-Wärmeleitpad sorgt für eine optimale Wärmeübertragung und senkt die GPU-Temperaturen für mehr Leistung und Zuverlässigkeit, Das 2.5-Slot-Design ermöglicht eine grössere Kompatibilität mit verschiedenen Builds bei gleichbleibender Kühlleistung, Lüfter mit Doppelkugellager halten bis zu doppelt so lange wie Standard-Gleitlager, Mit der 0dB-Technologie kannst du leichte Spiele in relativer Stille geniessen, Mit dem Dual-BIOS-Schalter kannst du zwischen den BIOS-Profilen \"Leise\" und \"Leistung\" umschalten, Auto-Extreme Fertigungsverfahren für Präzision und Zuverlässigkeit, Die GPU Tweak III Software bietet intuitive Leistungsoptimierung, fortschrittliche Wärmekontrolle und Systemüberwachung, OC-Modus (Prozessortakt): 2685 MHz, Standardmodus (Prozessortakt): 2655 MHz (Boost-Takt), KI-Leistung: 1827 TOPS, CUDA-Kern(e): 10752",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16110",
+                "order": 360,
+                "name": "Breite",
+                "type": null,
+                "unit": "mm",
+                "value": "126",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "126",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16111",
+                "order": 370,
+                "name": "Höhe",
+                "type": null,
+                "unit": "mm",
+                "value": "50",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "50",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16112",
+                "order": 380,
+                "name": "Tiefe",
+                "type": null,
+                "unit": "mm",
+                "value": "304",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "304",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_00002",
+                "order": 540,
+                "name": "Manufacturer Part Number (MPN)",
+                "type": null,
+                "unit": null,
+                "value": "90YV0LX0-M0NA00",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "90YV0LX0-M0NA00",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11470",
+                "order": 90,
+                "name": "Lieferumfang",
+                "type": null,
+                "unit": null,
+                "value": "Grafikkarte, Benutzerhandbuch, ASUS Velcro Hook & Loop, Adapterkabel (1 auf 3)​, Thank you card",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Grafikkarte, Benutzerhandbuch, ASUS Velcro Hook & Loop, Adapterkabel (1 auf 3)​, Thank you card",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15516",
+                "order": 430,
+                "name": "Packmaße (B/H/T) (cm)",
+                "type": null,
+                "unit": null,
+                "value": "235 mm / 90 mm / 410 mm",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "235 mm / 90 mm / 410 mm",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16617",
+                "order": 5000,
+                "name": "Modelljahr",
+                "type": null,
+                "unit": null,
+                "value": "2025",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2025",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_750531",
+                "name": "Computer & Software"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751013",
+                "name": "PC-Komponenten"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751073",
+                "name": "Grafikkarten"
+            }
+        ]
+    }
+}

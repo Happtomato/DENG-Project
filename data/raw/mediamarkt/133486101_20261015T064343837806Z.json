@@ -1,0 +1,553 @@
+{
+    "metadata": {
+        "source": "mediamarkt",
+        "source_type": "retailer",
+        "source_product_id": "133486101",
+        "source_url": "https://www.mediamarkt.ch/de/product/_synology-d4ecso-2666-16g-arbeitsspeicher-16-gb-ddr4-133486101.html",
+        "access_method": "public_html",
+        "collected_at": "2026-10-15T06:43:43.836707+00:00",
+        "category_code": "ram",
+        "quality_warnings": [],
+        "ram_speed_normalization": "Vendor effective DDR rate labelled MHz; confirmed in model name",
+        "item_condition": "https://schema.org/NewCondition",
+        "scope_status": "excluded",
+        "scope_reason": "excluded_hardware_or_condition",
+        "run_id": "20261015T064322224653Z",
+        "observation_day": "2026-10-15"
+    },
+    "brand": {
+        "brand_id": null,
+        "name": "SYNOLOGY"
+    },
+    "category": {
+        "category_id": null,
+        "name": "Arbeitsspeicher (RAM)"
+    },
+    "retailer": {
+        "retailer_id": null,
+        "name": "MediaMarkt",
+        "website": "https://www.mediamarkt.ch"
+    },
+    "product": {
+        "product_id": null,
+        "brand_id": null,
+        "category_id": null,
+        "product_name": "SYNOLOGY D4ECSO-2666-16G NAS-Arbeitsspeicher 16 GB DDR4",
+        "ean": "4711174723676",
+        "mpn": null,
+        "release_date": null,
+        "model": "D4ECSO-2666-16G",
+        "series": "m0000AYFDX",
+        "generation": "DDR4",
+        "msrp_chf": null,
+        "manufacturer_url": "https://www.synology.com/de-de/company/contact_us",
+        "created_at": null,
+        "updated_at": null
+    },
+    "retailer_product": {
+        "retailer_product_id": null,
+        "product_id": null,
+        "retailer_id": null,
+        "retailer_sku": "133486101",
+        "retailer_product_name": "SYNOLOGY D4ECSO-2666-16G NAS-Arbeitsspeicher 16 GB DDR4",
+        "product_url": "https://www.mediamarkt.ch/de/product/_synology-d4ecso-2666-16g-arbeitsspeicher-16-gb-ddr4-133486101.html",
+        "first_seen_at": "2026-10-15T06:43:30.117130+00:00",
+        "last_seen_at": "2026-10-15T06:43:43.836707+00:00"
+    },
+    "price_history": {
+        "price_id": null,
+        "retailer_product_id": null,
+        "price_chf": 1235.4,
+        "original_price_chf": null,
+        "discount_percent": null,
+        "availability": "InStock",
+        "collected_at": "2026-10-15T06:43:43.836707+00:00"
+    },
+    "gpu_details": {
+        "gpu_details_id": null,
+        "product_id": null,
+        "gpu_model": null,
+        "gpu_architecture": null,
+        "vram_gb": null,
+        "vram_type": null,
+        "clock_mhz": null,
+        "boost_clock_mhz": null,
+        "pcie_interface": null,
+        "tdp_watts": null,
+        "cooling_variant": null
+    },
+    "ram_details": {
+        "ram_details_id": null,
+        "product_id": null,
+        "ram_type": "DDR4",
+        "total_capacity_gb": 16,
+        "module_count": 2,
+        "capacity_per_module_gb": null,
+        "speed_mts": 2666,
+        "cas_latency": null,
+        "voltage": 1.2,
+        "ecc": null,
+        "rgb": null
+    },
+    "ssd_details": {
+        "ssd_details_id": null,
+        "product_id": null,
+        "capacity_gb": null,
+        "interface": null,
+        "pcie_generation": null,
+        "form_factor": null,
+        "nand_type": null,
+        "controller": null,
+        "read_speed_mbps": null,
+        "write_speed_mbps": null,
+        "tbw": null,
+        "dram_cache": null
+    },
+    "raw_payload": {
+        "@type": "Product",
+        "brand": {
+            "@type": "Brand",
+            "name": "SYNOLOGY"
+        },
+        "description": "SYNOLOGY D4ECSO-2666-16G NAS-Arbeitsspeicher 16 GB DDR4 im Onlineshop von MediaMarkt kaufen. Jetzt bequem online bestellen.",
+        "sku": "133486101",
+        "gtin13": "4711174723676",
+        "image": [
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_133486142/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_133486183/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_133486184/fee_786_587_png",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_172836410/fee_786_587_png"
+        ],
+        "name": "SYNOLOGY D4ECSO-2666-16G NAS-Arbeitsspeicher 16 GB DDR4",
+        "url": "https://www.mediamarkt.ch/de/product/_synology-d4ecso-2666-16g-arbeitsspeicher-16-gb-ddr4-133486101.html",
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": 1235.4,
+                "priceCurrency": "CHF",
+                "itemCondition": "https://schema.org/NewCondition",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.mediamarkt.ch/de/product/_synology-d4ecso-2666-16g-arbeitsspeicher-16-gb-ddr4-133486101.html",
+                "seller": {
+                    "@type": "Organization",
+                    "name": "4-electronics",
+                    "id": "11246"
+                },
+                "shippingDetails": {
+                    "@type": "OfferShippingDetails",
+                    "shippingDestination": {
+                        "@type": "DefinedRegion",
+                        "addressCountry": {
+                            "@type": "Country",
+                            "name": "CH"
+                        }
+                    },
+                    "shippingRate": {
+                        "@type": "MonetaryAmount",
+                        "value": 0,
+                        "currency": "CHF"
+                    },
+                    "deliveryTime": {
+                        "@type": "ShippingDeliveryTime",
+                        "handlingTime": {
+                            "@type": "QuantitativeValue",
+                            "minValue": 0,
+                            "maxValue": 1,
+                            "unitCode": "DAY"
+                        },
+                        "transitTime": {
+                            "@type": "QuantitativeValue",
+                            "minValue": 4,
+                            "maxValue": 6,
+                            "unitCode": "DAY"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "technical_payload": {
+        "product_id": "133486101",
+        "kind_of_product": "RAM",
+        "raw_title": "D4ECSO-2666-16G",
+        "features": [
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10990",
+                "order": 10,
+                "name": "Produkttyp",
+                "type": null,
+                "unit": null,
+                "value": "NAS-Arbeitsspeicher",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "NAS-Arbeitsspeicher",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16042",
+                "order": 90,
+                "name": "Serie",
+                "type": null,
+                "unit": null,
+                "value": "m0000AYFDX",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "m0000AYFDX",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15969",
+                "order": 20,
+                "name": "Arbeitsspeicher-Typ",
+                "type": null,
+                "unit": null,
+                "value": "DDR4",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "50",
+                        "value": "DDR4",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16526",
+                "order": 140,
+                "name": "Speichertechnologie",
+                "type": null,
+                "unit": null,
+                "value": "UDIMM (Unbuffered DIMM)",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "10",
+                        "value": "UDIMM (Unbuffered DIMM)",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10303",
+                "order": 110,
+                "name": "Anzahl PINs",
+                "type": null,
+                "unit": null,
+                "value": "260",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "260",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16047",
+                "order": 50,
+                "name": "Taktfrequenz",
+                "type": null,
+                "unit": "MHz",
+                "value": "2666",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2666",
+                        "unit": "MHz",
+                        "unitUnece": "unece.unit.MHZ"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11184",
+                "order": 30,
+                "name": "Arbeitsspeicher-Größe",
+                "type": null,
+                "unit": "GB",
+                "value": "16",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "16",
+                        "unit": "GB",
+                        "unitUnece": "unece.unit.E34"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12033",
+                "order": 80,
+                "name": "Spannung",
+                "type": null,
+                "unit": "V",
+                "value": "1.2",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "1.2",
+                        "unit": "V",
+                        "unitUnece": "unece.unit.VLT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16046",
+                "order": 120,
+                "name": "Speicher Architektur",
+                "type": null,
+                "unit": null,
+                "value": "DIMM",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "10",
+                        "value": "DIMM",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12359",
+                "order": 40,
+                "name": "Kompatibilität",
+                "type": null,
+                "unit": null,
+                "value": "DS3617xs",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "DS3617xs",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16110",
+                "order": 240,
+                "name": "Breite",
+                "type": null,
+                "unit": "cm",
+                "value": "0.0",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "0.0",
+                        "unit": "cm",
+                        "unitUnece": "unece.unit.CMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16111",
+                "order": 200,
+                "name": "Höhe",
+                "type": null,
+                "unit": "cm",
+                "value": "60",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "60",
+                        "unit": "cm",
+                        "unitUnece": "unece.unit.CMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16112",
+                "order": 250,
+                "name": "Tiefe",
+                "type": null,
+                "unit": "cm",
+                "value": "0.0",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "0.0",
+                        "unit": "cm",
+                        "unitUnece": "unece.unit.CMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11011",
+                "order": 220,
+                "name": "Gewicht (laut Hersteller)",
+                "type": null,
+                "unit": null,
+                "value": "38 Gramm",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "38 Gramm",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16333",
+                "order": 230,
+                "name": "Gewicht",
+                "type": null,
+                "unit": "g",
+                "value": "38",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "38",
+                        "unit": "g",
+                        "unitUnece": "unece.unit.GRM"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13366",
+                "order": 260,
+                "name": "Besondere Merkmale",
+                "type": null,
+                "unit": null,
+                "value": "Ungepuffert",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Ungepuffert",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15552",
+                "order": 130,
+                "name": "Modulanzahl",
+                "type": null,
+                "unit": null,
+                "value": "2",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10812",
+                "order": 250,
+                "name": "Farbe (laut Hersteller)",
+                "type": null,
+                "unit": null,
+                "value": "Keine Angabe",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Keine Angabe",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_18008",
+                "order": 300,
+                "name": "Ursprungsland/Herkunftsort",
+                "type": null,
+                "unit": null,
+                "value": "Taiwan",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Taiwan",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16743",
+                "order": 5020,
+                "name": "Herstellerunterstützte Software updates",
+                "type": null,
+                "unit": null,
+                "value": "Unbekannt",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "2",
+                        "value": "Unbekannt",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_750531",
+                "name": "Computer & Software"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751013",
+                "name": "PC-Komponenten"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751074",
+                "name": "Arbeitsspeicher (RAM)"
+            }
+        ]
+    }
+}

@@ -1,0 +1,559 @@
+{
+    "metadata": {
+        "source": "mediamarkt",
+        "source_type": "retailer",
+        "source_product_id": "2155505",
+        "source_url": "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155505.html",
+        "access_method": "public_html",
+        "collected_at": "2026-10-15T06:43:47.016395+00:00",
+        "category_code": "ssd",
+        "quality_warnings": [],
+        "item_condition": "https://schema.org/NewCondition",
+        "scope_status": "accepted",
+        "scope_reason": "in_scope",
+        "run_id": "20261015T064322224653Z",
+        "observation_day": "2026-10-15"
+    },
+    "brand": {
+        "brand_id": null,
+        "name": null
+    },
+    "category": {
+        "category_id": null,
+        "name": "Interne SSD"
+    },
+    "retailer": {
+        "retailer_id": null,
+        "name": "MediaMarkt",
+        "website": "https://www.mediamarkt.ch"
+    },
+    "product": {
+        "product_id": null,
+        "brand_id": null,
+        "category_id": null,
+        "product_name": "SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 1 TB, Schwarz)",
+        "ean": "8806094215021",
+        "mpn": "MZ-V9P1T0BW",
+        "release_date": null,
+        "model": "MZ-V9P1T0BW 990 PRO NVME M.2 1 TB",
+        "series": "990 PRO",
+        "generation": "PCIe 4.0",
+        "msrp_chf": null,
+        "manufacturer_url": null,
+        "created_at": null,
+        "updated_at": null
+    },
+    "retailer_product": {
+        "retailer_product_id": null,
+        "product_id": null,
+        "retailer_id": null,
+        "retailer_sku": "2155505",
+        "retailer_product_name": "SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 1 TB, Schwarz)",
+        "product_url": "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155505.html",
+        "first_seen_at": "2026-10-15T06:43:21.788719+00:00",
+        "last_seen_at": "2026-10-15T06:43:47.016395+00:00"
+    },
+    "price_history": {
+        "price_id": null,
+        "retailer_product_id": null,
+        "price_chf": 199.95,
+        "original_price_chf": null,
+        "discount_percent": null,
+        "availability": "InStock",
+        "collected_at": "2026-10-15T06:43:47.016395+00:00"
+    },
+    "gpu_details": {
+        "gpu_details_id": null,
+        "product_id": null,
+        "gpu_model": null,
+        "gpu_architecture": null,
+        "vram_gb": null,
+        "vram_type": null,
+        "clock_mhz": null,
+        "boost_clock_mhz": null,
+        "pcie_interface": null,
+        "tdp_watts": null,
+        "cooling_variant": null
+    },
+    "ram_details": {
+        "ram_details_id": null,
+        "product_id": null,
+        "ram_type": null,
+        "total_capacity_gb": null,
+        "module_count": null,
+        "capacity_per_module_gb": null,
+        "speed_mts": null,
+        "cas_latency": null,
+        "voltage": null,
+        "ecc": null,
+        "rgb": null
+    },
+    "ssd_details": {
+        "ssd_details_id": null,
+        "product_id": null,
+        "capacity_gb": 1000,
+        "interface": "M.2 via NVMe",
+        "pcie_generation": "4.0",
+        "form_factor": "M.2 (2280)",
+        "nand_type": "Samsung V-NAND 3-bit MLC",
+        "controller": "Samsung eigener Controller",
+        "read_speed_mbps": 7450,
+        "write_speed_mbps": 6900,
+        "tbw": null,
+        "dram_cache": true
+    },
+    "raw_payload": {
+        "@type": "Product",
+        "sku": "2155505",
+        "gtin13": "8806094215021",
+        "image": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_99809019?x=1248&y=936&format=webp&quality=60&sp=yes&strip=yes&trim=yes&ex=1248&ey=936&align=center&resizesource&unsharp=0.5x0.5",
+        "name": "SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 1 TB, Schwarz)",
+        "offers": {
+            "@type": "Offer",
+            "url": "/de/product/_samsung-990-pro-nvme-m-2-ssd-2155505.html",
+            "priceCurrency": "CHF",
+            "price": 199.95,
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+        },
+        "storageCapacity": "1 TB"
+    },
+    "technical_payload": {
+        "product_id": "2155505",
+        "kind_of_product": "HARD_DISK_INTERNAL",
+        "raw_title": "MZ-V9P1T0BW 990 PRO NVME M.2 1 TB",
+        "features": [
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15855",
+                "order": 140,
+                "name": "Festplattentyp",
+                "type": null,
+                "unit": null,
+                "value": "SSD",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "20",
+                        "value": "SSD",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15781",
+                "order": 40,
+                "name": "Bauart",
+                "type": null,
+                "unit": null,
+                "value": "intern",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "10",
+                        "value": "intern",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10134",
+                "order": 30,
+                "name": "Anschlüsse",
+                "type": null,
+                "unit": null,
+                "value": "PCIe® NVMe™ 2.0 Gen4 x4",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "PCIe® NVMe™ 2.0 Gen4 x4",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15854",
+                "order": 90,
+                "name": "Festplattenschnittstelle",
+                "type": null,
+                "unit": null,
+                "value": "M.2 via NVMe",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "130",
+                        "value": "M.2 via NVMe",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16155",
+                "order": 20,
+                "name": "Speicherkapazität",
+                "type": null,
+                "unit": "TB",
+                "value": "1",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "1",
+                        "unit": "TB",
+                        "unitUnece": "unece.unit.E35"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16413",
+                "order": 120,
+                "name": "Transferrate (lesen)",
+                "type": null,
+                "unit": "MB/s",
+                "value": "7.450",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "7.450",
+                        "unit": "MB/s",
+                        "unitUnece": "unece.unit.P95"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16414",
+                "order": 180,
+                "name": "Transferrate (schreiben)",
+                "type": null,
+                "unit": "MB/s",
+                "value": "6.900",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "6.900",
+                        "unit": "MB/s",
+                        "unitUnece": "unece.unit.P95"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_14561",
+                "order": 300,
+                "name": "Transportprotokoll",
+                "type": null,
+                "unit": null,
+                "value": "NVMe™ 2.0",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "NVMe™ 2.0",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15168",
+                "order": 335,
+                "name": "Stossfestigkeit",
+                "type": null,
+                "unit": null,
+                "value": "1.500 G & 0.5 ms (Halbsinus)",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "1.500 G & 0.5 ms (Halbsinus)",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13366",
+                "order": 370,
+                "name": "Besondere Merkmale",
+                "type": null,
+                "unit": null,
+                "value": "Formfaktor: M.2 (2280), AES 256-Bit-Verschlüsselung (Klasse 0)TCG/Opal IEEE1667 (verschlüsseltes Laufwerk), Samsung V-NAND 3-bit MLC (Speicher), Samsung eigener Controller, Samsung 1 GB stromsparender DDR4 SDRAM (Cache-Arbeitsspeicher), TRIM unterstützt, S.M.A.R.T unterstützt, GC (Speicherbereinigung): Auto Garbage Collection Algorithm, Device Sleep-Modus unterstützt, Random-Lesegeschwindigkeit (4 KB, QD 32): Bis zu 1.200.000 IOPS (Die Leistung kann je nach Systemhardware und -konfiguration variieren), Random-Schreibgeschwindigkeit (4 KB, QD 32): Bis zu 1.550.000 IOPS (Die Leistung kann je nach Systemhardware und -konfiguration variierenstem hardware & configuration), Random-Lesegeschwindigkeit (4 KB, QD 1): Bis zu 22.000 IOPS (Die Leistung kann je nach Systemhardware und -konfiguration variieren), Random-Schreibgeschwindigkeit (4 KB, QD 1): Bis zu 80.000 IOPS (Die Leistung kann je nach Systemhardware und -konfiguration variieren), Zulässige Spannung: 3.3 V ± 5 % Zulässige Spannung, Zuverlässigkeit (MTBF): 1.5 Millionen Stunden Ausfallsicherheit (MTBF), Durchschnitt: 5.4 W, Maximum: 7.8 W (Burst mode, Der tatsächliche Stromverbrauch kann je nach Systemhardware und -konfiguration variieren), Stromverbrauch (DPMS): Max. 50 mW (Der tatsächliche Stromverbrauch kann je nach Systemhardware und -konfiguration variieren), Management-Software: Magician Software for SSD management",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Formfaktor: M.2 (2280), AES 256-Bit-Verschlüsselung (Klasse 0)TCG/Opal IEEE1667 (verschlüsseltes Laufwerk), Samsung V-NAND 3-bit MLC (Speicher), Samsung eigener Controller, Samsung 1 GB stromsparender DDR4 SDRAM (Cache-Arbeitsspeicher), TRIM unterstützt, S.M.A.R.T unterstützt, GC (Speicherbereinigung): Auto Garbage Collection Algorithm, Device Sleep-Modus unterstützt, Random-Lesegeschwindigkeit (4 KB, QD 32): Bis zu 1.200.000 IOPS (Die Leistung kann je nach Systemhardware und -konfiguration variieren), Random-Schreibgeschwindigkeit (4 KB, QD 32): Bis zu 1.550.000 IOPS (Die Leistung kann je nach Systemhardware und -konfiguration variierenstem hardware & configuration), Random-Lesegeschwindigkeit (4 KB, QD 1): Bis zu 22.000 IOPS (Die Leistung kann je nach Systemhardware und -konfiguration variieren), Random-Schreibgeschwindigkeit (4 KB, QD 1): Bis zu 80.000 IOPS (Die Leistung kann je nach Systemhardware und -konfiguration variieren), Zulässige Spannung: 3.3 V ± 5 % Zulässige Spannung, Zuverlässigkeit (MTBF): 1.5 Millionen Stunden Ausfallsicherheit (MTBF), Durchschnitt: 5.4 W, Maximum: 7.8 W (Burst mode, Der tatsächliche Stromverbrauch kann je nach Systemhardware und -konfiguration variieren), Stromverbrauch (DPMS): Max. 50 mW (Der tatsächliche Stromverbrauch kann je nach Systemhardware und -konfiguration variieren), Management-Software: Magician Software for SSD management",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10990",
+                "order": 10,
+                "name": "Produkttyp",
+                "type": null,
+                "unit": null,
+                "value": "Festplatte",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Festplatte",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15806",
+                "order": 430,
+                "name": "Abmessungen (B/H/T) / Gewicht",
+                "type": null,
+                "unit": null,
+                "value": "80 mm x 22 mm x 2.3 mm / 9 g",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "80 mm x 22 mm x 2.3 mm / 9 g",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16042",
+                "order": 450,
+                "name": "Serie",
+                "type": null,
+                "unit": null,
+                "value": "990 PRO",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "990 PRO",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10812",
+                "order": 130,
+                "name": "Farbe (laut Hersteller)",
+                "type": null,
+                "unit": null,
+                "value": "Schwarz",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Schwarz",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16110",
+                "order": 480,
+                "name": "Breite",
+                "type": null,
+                "unit": "mm",
+                "value": "80",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "80",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16111",
+                "order": 490,
+                "name": "Höhe",
+                "type": null,
+                "unit": "mm",
+                "value": "22",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "22",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16112",
+                "order": 500,
+                "name": "Tiefe",
+                "type": null,
+                "unit": "mm",
+                "value": "2.3",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2.3",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11011",
+                "order": 100,
+                "name": "Gewicht (laut Hersteller)",
+                "type": null,
+                "unit": null,
+                "value": "9 g",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "9 g",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16333",
+                "order": 510,
+                "name": "Gewicht",
+                "type": null,
+                "unit": "g",
+                "value": "9",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "9",
+                        "unit": "g",
+                        "unitUnece": "unece.unit.GRM"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11470",
+                "order": 110,
+                "name": "Lieferumfang",
+                "type": null,
+                "unit": null,
+                "value": "990 PRO NVMe M.2 SSD, Installationsanleitung",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "990 PRO NVMe M.2 SSD, Installationsanleitung",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16800",
+                "order": 580,
+                "name": "Variante(n)",
+                "type": null,
+                "unit": null,
+                "value": "1 TB",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "1 TB",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_00002",
+                "order": 680,
+                "name": "Manufacturer Part Number (MPN)",
+                "type": null,
+                "unit": null,
+                "value": "MZ-V9P1T0BW",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "MZ-V9P1T0BW",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16617",
+                "order": 5000,
+                "name": "Modelljahr",
+                "type": null,
+                "unit": null,
+                "value": "2022",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2022",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_750531",
+                "name": "Computer & Software"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751016",
+                "name": "Speichermedien"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751115",
+                "name": "Interne SSD"
+            }
+        ]
+    }
+}

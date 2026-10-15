@@ -1,0 +1,595 @@
+{
+    "metadata": {
+        "source": "mediamarkt",
+        "source_type": "retailer",
+        "source_product_id": "2199070",
+        "source_url": "https://www.mediamarkt.ch/de/product/_western-digital-wd-black-sn850p-nvme-ssd-für-ps5-konsolen-mit-kühlkörper-2199070.html",
+        "access_method": "public_html",
+        "collected_at": "2026-10-15T06:43:50.111938+00:00",
+        "category_code": "ssd",
+        "quality_warnings": [],
+        "item_condition": "https://schema.org/NewCondition",
+        "scope_status": "accepted",
+        "scope_reason": "in_scope",
+        "run_id": "20261015T064322224653Z",
+        "observation_day": "2026-10-15"
+    },
+    "brand": {
+        "brand_id": null,
+        "name": null
+    },
+    "category": {
+        "category_id": null,
+        "name": "Interne SSD"
+    },
+    "retailer": {
+        "retailer_id": null,
+        "name": "MediaMarkt",
+        "website": "https://www.mediamarkt.ch"
+    },
+    "product": {
+        "product_id": null,
+        "brand_id": null,
+        "category_id": null,
+        "product_name": "WESTERN DIGITAL WD_BLACK SN850P NVMe SSD für PS5-Konsolen (mit Kühlkörper) - Festplatte (SSD, 1 TB, Schwarz)",
+        "ean": "0619659198053",
+        "mpn": "WDBBYV0010BNC-WRSN",
+        "release_date": null,
+        "model": "WDBBYV0010BNC-WRSN BLACK SN850P 1TB F/PS5",
+        "series": "SN850P",
+        "generation": "PCIe 4.0",
+        "msrp_chf": null,
+        "manufacturer_url": null,
+        "created_at": null,
+        "updated_at": null
+    },
+    "retailer_product": {
+        "retailer_product_id": null,
+        "product_id": null,
+        "retailer_id": null,
+        "retailer_sku": "2199070",
+        "retailer_product_name": "WESTERN DIGITAL WD_BLACK SN850P NVMe SSD für PS5-Konsolen (mit Kühlkörper) - Festplatte (SSD, 1 TB, Schwarz)",
+        "product_url": "https://www.mediamarkt.ch/de/product/_western-digital-wd-black-sn850p-nvme-ssd-für-ps5-konsolen-mit-kühlkörper-2199070.html",
+        "first_seen_at": "2026-10-15T06:43:33.129111+00:00",
+        "last_seen_at": "2026-10-15T06:43:50.111938+00:00"
+    },
+    "price_history": {
+        "price_id": null,
+        "retailer_product_id": null,
+        "price_chf": 268.7,
+        "original_price_chf": null,
+        "discount_percent": null,
+        "availability": "InStock",
+        "collected_at": "2026-10-15T06:43:50.111938+00:00"
+    },
+    "gpu_details": {
+        "gpu_details_id": null,
+        "product_id": null,
+        "gpu_model": null,
+        "gpu_architecture": null,
+        "vram_gb": null,
+        "vram_type": null,
+        "clock_mhz": null,
+        "boost_clock_mhz": null,
+        "pcie_interface": null,
+        "tdp_watts": null,
+        "cooling_variant": null
+    },
+    "ram_details": {
+        "ram_details_id": null,
+        "product_id": null,
+        "ram_type": null,
+        "total_capacity_gb": null,
+        "module_count": null,
+        "capacity_per_module_gb": null,
+        "speed_mts": null,
+        "cas_latency": null,
+        "voltage": null,
+        "ecc": null,
+        "rgb": null
+    },
+    "ssd_details": {
+        "ssd_details_id": null,
+        "product_id": null,
+        "capacity_gb": 1000,
+        "interface": "M.2 via NVMe",
+        "pcie_generation": "4.0",
+        "form_factor": null,
+        "nand_type": null,
+        "controller": null,
+        "read_speed_mbps": 7300,
+        "write_speed_mbps": 6300,
+        "tbw": null,
+        "dram_cache": null
+    },
+    "raw_payload": {
+        "@type": "Product",
+        "sku": "2199070",
+        "gtin13": "0619659198053",
+        "image": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_128449542?x=1248&y=936&format=webp&quality=60&sp=yes&strip=yes&trim=yes&ex=1248&ey=936&align=center&resizesource&unsharp=0.5x0.5",
+        "name": "WESTERN DIGITAL WD_BLACK SN850P NVMe SSD für PS5-Konsolen (mit Kühlkörper) - Festplatte (SSD, 1 TB, Schwarz)",
+        "offers": {
+            "@type": "Offer",
+            "url": "/de/product/_western-digital-wd-black-sn850p-nvme-ssd-für-ps5-konsolen-mit-kühlkörper-2199070.html",
+            "priceCurrency": "CHF",
+            "price": 268.7,
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+        },
+        "storageCapacity": "1 TB"
+    },
+    "technical_payload": {
+        "product_id": "2199070",
+        "kind_of_product": "HARD_DISK_INTERNAL",
+        "raw_title": "WDBBYV0010BNC-WRSN BLACK SN850P 1TB F/PS5",
+        "features": [
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15855",
+                "order": 140,
+                "name": "Festplattentyp",
+                "type": null,
+                "unit": null,
+                "value": "SSD",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "20",
+                        "value": "SSD",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15781",
+                "order": 40,
+                "name": "Bauart",
+                "type": null,
+                "unit": null,
+                "value": "intern",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "10",
+                        "value": "intern",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10134",
+                "order": 30,
+                "name": "Anschlüsse",
+                "type": null,
+                "unit": null,
+                "value": "PCIe Gen4 x4",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "PCIe Gen4 x4",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15854",
+                "order": 90,
+                "name": "Festplattenschnittstelle",
+                "type": null,
+                "unit": null,
+                "value": "M.2 via NVMe",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "130",
+                        "value": "M.2 via NVMe",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16155",
+                "order": 20,
+                "name": "Speicherkapazität",
+                "type": null,
+                "unit": "TB",
+                "value": "1",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "1",
+                        "unit": "TB",
+                        "unitUnece": "unece.unit.E35"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_12285",
+                "order": 70,
+                "name": "Übertragungsrate",
+                "type": null,
+                "unit": null,
+                "value": "Sequenzielles Lesen: 7.300 MB/s, Sequenzielles Schreiben: 6.300 MB/s",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Sequenzielles Lesen: 7.300 MB/s, Sequenzielles Schreiben: 6.300 MB/s",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16413",
+                "order": 120,
+                "name": "Transferrate (lesen)",
+                "type": null,
+                "unit": "MB/s",
+                "value": "7.300",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "7.300",
+                        "unit": "MB/s",
+                        "unitUnece": "unece.unit.P95"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16414",
+                "order": 180,
+                "name": "Transferrate (schreiben)",
+                "type": null,
+                "unit": "MB/s",
+                "value": "6.300",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "6.300",
+                        "unit": "MB/s",
+                        "unitUnece": "unece.unit.P95"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10936",
+                "order": 80,
+                "name": "Unterstützte Betriebssysteme",
+                "type": null,
+                "unit": null,
+                "value": "PlayStation®5, Computer mit M.2-Anschluss (Typ-M) und Unterstützung des Formfaktors M.2 2280, Windows® 8.1, 10, 11 (Die Kompatibilität ist von der Hardwarekonfiguration und dem Betriebssystem des Benutzers abhängig)",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "PlayStation®5, Computer mit M.2-Anschluss (Typ-M) und Unterstützung des Formfaktors M.2 2280, Windows® 8.1, 10, 11 (Die Kompatibilität ist von der Hardwarekonfiguration und dem Betriebssystem des Benutzers abhängig)",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_17241",
+                "order": 270,
+                "name": "Festplatten-Formfaktor",
+                "type": null,
+                "unit": null,
+                "value": "M.2",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": "40",
+                        "value": "M.2",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_14561",
+                "order": 300,
+                "name": "Transportprotokoll",
+                "type": null,
+                "unit": null,
+                "value": "NVMe™",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "NVMe™",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_13366",
+                "order": 370,
+                "name": "Besondere Merkmale",
+                "type": null,
+                "unit": null,
+                "value": "Offiziell lizenzierte M.2-SSD für PlayStation®5-Konsolen, Optimierter Kühlkörper erleichtert die Installation im M.2-Erweiterungssteckplatz der PS5®, Speichern und spielen Sie PS5®-kompatible Games direkt von der SSD, Bewährte Qualität von WD_BLACK™, Lesegeschwindigkeiten von bis zu 7.300 MB/s für nahtloses Gameplay, Zufällige Lesevorgänge: 800KIOPS (max, Rnd 4KiB), Zufällige Schreibvorgänge: 1100KIOPS (max, Rnd 4KiB), Dauerhaltbarkeit (TBW): 600, Betriebstemperatur: 0°C to 85°C, Non-Operating Temperature: -40°C to 85°C, Zertifizierungen: BSMI, CAN ICES-3(B)/NMB-3(B), CE, FCC, KCC, Morocco, RCM, TUV, UL, VCCI",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Offiziell lizenzierte M.2-SSD für PlayStation®5-Konsolen, Optimierter Kühlkörper erleichtert die Installation im M.2-Erweiterungssteckplatz der PS5®, Speichern und spielen Sie PS5®-kompatible Games direkt von der SSD, Bewährte Qualität von WD_BLACK™, Lesegeschwindigkeiten von bis zu 7.300 MB/s für nahtloses Gameplay, Zufällige Lesevorgänge: 800KIOPS (max, Rnd 4KiB), Zufällige Schreibvorgänge: 1100KIOPS (max, Rnd 4KiB), Dauerhaltbarkeit (TBW): 600, Betriebstemperatur: 0°C to 85°C, Non-Operating Temperature: -40°C to 85°C, Zertifizierungen: BSMI, CAN ICES-3(B)/NMB-3(B), CE, FCC, KCC, Morocco, RCM, TUV, UL, VCCI",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10990",
+                "order": 10,
+                "name": "Produkttyp",
+                "type": null,
+                "unit": null,
+                "value": "Festplatte",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Festplatte",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_15806",
+                "order": 430,
+                "name": "Abmessungen (B/H/T) / Gewicht",
+                "type": null,
+                "unit": null,
+                "value": "24.46 mm x 9.89 mm x 80 mm / 30.4 g",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "24.46 mm x 9.89 mm x 80 mm / 30.4 g",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16042",
+                "order": 450,
+                "name": "Serie",
+                "type": null,
+                "unit": null,
+                "value": "SN850P",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "SN850P",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_10812",
+                "order": 130,
+                "name": "Farbe (laut Hersteller)",
+                "type": null,
+                "unit": null,
+                "value": "Schwarz",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "Schwarz",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16110",
+                "order": 480,
+                "name": "Breite",
+                "type": null,
+                "unit": "mm",
+                "value": "24.46",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "24.46",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16111",
+                "order": 490,
+                "name": "Höhe",
+                "type": null,
+                "unit": "mm",
+                "value": "9.89",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "9.89",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16112",
+                "order": 500,
+                "name": "Tiefe",
+                "type": null,
+                "unit": "mm",
+                "value": "80",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "80",
+                        "unit": "mm",
+                        "unitUnece": "unece.unit.MMT"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11011",
+                "order": 100,
+                "name": "Gewicht (laut Hersteller)",
+                "type": null,
+                "unit": null,
+                "value": "30.4 g",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "30.4 g",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16333",
+                "order": 510,
+                "name": "Gewicht",
+                "type": null,
+                "unit": "g",
+                "value": "30.4",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "30.4",
+                        "unit": "g",
+                        "unitUnece": "unece.unit.GRM"
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_11470",
+                "order": 110,
+                "name": "Lieferumfang",
+                "type": null,
+                "unit": null,
+                "value": "WD_BLACK™ SN850P NVMe™-SSD für PS5®-Konsolen (mit Kühlkörper)",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "WD_BLACK™ SN850P NVMe™-SSD für PS5®-Konsolen (mit Kühlkörper)",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16800",
+                "order": 580,
+                "name": "Variante(n)",
+                "type": null,
+                "unit": null,
+                "value": "1 TB",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "1 TB",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_00002",
+                "order": 680,
+                "name": "Manufacturer Part Number (MPN)",
+                "type": null,
+                "unit": null,
+                "value": "WDBBYV0010BNC-WRSN",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "WDBBYV0010BNC-WRSN",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            },
+            {
+                "__typename": "GraphqlProductFeature",
+                "featureId": "PROD_FEAT_16617",
+                "order": 5000,
+                "name": "Modelljahr",
+                "type": null,
+                "unit": null,
+                "value": "2023",
+                "valuesAndUnits": [
+                    {
+                        "__typename": "GraphqlFeatureValue",
+                        "id": null,
+                        "value": "2023",
+                        "unit": null,
+                        "unitUnece": null
+                    }
+                ]
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_750531",
+                "name": "Computer & Software"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751016",
+                "name": "Speichermedien"
+            },
+            {
+                "__typename": "GraphqlBreadcrumb",
+                "categoryId": "CAT_CH_MM_751115",
+                "name": "Interne SSD"
+            }
+        ]
+    }
+}
