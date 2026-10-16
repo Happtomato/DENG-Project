@@ -1,0 +1,104 @@
+ Container deng-project-pipeline-run-ff4b4200db60 Creating 
+ Container deng-project-pipeline-run-ff4b4200db60 Created 
+17:52:10.799 | INFO    | Flow run 'astute-unicorn' - Beginning flow run 'astute-unicorn' for flow 'DENG MediaMarkt Batch'
+17:52:10.802 | INFO    | Flow run 'astute-unicorn' - View at http://prefect_server:4200/runs/flow-run/13c42d6e-f484-444c-87b1-bd7b8b02eaea
+17:52:14.841 | INFO    | Task run 'Collect-cbd' - Technical product data found for SKU 2230728 (23 features).
+17:52:14.855 | INFO    | Task run 'Collect-cbd' - ram 2230728: accepted (in_scope)
+17:52:14.856 | INFO    | Task run 'Collect-cbd' - {
+  "run_id": "20261015T175210857585Z",
+  "command": "daily",
+  "pages": 0,
+  "accepted": 1,
+  "review": 0,
+  "excluded": 0,
+  "skipped_today": 0,
+  "missing_price": 0,
+  "remaining_due": 0,
+  "errors": [],
+  "scope": {
+    "gpu": {
+      "category_url": "https://www.mediamarkt.ch/de/category/grafikkarten-751073.html",
+      "brands": [],
+      "families": [
+        "rtx",
+        "rx"
+      ],
+      "nvidia_min_model": 3000,
+      "amd_min_model": 6000
+    },
+    "ram": {
+      "category_url": "https://www.mediamarkt.ch/de/category/arbeitsspeicher-ram-751074.html",
+      "brands": [],
+      "types": [
+        "DDR4",
+        "DDR5"
+      ],
+      "min_gb": 8,
+      "max_gb": 64
+    },
+    "ssd": {
+      "category_url": "https://www.mediamarkt.ch/de/category/interne-ssd-751115.html",
+      "brands": [],
+      "min_gb": 256,
+      "max_gb": 4000,
+      "pcie_generations": [
+        "3.0",
+        "4.0",
+        "5.0"
+      ]
+    }
+  },
+  "requests": 2,
+  "finished_at": "2026-10-15T17:52:14.856091+00:00"
+}
+17:52:14.859 | INFO    | Task run 'Collect-cbd' - Finished in state Completed()
+17:52:14.864 | INFO    | Task run 'Transform-172' - Finished in state Completed()
+17:52:14.880 | INFO    | Task run 'Load-234' - Finished in state Completed()
+17:52:14.880 | INFO    | Flow run 'astute-unicorn' - {
+  "files": 1,
+  "loaded": 1,
+  "duplicate": 0,
+  "rejected": 0,
+  "error": 0,
+  "results": [
+    {
+      "path": "/workspace/data/raw/mediamarkt/live-check/2230728_2026-10-15.json",
+      "status": "loaded",
+      "reason": null
+    }
+  ],
+  "accepted": 1,
+  "verification": {
+    "counts": {
+      "product": 1,
+      "retailer_product": 1,
+      "price_history": 1,
+      "invalid_prices": 0,
+      "duplicate_observations": 0,
+      "accepted_raw_files": 1,
+      "rejected_raw_files": 0,
+      "error_raw_files": 0
+    },
+    "raw_files": [
+      {
+        "status": "loaded",
+        "reason": null,
+        "files": 1
+      }
+    ],
+    "categories": [
+      {
+        "category": "RAM",
+        "observations": 1
+      }
+    ],
+    "technically_valid": true,
+    "data_loaded": true,
+    "ok": true
+  },
+  "collection": {
+    "mode": "live",
+    "exit_code": 0
+  }
+}
+17:52:15.827 | INFO    | Flow run 'astute-unicorn' - Finished in state Completed()

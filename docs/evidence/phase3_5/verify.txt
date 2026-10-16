@@ -1,0 +1,49 @@
+ Container deng-project-postgres-1 Running 
+ Container deng-project-prefect_server-1 Running 
+ Container deng-project-postgres-1 Waiting 
+ Container deng-project-prefect_server-1 Waiting 
+ Container deng-project-prefect_server-1 Healthy 
+ Container deng-project-postgres-1 Healthy 
+ Container deng-project-pipeline-run-7c8599402d6a Creating 
+ Container deng-project-pipeline-run-7c8599402d6a Created 
+{
+  "counts": {
+    "product": 12,
+    "retailer_product": 12,
+    "price_history": 19,
+    "invalid_prices": 0,
+    "duplicate_observations": 0,
+    "accepted_raw_files": 19,
+    "rejected_raw_files": 1,
+    "error_raw_files": 0
+  },
+  "raw_files": [
+    {
+      "status": "loaded",
+      "reason": null,
+      "files": 19
+    },
+    {
+      "status": "rejected",
+      "reason": "Scope excluded: excluded_hardware_or_condition",
+      "files": 1
+    }
+  ],
+  "categories": [
+    {
+      "category": "GPU",
+      "observations": 8
+    },
+    {
+      "category": "RAM",
+      "observations": 6
+    },
+    {
+      "category": "SSD",
+      "observations": 5
+    }
+  ],
+  "technically_valid": true,
+  "data_loaded": true,
+  "ok": true
+}

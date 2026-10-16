@@ -1,0 +1,49 @@
+{
+  "run_id": "20261016T072240704506Z",
+  "command": "daily",
+  "pages": 0,
+  "accepted": 0,
+  "review": 0,
+  "excluded": 0,
+  "skipped_today": 9,
+  "missing_price": 0,
+  "remaining_due": 0,
+  "errors": [],
+  "scope": {
+    "gpu": {
+      "category_url": "https://www.mediamarkt.ch/de/category/grafikkarten-751073.html",
+      "brands": [],
+      "families": [
+        "rtx",
+        "rx"
+      ],
+      "nvidia_min_model": 3000,
+      "amd_min_model": 6000
+    },
+    "ram": {
+      "category_url": "https://www.mediamarkt.ch/de/category/arbeitsspeicher-ram-751074.html",
+      "brands": [],
+      "types": [
+        "DDR4",
+        "DDR5"
+      ],
+      "min_gb": 8,
+      "max_gb": 64
+    },
+    "ssd": {
+      "category_url": "https://www.mediamarkt.ch/de/category/interne-ssd-751115.html",
+      "brands": [],
+      "min_gb": 256,
+      "max_gb": 4000,
+      "pcie_generations": [
+        "3.0",
+        "4.0",
+        "5.0"
+      ]
+    }
+  },
+  "catalog_source": "postgresql",
+  "selected_products": 9,
+  "requests": 0,
+  "finished_at": "2026-10-16T07:22:40.704542+00:00"
+}

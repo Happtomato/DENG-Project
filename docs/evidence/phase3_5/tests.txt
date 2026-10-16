@@ -1,0 +1,131 @@
+ Container deng-project-postgres-1 Running 
+ Container deng-project-prefect_server-1 Running 
+ Container deng-project-postgres-1 Waiting 
+ Container deng-project-prefect_server-1 Waiting 
+ Container deng-project-prefect_server-1 Healthy 
+ Container deng-project-postgres-1 Healthy 
+ Container deng-project-pipeline-run-2c95176f4f37 Creating 
+ Container deng-project-pipeline-run-2c95176f4f37 Created 
+test_daily_collect_requests_products_from_database (test_catalog.CatalogueModesTests.test_daily_collect_requests_products_from_database) ... ok
+test_daily_excludes_legacy_out_of_scope_without_deleting_it (test_catalog.CatalogueModesTests.test_daily_excludes_legacy_out_of_scope_without_deleting_it) ... ok
+test_daily_next_day_fetches_same_product_then_skips_repeat (test_catalog.CatalogueModesTests.test_daily_next_day_fetches_same_product_then_skips_repeat) ... Technical product data found for SKU 2230728 (23 features).
+ram 2230728: accepted (in_scope)
+Technical product data found for SKU 2230728 (23 features).
+ram 2230728: accepted (in_scope)
+ok
+test_daily_uses_db_membership_instead_of_candidate_queue (test_catalog.CatalogueModesTests.test_daily_uses_db_membership_instead_of_candidate_queue) ... ok
+test_initial_does_not_require_database_for_acquisition (test_catalog.CatalogueModesTests.test_initial_does_not_require_database_for_acquisition) ... ok
+test_initial_limits_collection_to_selected_urls (test_catalog.CatalogueModesTests.test_initial_limits_collection_to_selected_urls) ... Technical product data found for SKU 2230728 (23 features).
+ram 2230728: accepted (in_scope)
+ok
+test_initial_rejects_duplicate_or_external_urls (test_catalog.CatalogueModesTests.test_initial_rejects_duplicate_or_external_urls) ... ok
+test_database_list_tracks_imported_offers_and_latest_observation (test_catalog.DatabaseCatalogueTest.test_database_list_tracks_imported_offers_and_latest_observation) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_backfill_preserves_original_time (test_ingestion.DatabaseTests.test_backfill_preserves_original_time) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_concurrent_rerun (test_ingestion.DatabaseTests.test_concurrent_rerun) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_conflicting_observation_not_overwritten (test_ingestion.DatabaseTests.test_conflicting_observation_not_overwritten) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_identifier_disagreement_rejected (test_ingestion.DatabaseTests.test_identifier_disagreement_rejected) ... Technical product data found for SKU 2276243 (27 features).
+Technical product data found for SKU 2277751 (29 features).
+ok
+test_missing_identifiers_do_not_merge_names (test_ingestion.DatabaseTests.test_missing_identifiers_do_not_merge_names) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_real_ingestion_sql_and_repeat (test_ingestion.DatabaseTests.test_real_ingestion_sql_and_repeat) ... Technical product data found for SKU 160229354 (37 features).
+Technical product data found for SKU 2199070 (25 features).
+Technical product data found for SKU 2230728 (23 features).
+Technical product data found for SKU 2276243 (27 features).
+Technical product data found for SKU 2277751 (29 features).
+ok
+test_rejected_file_does_not_stop_valid_file (test_ingestion.DatabaseTests.test_rejected_file_does_not_stop_valid_file) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_same_observation_different_file_no_duplicate (test_ingestion.DatabaseTests.test_same_observation_different_file_no_duplicate) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_same_price_next_day_is_new_observation (test_ingestion.DatabaseTests.test_same_price_next_day_is_new_observation) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_schema_repeat_and_empty_verification (test_ingestion.DatabaseTests.test_schema_repeat_and_empty_verification) ... ok
+test_technical_conflict_rolls_back (test_ingestion.DatabaseTests.test_technical_conflict_rolls_back) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_invalid_price_gtin_timestamp (test_ingestion.TransformationTests.test_invalid_price_gtin_timestamp) ... ok
+test_malformed_json_and_test_marker_rejected (test_ingestion.TransformationTests.test_malformed_json_and_test_marker_rejected) ... ok
+test_original_time_and_seller_preserved (test_ingestion.TransformationTests.test_original_time_and_seller_preserved) ... Technical product data found for SKU 160229354 (37 features).
+Technical product data found for SKU 2230728 (23 features).
+ok
+test_real_legacy_data_and_scope (test_ingestion.TransformationTests.test_real_legacy_data_and_scope) ... Technical product data found for SKU 160229354 (37 features).
+Technical product data found for SKU 2155505 (23 features).
+Technical product data found for SKU 2199070 (25 features).
+Technical product data found for SKU 2230728 (23 features).
+Technical product data found for SKU 2276243 (27 features).
+Technical product data found for SKU 2277751 (29 features).
+ok
+test_source_price_must_agree (test_ingestion.TransformationTests.test_source_price_must_agree) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_ssd_and_ram_transformations (test_ingestion.TransformationTests.test_ssd_and_ram_transformations) ... Technical product data found for SKU 2199070 (25 features).
+Technical product data found for SKU 2230728 (23 features).
+ok
+test_daily_rerun_makes_no_product_requests (test_mediamarkt.CatalogueTests.test_daily_rerun_makes_no_product_requests) ... Technical product data found for SKU 2230728 (23 features).
+ram 2230728: accepted (in_scope)
+ok
+test_error_keeps_url_and_next_product_continues (test_mediamarkt.CatalogueTests.test_error_keeps_url_and_next_product_continues) ... Failed 145381326: HTTP 404
+Technical product data found for SKU 2155505 (23 features).
+ssd 2155505: accepted (in_scope)
+ok
+test_listing_deduplicates_and_reports_pages (test_mediamarkt.CatalogueTests.test_listing_deduplicates_and_reports_pages) ... ok
+test_lock_and_atomic_catalogue (test_mediamarkt.CatalogueTests.test_lock_and_atomic_catalogue) ... ok
+test_pagination_cursor_is_saved_and_repeats_detected (test_mediamarkt.CatalogueTests.test_pagination_cursor_is_saved_and_repeats_detected) ... gpu: page 1/20, 12 product links
+ok
+test_recovers_observation_written_before_catalogue_commit (test_mediamarkt.CatalogueTests.test_recovers_observation_written_before_catalogue_commit) ... Technical product data found for SKU 2230728 (23 features).
+ram 2230728: accepted (in_scope)
+ok
+test_url_identity_and_domain (test_mediamarkt.CatalogueTests.test_url_identity_and_domain) ... ok
+test_blocked_requests_abort_without_retry (test_mediamarkt.HttpTests.test_blocked_requests_abort_without_retry) ... ok
+test_budget_stops_before_request (test_mediamarkt.HttpTests.test_budget_stops_before_request) ... ok
+test_redirect_checks_robots_at_each_hop (test_mediamarkt.HttpTests.test_redirect_checks_robots_at_each_hop) ... ok
+test_contradictory_source_is_reviewed (test_mediamarkt.ParsingTests.test_contradictory_source_is_reviewed) ... Technical product data found for SKU 145381326 (48 features).
+ok
+test_gpu_payload_and_clock_semantics (test_mediamarkt.ParsingTests.test_gpu_payload_and_clock_semantics) ... Technical product data found for SKU 2277751 (29 features).
+ok
+test_listing_prefilter_avoids_obvious_off_scope_requests (test_mediamarkt.ParsingTests.test_listing_prefilter_avoids_obvious_off_scope_requests) ... ok
+test_missing_product_cannot_use_recommendation (test_mediamarkt.ParsingTests.test_missing_product_cannot_use_recommendation) ... ok
+test_nonfinite_numbers_and_undefined_in_strings (test_mediamarkt.ParsingTests.test_nonfinite_numbers_and_undefined_in_strings) ... ok
+test_ram_kit_capacity_and_units (test_mediamarkt.ParsingTests.test_ram_kit_capacity_and_units) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_schema_keys_match_postgres (test_mediamarkt.ParsingTests.test_schema_keys_match_postgres) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_ssd_selects_correct_variant_and_converts_tb (test_mediamarkt.ParsingTests.test_ssd_selects_correct_variant_and_converts_tb) ... Technical product data found for SKU 2155505 (23 features).
+ok
+test_strict_gpu_board_partner_and_brand_scope (test_mediamarkt.ParsingTests.test_strict_gpu_board_partner_and_brand_scope) ... Technical product data found for SKU 2277751 (29 features).
+ok
+test_strict_ram_and_ssd_brands (test_mediamarkt.ParsingTests.test_strict_ram_and_ssd_brands) ... ok
+test_unsupported_product_and_unproven_condition (test_mediamarkt.ParsingTests.test_unsupported_product_and_unproven_condition) ... Technical product data found for SKU 2230728 (23 features).
+Technical product data found for SKU 2230728 (23 features).
+ok
+test_failed_live_collection_loads_existing_then_fails (test_orchestration.OrchestrationTests.test_failed_live_collection_loads_existing_then_fails) ... {
+  "error": 0,
+  "accepted": 1,
+  "verification": {
+    "ok": true
+  },
+  "collection": {
+    "exit_code": 1
+  }
+}
+ok
+test_replay_does_not_call_collector (test_orchestration.OrchestrationTests.test_replay_does_not_call_collector) ... ok
+test_zero_accepted_files_fails_even_when_db_has_data (test_orchestration.OrchestrationTests.test_zero_accepted_files_fails_even_when_db_has_data) ... {
+  "error": 0,
+  "accepted": 0,
+  "verification": {
+    "ok": true
+  },
+  "collection": {
+    "exit_code": 0
+  }
+}
+ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 2.052s
+
+OK

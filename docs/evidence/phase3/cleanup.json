@@ -1,0 +1,286 @@
+{
+  "deleted": [
+    {
+      "path": "backend/legacy/phase1/README.md",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/db.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/ingest.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/__init__.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/reprocess.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/cli.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/digitec.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/contracts.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/tests/test_orchestration.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/legacy/phase1/pipeline/tests/test_pipeline.py",
+      "reason": "Inactive Phase-1 code preserved in docs/archive/phase1-code.tar.gz; no active imports"
+    },
+    {
+      "path": "backend/ingestBrack/requirements.txt",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestBrack/Dockerfile",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestBrack/app.py",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestInterdiscount/requirements.txt",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestInterdiscount/Dockerfile",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestInterdiscount/app.py",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestDigitec/requirements.txt",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestDigitec/Dockerfile",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestDigitec/app.py",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestMediamarkt/requirements.txt",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestMediamarkt/Dockerfile",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/ingestMediamarkt/app.py",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeBrack/requirements.txt",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeBrack/Dockerfile",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeBrack/app.py",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeInterdiscount/requirements.txt",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeInterdiscount/Dockerfile",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeInterdiscount/app.py",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeDigitec/requirements.txt",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeDigitec/Dockerfile",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeDigitec/app.py",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/seedDatabase/requirements.txt",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/seedDatabase/Dockerfile",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/seedDatabase/app.py",
+      "reason": "Unused placeholder, inactive notice or forwarding entry point; no Compose/Prefect/test callers"
+    },
+    {
+      "path": "backend/scrapeMediamarkt/Dockerfile",
+      "reason": "Duplicate container/dependency entry or unused HTML print helper; saved HTML and fixtures retained"
+    },
+    {
+      "path": "backend/scrapeMediamarkt/requirements.txt",
+      "reason": "Duplicate container/dependency entry or unused HTML print helper; saved HTML and fixtures retained"
+    },
+    {
+      "path": "backend/scrapeMediamarkt/inspect.py",
+      "reason": "Duplicate container/dependency entry or unused HTML print helper; saved HTML and fixtures retained"
+    },
+    {
+      "path": "backend/pipeline/contracts.py",
+      "reason": "Merged into transform/database/flow; empty package no longer needed"
+    },
+    {
+      "path": "backend/pipeline/transform.py",
+      "reason": "Merged into transform/database/flow; empty package no longer needed"
+    },
+    {
+      "path": "backend/pipeline/cli.py",
+      "reason": "Merged into transform/database/flow; empty package no longer needed"
+    },
+    {
+      "path": "backend/pipeline/__init__.py",
+      "reason": "Merged into transform/database/flow; empty package no longer needed"
+    },
+    {
+      "path": "backend/orchestrator/Dockerfile",
+      "reason": "Unused second image; root backend/Dockerfile supplies all dependencies and current entry point"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "reason": "Redundant lockfile forwarding file or empty README; active dependencies are backend/requirements.lock"
+    },
+    {
+      "path": "backend/README.md",
+      "reason": "Redundant lockfile forwarding file or empty README; active dependencies are backend/requirements.lock"
+    },
+    {
+      "path": "data/README.md",
+      "reason": "Redundant lockfile forwarding file or empty README; active dependencies are backend/requirements.lock"
+    }
+  ],
+  "moved": [
+    {
+      "from": "backend/scrapeBrack/debug_response.html",
+      "to": "data/debug/legacy/scrapeBrack/debug_response.html"
+    },
+    {
+      "from": "backend/scrapeDigitec/debug_response.html",
+      "to": "data/debug/legacy/scrapeDigitec/debug_response.html"
+    },
+    {
+      "from": "backend/scrapeInterdiscount/debug_response.html",
+      "to": "data/debug/legacy/scrapeInterdiscount/debug_response.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/app.py",
+      "to": "backend/retailers/mediamarkt/parser.py"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/pipeline.py",
+      "to": "backend/retailers/mediamarkt/collector.py"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/scope.json",
+      "to": "backend/retailers/mediamarkt/scope.json"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/test_pipeline.py",
+      "to": "backend/tests/test_mediamarkt.py"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/fixtures/arbeitsspeicher-ram-751074.html",
+      "to": "backend/tests/fixtures/mediamarkt/arbeitsspeicher-ram-751074.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/fixtures/gpu.html",
+      "to": "backend/tests/fixtures/mediamarkt/gpu.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/fixtures/interne-ssd-751115.html",
+      "to": "backend/tests/fixtures/mediamarkt/interne-ssd-751115.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/fixtures/_kingston-m2-1tb-nv3-nvme-pcie-40-x-4-1-tb-ssd-0-intern-145381326.html",
+      "to": "backend/tests/fixtures/mediamarkt/_kingston-m2-1tb-nv3-nvme-pcie-40-x-4-1-tb-ssd-0-intern-145381326.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/fixtures/interne-festplatten-751113.html",
+      "to": "backend/tests/fixtures/mediamarkt/interne-festplatten-751113.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/fixtures/grafikkarten-751073.html",
+      "to": "backend/tests/fixtures/mediamarkt/grafikkarten-751073.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/fixtures/_samsung-990-pro-nvme-m-2-ssd-2155505.html",
+      "to": "backend/tests/fixtures/mediamarkt/_samsung-990-pro-nvme-m-2-ssd-2155505.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/tests/fixtures/_corsair-vengeance-ddr5-2230728.html",
+      "to": "backend/tests/fixtures/mediamarkt/_corsair-vengeance-ddr5-2230728.html"
+    },
+    {
+      "from": "backend/scrapeMediamarkt/README.md",
+      "to": "docs/MEDIAMARKT.md"
+    },
+    {
+      "from": "backend/pipeline/ingest.py",
+      "to": "backend/ingestion.py"
+    },
+    {
+      "from": "backend/pipeline/db.py",
+      "to": "backend/database.py"
+    },
+    {
+      "from": "backend/orchestrator/flow.py",
+      "to": "backend/flow.py"
+    },
+    {
+      "from": "backend/pipeline/tests/test_pipeline.py",
+      "to": "backend/tests/test_ingestion.py"
+    },
+    {
+      "from": "backend/pipeline/tests/test_orchestration.py",
+      "to": "backend/tests/test_orchestration.py"
+    }
+  ],
+  "merged": [
+    {
+      "from": [
+        "backend/pipeline/contracts.py",
+        "backend/pipeline/transform.py"
+      ],
+      "to": "backend/transform.py"
+    },
+    {
+      "from": [
+        "backend/pipeline/cli.py (verification)",
+        "backend/pipeline/db.py"
+      ],
+      "to": "backend/database.py"
+    }
+  ]
+}

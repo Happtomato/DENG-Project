@@ -1,0 +1,109 @@
+ Container deng-project-pipeline-run-2d1c28b0c6e6 Creating 
+ Container deng-project-pipeline-run-2d1c28b0c6e6 Created 
+17:52:59.208 | INFO    | Flow run 'ingenious-lizard' - Beginning flow run 'ingenious-lizard' for flow 'DENG MediaMarkt Batch'
+17:52:59.211 | INFO    | Flow run 'ingenious-lizard' - View at http://prefect_server:4200/runs/flow-run/492317e3-eda4-4d55-9695-af66d806a3aa
+17:52:59.217 | INFO    | Task run 'Collect-33b' - Finished in state Completed()
+17:52:59.334 | INFO    | Task run 'Transform-6f9' - Technical product data found for SKU 160229354 (37 features).
+17:52:59.420 | INFO    | Task run 'Transform-6f9' - Technical product data found for SKU 2155505 (23 features).
+17:52:59.478 | INFO    | Task run 'Transform-6f9' - Technical product data found for SKU 2199070 (25 features).
+17:52:59.534 | INFO    | Task run 'Transform-6f9' - Technical product data found for SKU 2230728 (23 features).
+17:52:59.602 | INFO    | Task run 'Transform-6f9' - Technical product data found for SKU 2276243 (27 features).
+17:52:59.659 | INFO    | Task run 'Transform-6f9' - Technical product data found for SKU 2277751 (29 features).
+17:52:59.664 | INFO    | Task run 'Transform-6f9' - Finished in state Completed()
+17:52:59.679 | INFO    | Task run 'Load-706' - Finished in state Completed()
+17:52:59.680 | INFO    | Flow run 'ingenious-lizard' - {
+  "files": 8,
+  "loaded": 0,
+  "duplicate": 7,
+  "rejected": 1,
+  "error": 0,
+  "results": [
+    {
+      "path": "/workspace/data/raw/mediamarkt/133486101_20261015T064343837806Z.json",
+      "status": "rejected",
+      "reason": "Scope excluded: excluded_hardware_or_condition"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/160229354_20261015T064338353544Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2155505_20261015T064347017836Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2199070_20261015T064350113296Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2230728_20261015T064341071928Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2276243_20261015T064335187758Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2277751_20261015T062824015052Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/live-check/2230728_2026-10-15.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    }
+  ],
+  "accepted": 7,
+  "verification": {
+    "counts": {
+      "product": 6,
+      "retailer_product": 6,
+      "price_history": 7,
+      "invalid_prices": 0,
+      "duplicate_observations": 0,
+      "accepted_raw_files": 7,
+      "rejected_raw_files": 1,
+      "error_raw_files": 0
+    },
+    "raw_files": [
+      {
+        "status": "loaded",
+        "reason": null,
+        "files": 7
+      },
+      {
+        "status": "rejected",
+        "reason": "Scope excluded: excluded_hardware_or_condition",
+        "files": 1
+      }
+    ],
+    "categories": [
+      {
+        "category": "GPU",
+        "observations": 3
+      },
+      {
+        "category": "RAM",
+        "observations": 2
+      },
+      {
+        "category": "SSD",
+        "observations": 2
+      }
+    ],
+    "technically_valid": true,
+    "data_loaded": true,
+    "ok": true
+  },
+  "collection": {
+    "mode": "replay",
+    "exit_code": 0
+  }
+}
+17:53:00.220 | INFO    | Flow run 'ingenious-lizard' - Finished in state Completed()

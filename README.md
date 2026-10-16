@@ -318,14 +318,26 @@ end-to-end pipeline. Primary ownership is divided as follows:
 - [ ] Evaluate the feasibility of forecasting models
 
 
-## Current Status
+## Current local implementation
 
-The project is currently in the initial design and implementation phase.
+The midterm implementation uses the existing MediaMarkt collector, one Prefect
+flow and PostgreSQL. It supports manual discovery, initial collection from the
+catalogue, daily collection from stored product URLs and offline replay. The
+local [PC Price Lab frontend](frontend/README.md) reads this database
+without running a second pipeline. For exact pipeline commands see
+[docs/RUN_COMMANDS.md](docs/RUN_COMMANDS.md). The earlier architecture and
+project plan above record the original proposal; cloud components remain
+future work.
 
-Current priorities:
+Start the local stack, including the dashboard on [localhost:3000](http://localhost:3000),
+with `docker compose up -d --build` after setting the root `.env`.
 
-1. Develop the Digitec web scraper
-2. Implement the Digitec ingestion pipeline
-3. Set up the local PostgreSQL database
-4. Contact and evaluate additional retailers
-5. Finalize Architecture v0.1
+### TODO: controlled catalogue expansion
+
+Once MediaMarkt's terms and permitted request volume are clarified, reuse the
+existing discovery with bounded category pagination, save candidates in the
+catalogue, apply the existing hardware/manufacturer scope, and import
+validated candidates through INITIAL. The long-term goal is 200–300 distinct,
+fully validated products; do not add arbitrary products to reach a number.
+DAILY should then continue to use only stored PostgreSQL product URLs. No
+large crawl or access-control bypass is part of the frontend phase.

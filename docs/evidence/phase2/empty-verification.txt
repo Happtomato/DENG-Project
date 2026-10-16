@@ -1,0 +1,20 @@
+ Container deng-project-pipeline-run-0b3eb8dc72e9 Creating 
+ Container deng-project-pipeline-run-0b3eb8dc72e9 Created 
+{
+  "counts": {
+    "product": 0,
+    "retailer_product": 0,
+    "price_history": 0,
+    "invalid_prices": 0,
+    "duplicate_observations": 0,
+    "accepted_raw_files": 0,
+    "rejected_raw_files": 0,
+    "error_raw_files": 0
+  },
+  "raw_files": [],
+  "categories": [],
+  "technically_valid": true,
+  "data_loaded": false,
+  "ok": false
+}
+

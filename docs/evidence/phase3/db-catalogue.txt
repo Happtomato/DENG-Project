@@ -1,0 +1,76 @@
+{
+  "database_products": [
+    {
+      "retailer_sku": "101374309",
+      "product_url": "https://www.mediamarkt.ch/de/product/_kingston-ddr4-ram-fury-beast-3200-mhz-arbeitsspeicher-16-gb-ddr4-101374309.html",
+      "category": "ram",
+      "first_seen_at": "2026-10-16 07:22:10.232541+00:00",
+      "last_success_at": "2026-10-16 07:22:10.232541+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/101374309_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "160229354",
+      "product_url": "https://www.mediamarkt.ch/de/product/_gigabyte-geforce-rtx-5060-ti-windforce-max-oc-nvidia-grafikkarte-160229354.html",
+      "category": "gpu",
+      "first_seen_at": "2026-10-15 06:43:38.352714+00:00",
+      "last_success_at": "2026-10-16 07:22:04.307511+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/160229354_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "167409624",
+      "product_url": "https://www.mediamarkt.ch/de/product/_adata-ddr5-u-dimm-32gb-ad5u560032g-s-arbeitsspeicher-32-gb-ddr5-167409624.html",
+      "category": "ram",
+      "first_seen_at": "2026-10-16 07:22:07.253654+00:00",
+      "last_success_at": "2026-10-16 07:22:07.253654+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/167409624_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2155504",
+      "product_url": "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155504.html",
+      "category": "ssd",
+      "first_seen_at": "2026-10-16 07:22:13.315603+00:00",
+      "last_success_at": "2026-10-16 07:22:13.315603+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2155504_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2155505",
+      "product_url": "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155505.html",
+      "category": "ssd",
+      "first_seen_at": "2026-10-15 06:43:47.016395+00:00",
+      "last_success_at": "2026-10-16 02:31:07.590557+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2155505_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2199070",
+      "product_url": "https://www.mediamarkt.ch/de/product/_western-digital-wd-black-sn850p-nvme-ssd-f\u00fcr-ps5-konsolen-mit-k\u00fchlk\u00f6rper-2199070.html",
+      "category": "ssd",
+      "first_seen_at": "2026-10-15 06:43:50.111938+00:00",
+      "last_success_at": "2026-10-16 07:22:16.286609+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2199070_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2230728",
+      "product_url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+      "category": "ram",
+      "first_seen_at": "2026-10-15 06:43:41.070011+00:00",
+      "last_success_at": "2026-10-16 02:31:05.428444+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2230728_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2276243",
+      "product_url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5080-16gb-gddr7-oc-edition-nvidia-grafikkarte-2276243.html",
+      "category": "gpu",
+      "first_seen_at": "2026-10-15 06:43:35.182357+00:00",
+      "last_success_at": "2026-10-16 01:30:33.540561+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2276243_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2277751",
+      "product_url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277751.html",
+      "category": "gpu",
+      "first_seen_at": "2026-10-15 06:28:24.014125+00:00",
+      "last_success_at": "2026-10-16 07:22:01.473671+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2277751_2026-10-16.json"
+    }
+  ]
+}

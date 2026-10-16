@@ -1,0 +1,123 @@
+ Container deng-midterm-schedule-check Creating 
+ Container deng-midterm-schedule-check Created 
+Your flow 'DENG MediaMarkt Batch' is being served and polling for scheduled runs!
+
+To trigger a run for this flow, use the following command:
+
+        $ prefect deployment run 'DENG MediaMarkt Batch/mediamarkt-daily'
+
+You can also run your flow via the Prefect UI: http://prefect_server:4200/deployments/deployment/b1c4bd19-985e-480a-af78-a7380769ea75
+
+17:57:59.788 | INFO    | Flow run 'ultraviolet-sponge' - Beginning flow run 'ultraviolet-sponge' for flow 'DENG MediaMarkt Batch'
+17:57:59.791 | INFO    | Flow run 'ultraviolet-sponge' - View at http://prefect_server:4200/runs/flow-run/01a140b6-7f3e-7d40-a899-557ceb391fa4
+17:57:59.803 | INFO    | Task run 'Collect-241' - Finished in state Completed()
+17:57:59.915 | INFO    | Task run 'Transform-476' - Technical product data found for SKU 160229354 (37 features).
+17:57:59.974 | INFO    | Task run 'Transform-476' - Technical product data found for SKU 2155505 (23 features).
+17:58:00.060 | INFO    | Task run 'Transform-476' - Technical product data found for SKU 2199070 (25 features).
+17:58:00.116 | INFO    | Task run 'Transform-476' - Technical product data found for SKU 2230728 (23 features).
+17:58:00.173 | INFO    | Task run 'Transform-476' - Technical product data found for SKU 2276243 (27 features).
+17:58:00.230 | INFO    | Task run 'Transform-476' - Technical product data found for SKU 2277751 (29 features).
+17:58:00.235 | INFO    | Task run 'Transform-476' - Finished in state Completed()
+17:58:00.250 | INFO    | Task run 'Load-d7e' - Finished in state Completed()
+17:58:00.250 | INFO    | Flow run 'ultraviolet-sponge' - {
+  "files": 8,
+  "loaded": 0,
+  "duplicate": 7,
+  "rejected": 1,
+  "error": 0,
+  "results": [
+    {
+      "path": "/workspace/data/raw/mediamarkt/133486101_20261015T064343837806Z.json",
+      "status": "rejected",
+      "reason": "Scope excluded: excluded_hardware_or_condition"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/160229354_20261015T064338353544Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2155505_20261015T064347017836Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2199070_20261015T064350113296Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2230728_20261015T064341071928Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2276243_20261015T064335187758Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/2277751_20261015T062824015052Z.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    },
+    {
+      "path": "/workspace/data/raw/mediamarkt/live-check/2230728_2026-10-15.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    }
+  ],
+  "accepted": 7,
+  "verification": {
+    "counts": {
+      "product": 6,
+      "retailer_product": 6,
+      "price_history": 7,
+      "invalid_prices": 0,
+      "duplicate_observations": 0,
+      "accepted_raw_files": 7,
+      "rejected_raw_files": 1,
+      "error_raw_files": 0
+    },
+    "raw_files": [
+      {
+        "status": "loaded",
+        "reason": null,
+        "files": 7
+      },
+      {
+        "status": "rejected",
+        "reason": "Scope excluded: excluded_hardware_or_condition",
+        "files": 1
+      }
+    ],
+    "categories": [
+      {
+        "category": "GPU",
+        "observations": 3
+      },
+      {
+        "category": "RAM",
+        "observations": 2
+      },
+      {
+        "category": "SSD",
+        "observations": 2
+      }
+    ],
+    "technically_valid": true,
+    "data_loaded": true,
+    "ok": true
+  },
+  "collection": {
+    "mode": "replay",
+    "exit_code": 0
+  }
+}
+17:58:01.011 | INFO    | Flow run 'ultraviolet-sponge' - Finished in state Completed()
+17:58:32.272 | INFO    | prefect.runner - SIGTERM received, initiating graceful shutdown...
+/usr/local/lib/python3.12/site-packages/prefect/runner/runner.py:603: RuntimeWarning: coroutine 'Runner.astop' was never awaited
+  self.stop()
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+17:58:32.279 | INFO    | prefect.runner - Pausing all deployments...
+17:58:32.301 | INFO    | prefect.runner - All deployments have been paused!

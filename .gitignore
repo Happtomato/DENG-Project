@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Reproducible derived raw files and private incoming exports
+/data/raw/*/reprocessed/
+/data/import/digitec/*.json
+/data/catalog/*.lock
+/data/**/*.tmp

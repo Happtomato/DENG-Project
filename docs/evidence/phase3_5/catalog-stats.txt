@@ -1,0 +1,135 @@
+1. Products, offers, observations, earliest/latest observations
+ products | offers | observations |       first_observed_at       |       last_observed_at        
+----------+--------+--------------+-------------------------------+-------------------------------
+       12 |     12 |           19 | 2026-10-15 06:28:24.014125+00 | 2026-10-16 09:18:45.983564+00
+(1 row)
+
+2. Products, offers and observations by category
+ category | products | offers | observations 
+----------+----------+--------+--------------
+ GPU      |        5 |      5 |            8
+ RAM      |        4 |      4 |            6
+ SSD      |        3 |      3 |            5
+(3 rows)
+
+3. Brands per category; historical out-of-scope brands remain visible
+ category |      brand      | products 
+----------+-----------------+----------
+ GPU      | ASUS            |        3
+ GPU      | GIGABYTE        |        1
+ GPU      | MSI             |        1
+ RAM      | ADATA           |        1
+ RAM      | CORSAIR         |        1
+ RAM      | G.SKILL         |        1
+ RAM      | KINGSTON        |        1
+ SSD      | SAMSUNG         |        2
+ SSD      | WESTERN DIGITAL |        1
+(9 rows)
+
+4. Retailer platform and actual seller are separate
+  platform  | actual_seller | offers | observations 
+------------+---------------+--------+--------------
+ MediaMarkt | Buchmann      |      1 |            2
+ MediaMarkt | Orderflow     |      1 |            1
+ MediaMarkt | Ultimus.ch    |      2 |            2
+ MediaMarkt | UNKNOWN       |      8 |           14
+(4 rows)
+
+5. Observations per local day and category
+ observation_day | category | observations | distinct_offers 
+-----------------+----------+--------------+-----------------
+ 2026-10-15      | GPU      |            3 |               3
+ 2026-10-15      | RAM      |            2 |               1
+ 2026-10-15      | SSD      |            2 |               2
+ 2026-10-16      | GPU      |            5 |               5
+ 2026-10-16      | RAM      |            4 |               4
+ 2026-10-16      | SSD      |            3 |               3
+(6 rows)
+
+6. Observations per product and current latest price
+ product_id |                                                 product_name                                                 | retailer_sku | observations |       first_observed_at       |       last_observed_at        | latest_price_chf 
+------------+--------------------------------------------------------------------------------------------------------------+--------------+--------------+-------------------------------+-------------------------------+------------------
+          1 | CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher                                                                   | 2230728      |            3 | 2026-10-15 06:43:41.070011+00 | 2026-10-16 02:31:05.428444+00 |           259.95
+          2 | GIGABYTE GeForce RTX 5060 Ti WINDFORCE MAX OC (NVIDIA, Grafikkarte)                                          | 160229354    |            2 | 2026-10-15 06:43:38.352714+00 | 2026-10-16 07:22:04.307511+00 |           405.00
+          3 | SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 1 TB, Schwarz)                                               | 2155505      |            2 | 2026-10-15 06:43:47.016395+00 | 2026-10-16 02:31:07.590557+00 |           199.95
+          4 | WESTERN DIGITAL WD_BLACK SN850P NVMe SSD für PS5-Konsolen (mit Kühlkörper) - Festplatte (SSD, 1 TB, Schwarz) | 2199070      |            2 | 2026-10-15 06:43:50.111938+00 | 2026-10-16 07:22:16.286609+00 |           268.70
+          5 | ASUS PRIME GeForce RTX 5080 16GB GDDR7 OC Edition (NVIDIA, Grafikkarte)                                      | 2276243      |            2 | 2026-10-15 06:43:35.182357+00 | 2026-10-16 01:30:33.540561+00 |          1599.95
+          6 | ASUS PRIME GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)                                                 | 2277751      |            2 | 2026-10-15 06:28:24.014125+00 | 2026-10-16 07:22:01.473671+00 |           547.00
+          7 | KINGSTON KF432C16BB/16 Arbeitsspeicher 16 GB DDR4                                                            | 101374309    |            1 | 2026-10-16 07:22:10.232541+00 | 2026-10-16 07:22:10.232541+00 |           244.95
+          8 | ADATA DDR5 U-DIMM 32GB AD5U560032G-S Arbeitsspeicher 32 GB DDR5                                              | 167409624    |            1 | 2026-10-16 07:22:07.253654+00 | 2026-10-16 07:22:07.253654+00 |           510.95
+          9 | SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 2 TB, Schwarz)                                               | 2155504      |            1 | 2026-10-16 07:22:13.315603+00 | 2026-10-16 07:22:13.315603+00 |           349.95
+         10 | G.SKILL 2x8GB 1,2V Speicher-Kit 16 GB DDR4                                                                   | 107353786    |            1 | 2026-10-16 09:18:45.983564+00 | 2026-10-16 09:18:45.983564+00 |           173.95
+         11 | ASUS ROG Strix GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)                                             | 2277758      |            1 | 2026-10-16 09:18:40.010097+00 | 2026-10-16 09:18:40.010097+00 |           737.00
+         12 | MSI GeForce RTX 5070 12G VENTUS 2X OC WHITE (NVIDIA, Grafikkarte)                                            | 2277995      |            1 | 2026-10-16 09:18:43.182333+00 | 2026-10-16 09:18:43.182333+00 |           489.60
+(12 rows)
+
+7. Products without a valid CHF price; missing identifiers and details
+ products_without_valid_price | products_without_ean_and_mpn | products_without_category_details 
+------------------------------+------------------------------+-----------------------------------
+                            0 |                            0 |                                 0
+(1 row)
+
+ gpu_architecture_missing | gpu_tdp_missing | ram_speed_missing | ssd_nand_missing | ssd_tbw_missing | seller_unknown_observations 
+--------------------------+-----------------+-------------------+------------------+-----------------+-----------------------------
+                        2 |               5 |                 3 |                1 |               3 |                          14
+(1 row)
+
+8. GPU RTX/RX families and generations (model text, UNKNOWN explicit)
+ gpu_family | model_number | products 
+------------+--------------+----------
+ RTX        | 5060         |        1
+ RTX        | 5070         |        3
+ RTX        | 5080         |        1
+(3 rows)
+
+9. RAM types/capacities and SSD PCIe generations/capacities
+ ram_type | capacity_gb | products 
+----------+-------------+----------
+ DDR4     | 16          |        2
+ DDR5     | 32          |        1
+ DDR5     | 64          |        1
+(3 rows)
+
+ pcie_generation | capacity_gb | products 
+-----------------+-------------+----------
+ 4.0             | 1000        |        2
+ 4.0             | 2000        |        1
+(2 rows)
+
+10. Latest valid offer prices by category
+ category | offers | min_chf | avg_chf | max_chf 
+----------+--------+---------+---------+---------
+ GPU      |      5 |  405.00 |  755.71 | 1599.95
+ RAM      |      4 |  173.95 |  297.45 |  510.95
+ SSD      |      3 |  199.95 |  272.87 |  349.95
+(3 rows)
+
+11. Price changes, including same-price new-day observations
+ retailer_sku | repeat_observations | price_changes | same_price_observations 
+--------------+---------------------+---------------+-------------------------
+ 101374309    |                   0 |             0 |                       0
+ 107353786    |                   0 |             0 |                       0
+ 160229354    |                   1 |             0 |                       1
+ 167409624    |                   0 |             0 |                       0
+ 2155504      |                   0 |             0 |                       0
+ 2155505      |                   1 |             0 |                       1
+ 2199070      |                   1 |             0 |                       1
+ 2230728      |                   2 |             0 |                       2
+ 2276243      |                   1 |             1 |                       0
+ 2277751      |                   1 |             0 |                       1
+ 2277758      |                   0 |             0 |                       0
+ 2277995      |                   0 |             0 |                       0
+(12 rows)
+
+12. Quality: duplicates, invalid price, absent raw reference, raw-import results
+ duplicate_observation_keys | invalid_prices | observations_without_raw_sha 
+----------------------------+----------------+------------------------------
+                          0 |              0 |                            0
+(1 row)
+
+  status  |                     reason                     | raw_files 
+----------+------------------------------------------------+-----------
+ loaded   |                                                |        19
+ rejected | Scope excluded: excluded_hardware_or_condition |         1
+(2 rows)
+

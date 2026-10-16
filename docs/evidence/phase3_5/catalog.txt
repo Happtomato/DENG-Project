@@ -1,0 +1,244 @@
+ Container deng-project-postgres-1 Running 
+ Container deng-project-prefect_server-1 Running 
+ Container deng-project-prefect_server-1 Waiting 
+ Container deng-project-postgres-1 Waiting 
+ Container deng-project-prefect_server-1 Healthy 
+ Container deng-project-postgres-1 Healthy 
+ Container deng-project-pipeline-run-81758d6640ec Creating 
+ Container deng-project-pipeline-run-81758d6640ec Created 
+{
+  "database_products": [
+    {
+      "retailer_sku": "101374309",
+      "product_url": "https://www.mediamarkt.ch/de/product/_kingston-ddr4-ram-fury-beast-3200-mhz-arbeitsspeicher-16-gb-ddr4-101374309.html",
+      "category": "ram",
+      "brand": "KINGSTON",
+      "title": "KINGSTON KF432C16BB/16 Arbeitsspeicher 16 GB DDR4",
+      "first_seen_at": "2026-10-16 07:22:10.232541+00:00",
+      "last_success_at": "2026-10-16 07:22:10.232541+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/101374309_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "107353786",
+      "product_url": "https://www.mediamarkt.ch/de/product/_gskill-2x8gb-12v-speicher-kit-16-gb-ddr4-107353786.html",
+      "category": "ram",
+      "brand": "G.SKILL",
+      "title": "G.SKILL 2x8GB 1,2V Speicher-Kit 16 GB DDR4",
+      "first_seen_at": "2026-10-16 09:18:45.983564+00:00",
+      "last_success_at": "2026-10-16 09:18:45.983564+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/107353786_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "160229354",
+      "product_url": "https://www.mediamarkt.ch/de/product/_gigabyte-geforce-rtx-5060-ti-windforce-max-oc-nvidia-grafikkarte-160229354.html",
+      "category": "gpu",
+      "brand": "GIGABYTE",
+      "title": "GIGABYTE GeForce RTX 5060 Ti WINDFORCE MAX OC (NVIDIA, Grafikkarte)",
+      "first_seen_at": "2026-10-15 06:43:38.352714+00:00",
+      "last_success_at": "2026-10-16 07:22:04.307511+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/160229354_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "167409624",
+      "product_url": "https://www.mediamarkt.ch/de/product/_adata-ddr5-u-dimm-32gb-ad5u560032g-s-arbeitsspeicher-32-gb-ddr5-167409624.html",
+      "category": "ram",
+      "brand": "ADATA",
+      "title": "ADATA DDR5 U-DIMM 32GB AD5U560032G-S Arbeitsspeicher 32 GB DDR5",
+      "first_seen_at": "2026-10-16 07:22:07.253654+00:00",
+      "last_success_at": "2026-10-16 07:22:07.253654+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/167409624_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2155504",
+      "product_url": "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155504.html",
+      "category": "ssd",
+      "brand": "SAMSUNG",
+      "title": "SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 2 TB, Schwarz)",
+      "first_seen_at": "2026-10-16 07:22:13.315603+00:00",
+      "last_success_at": "2026-10-16 07:22:13.315603+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2155504_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2155505",
+      "product_url": "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155505.html",
+      "category": "ssd",
+      "brand": "SAMSUNG",
+      "title": "SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 1 TB, Schwarz)",
+      "first_seen_at": "2026-10-15 06:43:47.016395+00:00",
+      "last_success_at": "2026-10-16 02:31:07.590557+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2155505_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2199070",
+      "product_url": "https://www.mediamarkt.ch/de/product/_western-digital-wd-black-sn850p-nvme-ssd-f\u00fcr-ps5-konsolen-mit-k\u00fchlk\u00f6rper-2199070.html",
+      "category": "ssd",
+      "brand": "WESTERN DIGITAL",
+      "title": "WESTERN DIGITAL WD_BLACK SN850P NVMe SSD f\u00fcr PS5-Konsolen (mit K\u00fchlk\u00f6rper) - Festplatte (SSD, 1 TB, Schwarz)",
+      "first_seen_at": "2026-10-15 06:43:50.111938+00:00",
+      "last_success_at": "2026-10-16 07:22:16.286609+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2199070_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2230728",
+      "product_url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+      "category": "ram",
+      "brand": "CORSAIR",
+      "title": "CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher",
+      "first_seen_at": "2026-10-15 06:43:41.070011+00:00",
+      "last_success_at": "2026-10-16 02:31:05.428444+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2230728_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2276243",
+      "product_url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5080-16gb-gddr7-oc-edition-nvidia-grafikkarte-2276243.html",
+      "category": "gpu",
+      "brand": "ASUS",
+      "title": "ASUS PRIME GeForce RTX 5080 16GB GDDR7 OC Edition (NVIDIA, Grafikkarte)",
+      "first_seen_at": "2026-10-15 06:43:35.182357+00:00",
+      "last_success_at": "2026-10-16 01:30:33.540561+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2276243_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2277751",
+      "product_url": "https://www.mediamarkt.ch/de/product/_asus-prime-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277751.html",
+      "category": "gpu",
+      "brand": "ASUS",
+      "title": "ASUS PRIME GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)",
+      "first_seen_at": "2026-10-15 06:28:24.014125+00:00",
+      "last_success_at": "2026-10-16 07:22:01.473671+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2277751_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2277758",
+      "product_url": "https://www.mediamarkt.ch/de/product/_asus-rog-strix-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277758.html",
+      "category": "gpu",
+      "brand": "ASUS",
+      "title": "ASUS ROG Strix GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)",
+      "first_seen_at": "2026-10-16 09:18:40.010097+00:00",
+      "last_success_at": "2026-10-16 09:18:40.010097+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2277758_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2277995",
+      "product_url": "https://www.mediamarkt.ch/de/product/_msi-geforce-rtx-5070-12g-ventus-2x-oc-white-nvidia-grafikkarte-2277995.html",
+      "category": "gpu",
+      "brand": "MSI",
+      "title": "MSI GeForce RTX 5070 12G VENTUS 2X OC WHITE (NVIDIA, Grafikkarte)",
+      "first_seen_at": "2026-10-16 09:18:43.182333+00:00",
+      "last_success_at": "2026-10-16 09:18:43.182333+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2277995_2026-10-16.json"
+    }
+  ],
+  "in_scope_products": [
+    {
+      "retailer_sku": "101374309",
+      "product_url": "https://www.mediamarkt.ch/de/product/_kingston-ddr4-ram-fury-beast-3200-mhz-arbeitsspeicher-16-gb-ddr4-101374309.html",
+      "category": "ram",
+      "brand": "KINGSTON",
+      "title": "KINGSTON KF432C16BB/16 Arbeitsspeicher 16 GB DDR4",
+      "first_seen_at": "2026-10-16 07:22:10.232541+00:00",
+      "last_success_at": "2026-10-16 07:22:10.232541+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/101374309_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "107353786",
+      "product_url": "https://www.mediamarkt.ch/de/product/_gskill-2x8gb-12v-speicher-kit-16-gb-ddr4-107353786.html",
+      "category": "ram",
+      "brand": "G.SKILL",
+      "title": "G.SKILL 2x8GB 1,2V Speicher-Kit 16 GB DDR4",
+      "first_seen_at": "2026-10-16 09:18:45.983564+00:00",
+      "last_success_at": "2026-10-16 09:18:45.983564+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/107353786_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2155504",
+      "product_url": "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155504.html",
+      "category": "ssd",
+      "brand": "SAMSUNG",
+      "title": "SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 2 TB, Schwarz)",
+      "first_seen_at": "2026-10-16 07:22:13.315603+00:00",
+      "last_success_at": "2026-10-16 07:22:13.315603+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2155504_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2155505",
+      "product_url": "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155505.html",
+      "category": "ssd",
+      "brand": "SAMSUNG",
+      "title": "SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 1 TB, Schwarz)",
+      "first_seen_at": "2026-10-15 06:43:47.016395+00:00",
+      "last_success_at": "2026-10-16 02:31:07.590557+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2155505_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2199070",
+      "product_url": "https://www.mediamarkt.ch/de/product/_western-digital-wd-black-sn850p-nvme-ssd-f\u00fcr-ps5-konsolen-mit-k\u00fchlk\u00f6rper-2199070.html",
+      "category": "ssd",
+      "brand": "WESTERN DIGITAL",
+      "title": "WESTERN DIGITAL WD_BLACK SN850P NVMe SSD f\u00fcr PS5-Konsolen (mit K\u00fchlk\u00f6rper) - Festplatte (SSD, 1 TB, Schwarz)",
+      "first_seen_at": "2026-10-15 06:43:50.111938+00:00",
+      "last_success_at": "2026-10-16 07:22:16.286609+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2199070_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2230728",
+      "product_url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+      "category": "ram",
+      "brand": "CORSAIR",
+      "title": "CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher",
+      "first_seen_at": "2026-10-15 06:43:41.070011+00:00",
+      "last_success_at": "2026-10-16 02:31:05.428444+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2230728_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2277758",
+      "product_url": "https://www.mediamarkt.ch/de/product/_asus-rog-strix-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277758.html",
+      "category": "gpu",
+      "brand": "ASUS",
+      "title": "ASUS ROG Strix GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)",
+      "first_seen_at": "2026-10-16 09:18:40.010097+00:00",
+      "last_success_at": "2026-10-16 09:18:40.010097+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2277758_2026-10-16.json"
+    },
+    {
+      "retailer_sku": "2277995",
+      "product_url": "https://www.mediamarkt.ch/de/product/_msi-geforce-rtx-5070-12g-ventus-2x-oc-white-nvidia-grafikkarte-2277995.html",
+      "category": "gpu",
+      "brand": "MSI",
+      "title": "MSI GeForce RTX 5070 12G VENTUS 2X OC WHITE (NVIDIA, Grafikkarte)",
+      "first_seen_at": "2026-10-16 09:18:43.182333+00:00",
+      "last_success_at": "2026-10-16 09:18:43.182333+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/2277995_2026-10-16.json"
+    }
+  ],
+  "legacy_out_of_scope_count": 4,
+  "catalogue_funnel": {
+    "gpu": {
+      "known_urls": 27,
+      "attempted_skus": 5,
+      "fetched_and_parsed_skus": 5,
+      "candidate": 22,
+      "accepted": 5,
+      "review": 0,
+      "excluded": 0
+    },
+    "ram": {
+      "known_urls": 25,
+      "attempted_skus": 5,
+      "fetched_and_parsed_skus": 5,
+      "candidate": 20,
+      "accepted": 4,
+      "review": 0,
+      "excluded": 1
+    },
+    "ssd": {
+      "known_urls": 24,
+      "attempted_skus": 3,
+      "fetched_and_parsed_skus": 3,
+      "candidate": 21,
+      "accepted": 3,
+      "review": 0,
+      "excluded": 0
+    }
+  }
+}

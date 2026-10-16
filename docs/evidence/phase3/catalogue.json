@@ -1,0 +1,32 @@
+{
+  "gpu": {
+    "known_urls": 25,
+    "catalog_accepted": 3,
+    "automatically_discovered_in_saved_pages": 24,
+    "fetched_products": 3,
+    "validated_products": 3,
+    "products": 3,
+    "listings": 3,
+    "observations": 6
+  },
+  "ram": {
+    "known_urls": 25,
+    "catalog_accepted": 3,
+    "automatically_discovered_in_saved_pages": 24,
+    "fetched_products": 4,
+    "validated_products": 3,
+    "products": 3,
+    "listings": 3,
+    "observations": 5
+  },
+  "ssd": {
+    "known_urls": 24,
+    "catalog_accepted": 3,
+    "automatically_discovered_in_saved_pages": 24,
+    "fetched_products": 3,
+    "validated_products": 3,
+    "products": 3,
+    "listings": 3,
+    "observations": 5
+  }
+}

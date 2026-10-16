@@ -1,10 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="de-CH">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="text-scale" content="scale" />
+		<script>
+			try {
+				const mode = localStorage.getItem('pc-price-lab-theme');
+				const theme =
+					mode === 'light' || mode === 'dark'
+						? mode
+						: matchMedia('(prefers-color-scheme: dark)').matches
+							? 'dark'
+							: 'light';
+				document.documentElement.dataset.theme = theme;
+				document.documentElement.style.colorScheme = theme;
+				document.documentElement.lang =
+					localStorage.getItem('pc-price-lab-language') === 'en' ? 'en-CH' : 'de-CH';
+			} catch (_) {
+				document.documentElement.dataset.theme = 'light';
+			}
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

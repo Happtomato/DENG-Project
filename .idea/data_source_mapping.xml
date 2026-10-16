@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/data/queries/catalog_stats.sql" value="53185b64-c60b-4462-9c91-bc9309507777" />
+    <file url="file://$PROJECT_DIR$/data/queries/verification.sql" value="53185b64-c60b-4462-9c91-bc9309507777" />
+  </component>
+</project>

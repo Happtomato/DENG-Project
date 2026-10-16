@@ -1,0 +1,16 @@
+{
+  "before_counts": {
+    "product": 6,
+    "retailer": 1,
+    "retailer_product": 6,
+    "price_history": 10
+  },
+  "after_restart_counts": {
+    "product": 9,
+    "retailer": 1,
+    "retailer_product": 9,
+    "price_history": 16
+  },
+  "all_original_products_and_prices_unchanged": true,
+  "original_listing_identity_preserved": true
+}

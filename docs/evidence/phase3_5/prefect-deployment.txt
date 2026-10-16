@@ -1,0 +1,112 @@
+ Container deng-project-postgres-1 Running 
+ Container deng-project-prefect_server-1 Running 
+ Container deng-project-postgres-1 Waiting 
+ Container deng-project-prefect_server-1 Waiting 
+ Container deng-project-postgres-1 Healthy 
+ Container deng-project-prefect_server-1 Healthy 
+ Container deng-project-pipeline-run-ee4b80d37742 Creating 
+ Container deng-project-pipeline-run-ee4b80d37742 Created 
+{
+  "id": "b1c4bd19-985e-480a-af78-a7380769ea75",
+  "created": "2026-10-15T17:53:03.778253Z",
+  "updated": "2026-10-16T14:20:22.130000Z",
+  "name": "mediamarkt-daily",
+  "version": "12db3da627050dc20d13f6b06d4cc66a",
+  "version_id": null,
+  "version_info": null,
+  "branch": null,
+  "base": null,
+  "root": null,
+  "description": null,
+  "flow_id": "ab3ace6b-f689-4fcd-8367-46acd1b8ae5c",
+  "concurrency_limit": null,
+  "global_concurrency_limit": null,
+  "concurrency_options": null,
+  "paused": true,
+  "schedules": [
+    {
+      "id": "89b7f216-b6ce-41c4-a59b-4b4aa4f655bf",
+      "created": "2026-10-16T08:17:41.946963Z",
+      "updated": "2026-10-16T14:20:11.014000Z",
+      "deployment_id": "b1c4bd19-985e-480a-af78-a7380769ea75",
+      "schedule": {
+        "cron": "0 3 * * *",
+        "timezone": "Europe/Zurich",
+        "day_or": true
+      },
+      "active": false,
+      "max_scheduled_runs": null,
+      "parameters": {},
+      "slug": null
+    }
+  ],
+  "job_variables": {},
+  "parameters": {
+    "mode": "daily",
+    "input_dir": "/workspace/data/raw/mediamarkt",
+    "catalog": "/workspace/data/catalog/mediamarkt.json",
+    "max_products": 3,
+    "max_requests": 20,
+    "selection": "/workspace/data/catalog/mediamarkt_initial.json",
+    "delay": 3.0
+  },
+  "pull_steps": null,
+  "tags": [],
+  "labels": {
+    "prefect.flow.id": "ab3ace6b-f689-4fcd-8367-46acd1b8ae5c"
+  },
+  "work_queue_name": null,
+  "last_polled": "2026-10-16T14:20:12.405512Z",
+  "parameter_openapi_schema": {
+    "title": "Parameters",
+    "type": "object",
+    "properties": {
+      "mode": {
+        "default": "replay",
+        "position": 0,
+        "title": "mode"
+      },
+      "input_dir": {
+        "default": "/workspace/data/raw/mediamarkt",
+        "position": 1,
+        "title": "input_dir"
+      },
+      "catalog": {
+        "default": "/workspace/data/catalog/mediamarkt.json",
+        "position": 2,
+        "title": "catalog"
+      },
+      "max_products": {
+        "default": 3,
+        "position": 3,
+        "title": "max_products"
+      },
+      "max_requests": {
+        "default": 20,
+        "position": 4,
+        "title": "max_requests"
+      },
+      "selection": {
+        "default": "/workspace/data/catalog/mediamarkt_initial.json",
+        "position": 5,
+        "title": "selection"
+      },
+      "delay": {
+        "default": 3.0,
+        "position": 6,
+        "title": "delay"
+      }
+    }
+  },
+  "path": ".",
+  "entrypoint": "backend/flow.py:mediamarkt_pipeline",
+  "storage_document_id": null,
+  "infrastructure_document_id": null,
+  "created_by": null,
+  "updated_by": null,
+  "work_queue_id": null,
+  "enforce_parameter_schema": true,
+  "work_pool_name": null,
+  "status": "NOT_READY",
+  "automations": []
+}

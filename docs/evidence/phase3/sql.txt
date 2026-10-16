@@ -1,0 +1,42 @@
+    metric    | count 
+--------------+-------
+ products     |     9
+ listings     |     9
+ observations |    16
+(3 rows)
+
+  status  |                     reason                     | count 
+----------+------------------------------------------------+-------
+ loaded   |                                                |    16
+ rejected | Scope excluded: excluded_hardware_or_condition |     1
+(2 rows)
+
+                                                 product_name                                                 | category |  platform  | seller_name | price_chf |          observed_at          |                               raw_path                               | ssd_capacity_gb | ssd_chf_per_gb 
+--------------------------------------------------------------------------------------------------------------+----------+------------+-------------+-----------+-------------------------------+----------------------------------------------------------------------+-----------------+----------------
+ ASUS PRIME GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)                                                 | GPU      | MediaMarkt |             |    547.00 | 2026-10-15 06:28:24.014125+00 | /workspace/data/raw/mediamarkt/2277751_20261015T062824015052Z.json   |                 |               
+ ASUS PRIME GeForce RTX 5070 12GB GDDR7 (NVIDIA, Grafikkarte)                                                 | GPU      | MediaMarkt |             |    547.00 | 2026-10-16 07:22:01.473671+00 | /workspace/data/raw/mediamarkt/2277751_2026-10-16.json               |                 |               
+ ASUS PRIME GeForce RTX 5080 16GB GDDR7 OC Edition (NVIDIA, Grafikkarte)                                      | GPU      | MediaMarkt |             |   1499.95 | 2026-10-15 06:43:35.182357+00 | /workspace/data/raw/mediamarkt/2276243_20261015T064335187758Z.json   |                 |               
+ ASUS PRIME GeForce RTX 5080 16GB GDDR7 OC Edition (NVIDIA, Grafikkarte)                                      | GPU      | MediaMarkt |             |   1599.95 | 2026-10-16 01:30:33.540561+00 | /workspace/data/raw/mediamarkt/2276243_2026-10-16.json               |                 |               
+ GIGABYTE GeForce RTX 5060 Ti WINDFORCE MAX OC (NVIDIA, Grafikkarte)                                          | GPU      | MediaMarkt | Buchmann    |    405.00 | 2026-10-15 06:43:38.352714+00 | /workspace/data/raw/mediamarkt/160229354_20261015T064338353544Z.json |                 |               
+ GIGABYTE GeForce RTX 5060 Ti WINDFORCE MAX OC (NVIDIA, Grafikkarte)                                          | GPU      | MediaMarkt | Buchmann    |    405.00 | 2026-10-16 07:22:04.307511+00 | /workspace/data/raw/mediamarkt/160229354_2026-10-16.json             |                 |               
+ ADATA DDR5 U-DIMM 32GB AD5U560032G-S Arbeitsspeicher 32 GB DDR5                                              | RAM      | MediaMarkt | Orderflow   |    510.95 | 2026-10-16 07:22:07.253654+00 | /workspace/data/raw/mediamarkt/167409624_2026-10-16.json             |                 |               
+ CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher                                                                   | RAM      | MediaMarkt |             |    259.95 | 2026-10-15 06:43:41.070011+00 | /workspace/data/raw/mediamarkt/2230728_20261015T064341071928Z.json   |                 |               
+ CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher                                                                   | RAM      | MediaMarkt |             |    259.95 | 2026-10-15 17:52:14.841956+00 | /workspace/data/raw/mediamarkt/live-check/2230728_2026-10-15.json    |                 |               
+ CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher                                                                   | RAM      | MediaMarkt |             |    259.95 | 2026-10-16 02:31:05.428444+00 | /workspace/data/raw/mediamarkt/2230728_2026-10-16.json               |                 |               
+ KINGSTON KF432C16BB/16 Arbeitsspeicher 16 GB DDR4                                                            | RAM      | MediaMarkt | Ultimus.ch  |    244.95 | 2026-10-16 07:22:10.232541+00 | /workspace/data/raw/mediamarkt/101374309_2026-10-16.json             |                 |               
+ SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 1 TB, Schwarz)                                               | SSD      | MediaMarkt |             |    199.95 | 2026-10-15 06:43:47.016395+00 | /workspace/data/raw/mediamarkt/2155505_20261015T064347017836Z.json   |            1000 |         0.2000
+ SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 1 TB, Schwarz)                                               | SSD      | MediaMarkt |             |    199.95 | 2026-10-16 02:31:07.590557+00 | /workspace/data/raw/mediamarkt/2155505_2026-10-16.json               |            1000 |         0.2000
+ SAMSUNG 990 PRO NVMe M.2 SSD - Festplatte (SSD, 2 TB, Schwarz)                                               | SSD      | MediaMarkt |             |    349.95 | 2026-10-16 07:22:13.315603+00 | /workspace/data/raw/mediamarkt/2155504_2026-10-16.json               |            2000 |         0.1750
+ WESTERN DIGITAL WD_BLACK SN850P NVMe SSD für PS5-Konsolen (mit Kühlkörper) - Festplatte (SSD, 1 TB, Schwarz) | SSD      | MediaMarkt |             |    268.70 | 2026-10-15 06:43:50.111938+00 | /workspace/data/raw/mediamarkt/2199070_20261015T064350113296Z.json   |            1000 |         0.2687
+ WESTERN DIGITAL WD_BLACK SN850P NVMe SSD für PS5-Konsolen (mit Kühlkörper) - Festplatte (SSD, 1 TB, Schwarz) | SSD      | MediaMarkt |             |    268.70 | 2026-10-16 07:22:16.286609+00 | /workspace/data/raw/mediamarkt/2199070_2026-10-16.json               |            1000 |         0.2687
+(16 rows)
+
+ invalid_prices 
+----------------
+              0
+(1 row)
+
+ retailer_product_id | collected_at | count 
+---------------------+--------------+-------
+(0 rows)
+

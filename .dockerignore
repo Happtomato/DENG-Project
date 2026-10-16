@@ -1,0 +1,12 @@
+.git
+.idea
+.env
+.venv
+**/__pycache__
+**/node_modules
+data/raw
+data/debug
+data/catalog
+data/import
+data/seed
+frontend

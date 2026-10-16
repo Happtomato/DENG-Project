@@ -1,0 +1,232 @@
+{
+  "python": "3.12.15",
+  "architecture": "aarch64",
+  "prefect": "3.8.8",
+  "sqlalchemy": "2.0.43",
+  "deployments": [
+    {
+      "id": "b1c4bd19-985e-480a-af78-a7380769ea75",
+      "name": "mediamarkt-daily",
+      "paused": false,
+      "parameters": {
+        "mode": "live",
+        "input_dir": "/workspace/data/raw/mediamarkt",
+        "catalog": "/workspace/data/catalog/mediamarkt.json",
+        "max_products": 3,
+        "max_requests": 20
+      },
+      "schedules": [
+        {
+          "id": "24998f69-a1c6-468a-a881-dc380fad1607",
+          "created": "2026-10-15T17:58:34.153912Z",
+          "updated": "2026-10-15T17:58:34.153916Z",
+          "deployment_id": "b1c4bd19-985e-480a-af78-a7380769ea75",
+          "schedule": {
+            "cron": "0 3 * * *",
+            "timezone": "Europe/Zurich",
+            "day_or": true
+          },
+          "active": true,
+          "max_scheduled_runs": null,
+          "parameters": {},
+          "slug": null
+        }
+      ]
+    }
+  ],
+  "flow_runs": [
+    {
+      "id": "6775c053-6e00-499b-92d2-e907904aef86",
+      "name": "lean-boobook",
+      "state_type": "COMPLETED",
+      "auto_scheduled": false,
+      "expected_start_time": "2026-10-15T17:52:31.171868Z",
+      "start_time": "2026-10-15T17:52:31.180823Z",
+      "end_time": "2026-10-15T17:52:31.671837Z",
+      "deployment_id": null,
+      "parameters": {
+        "mode": "replay",
+        "input_dir": "/workspace/data/raw/mediamarkt",
+        "catalog": "/workspace/data/catalog/mediamarkt.json",
+        "max_products": 3,
+        "max_requests": 20
+      }
+    },
+    {
+      "id": "492317e3-eda4-4d55-9695-af66d806a3aa",
+      "name": "ingenious-lizard",
+      "state_type": "COMPLETED",
+      "auto_scheduled": false,
+      "expected_start_time": "2026-10-15T17:52:59.192496Z",
+      "start_time": "2026-10-15T17:52:59.200723Z",
+      "end_time": "2026-10-15T17:52:59.685425Z",
+      "deployment_id": null,
+      "parameters": {
+        "mode": "replay",
+        "input_dir": "/workspace/data/raw/mediamarkt",
+        "catalog": "/workspace/data/catalog/mediamarkt.json",
+        "max_products": 3,
+        "max_requests": 20
+      }
+    },
+    {
+      "id": "13c42d6e-f484-444c-87b1-bd7b8b02eaea",
+      "name": "astute-unicorn",
+      "state_type": "COMPLETED",
+      "auto_scheduled": false,
+      "expected_start_time": "2026-10-15T17:52:10.775570Z",
+      "start_time": "2026-10-15T17:52:10.787251Z",
+      "end_time": "2026-10-15T17:52:14.885229Z",
+      "deployment_id": null,
+      "parameters": {
+        "mode": "live",
+        "input_dir": "/workspace/data/raw/mediamarkt/live-check",
+        "catalog": "/workspace/data/catalog/midterm-live-check.json",
+        "max_products": 1,
+        "max_requests": 5
+      }
+    },
+    {
+      "id": "01a140b7-45eb-7a4e-a18c-8282e1aac2fd",
+      "name": "independent-sunfish",
+      "state_type": "SCHEDULED",
+      "auto_scheduled": true,
+      "expected_start_time": "2026-10-16T01:00:00Z",
+      "start_time": null,
+      "end_time": null,
+      "deployment_id": "b1c4bd19-985e-480a-af78-a7380769ea75",
+      "parameters": {
+        "mode": "live",
+        "input_dir": "/workspace/data/raw/mediamarkt",
+        "catalog": "/workspace/data/catalog/mediamarkt.json",
+        "max_products": 3,
+        "max_requests": 20
+      }
+    },
+    {
+      "id": "01a140b7-45eb-792f-b60b-bca25b18c288",
+      "name": "strong-leopard",
+      "state_type": "SCHEDULED",
+      "auto_scheduled": true,
+      "expected_start_time": "2026-10-17T01:00:00Z",
+      "start_time": null,
+      "end_time": null,
+      "deployment_id": "b1c4bd19-985e-480a-af78-a7380769ea75",
+      "parameters": {
+        "mode": "live",
+        "input_dir": "/workspace/data/raw/mediamarkt",
+        "catalog": "/workspace/data/catalog/mediamarkt.json",
+        "max_products": 3,
+        "max_requests": 20
+      }
+    },
+    {
+      "id": "01a140b7-45eb-78ac-b2ed-ded3fc481f77",
+      "name": "eminent-curassow",
+      "state_type": "SCHEDULED",
+      "auto_scheduled": true,
+      "expected_start_time": "2026-10-18T01:00:00Z",
+      "start_time": null,
+      "end_time": null,
+      "deployment_id": "b1c4bd19-985e-480a-af78-a7380769ea75",
+      "parameters": {
+        "mode": "live",
+        "input_dir": "/workspace/data/raw/mediamarkt",
+        "catalog": "/workspace/data/catalog/mediamarkt.json",
+        "max_products": 3,
+        "max_requests": 20
+      }
+    },
+    {
+      "id": "01a140b6-7f3e-7d40-a899-557ceb391fa4",
+      "name": "ultraviolet-sponge",
+      "state_type": "COMPLETED",
+      "auto_scheduled": true,
+      "expected_start_time": "2026-10-15T17:58:00Z",
+      "start_time": "2026-10-15T17:57:59.779692Z",
+      "end_time": "2026-10-15T17:58:00.254964Z",
+      "deployment_id": "b1c4bd19-985e-480a-af78-a7380769ea75",
+      "parameters": {
+        "mode": "replay",
+        "input_dir": "/workspace/data/raw/mediamarkt",
+        "catalog": "/workspace/data/catalog/mediamarkt.json",
+        "max_products": 3,
+        "max_requests": 20
+      }
+    }
+  ],
+  "task_runs": [
+    {
+      "id": "01a140b6-bd2c-7d1f-b592-17551b4f3ab3",
+      "name": "Load-d7e",
+      "state_type": "COMPLETED",
+      "flow_run_id": "01a140b6-7f3e-7d40-a899-557ceb391fa4"
+    },
+    {
+      "id": "01a140b6-bb7b-7f5d-ab58-8e1d53d92f84",
+      "name": "Transform-476",
+      "state_type": "COMPLETED",
+      "flow_run_id": "01a140b6-7f3e-7d40-a899-557ceb391fa4"
+    },
+    {
+      "id": "01a140b6-bb78-70de-8112-91f4d1a23c0c",
+      "name": "Collect-241",
+      "state_type": "COMPLETED",
+      "flow_run_id": "01a140b6-7f3e-7d40-a899-557ceb391fa4"
+    },
+    {
+      "id": "01a140b2-2712-73af-ad02-9c662665d655",
+      "name": "Load-706",
+      "state_type": "COMPLETED",
+      "flow_run_id": "492317e3-eda4-4d55-9695-af66d806a3aa"
+    },
+    {
+      "id": "01a140b2-2551-7389-aba2-effe28603e29",
+      "name": "Transform-6f9",
+      "state_type": "COMPLETED",
+      "flow_run_id": "492317e3-eda4-4d55-9695-af66d806a3aa"
+    },
+    {
+      "id": "01a140b2-254f-793c-b740-94fc1c9ec18c",
+      "name": "Collect-33b",
+      "state_type": "COMPLETED",
+      "flow_run_id": "492317e3-eda4-4d55-9695-af66d806a3aa"
+    },
+    {
+      "id": "01a140b1-b998-7f4f-b252-971f201bff18",
+      "name": "Load-ce4",
+      "state_type": "COMPLETED",
+      "flow_run_id": "6775c053-6e00-499b-92d2-e907904aef86"
+    },
+    {
+      "id": "01a140b1-b7de-7308-9b46-c904217ee896",
+      "name": "Transform-f66",
+      "state_type": "COMPLETED",
+      "flow_run_id": "6775c053-6e00-499b-92d2-e907904aef86"
+    },
+    {
+      "id": "01a140b1-b7dc-7a36-a017-1ce18be286dc",
+      "name": "Collect-20a",
+      "state_type": "COMPLETED",
+      "flow_run_id": "6775c053-6e00-499b-92d2-e907904aef86"
+    },
+    {
+      "id": "01a140b1-7811-7ca4-bf3e-69e95c21cbe0",
+      "name": "Load-234",
+      "state_type": "COMPLETED",
+      "flow_run_id": "13c42d6e-f484-444c-87b1-bd7b8b02eaea"
+    },
+    {
+      "id": "01a140b1-780b-7369-baed-3b2966bfd7b7",
+      "name": "Transform-172",
+      "state_type": "COMPLETED",
+      "flow_run_id": "13c42d6e-f484-444c-87b1-bd7b8b02eaea"
+    },
+    {
+      "id": "01a140b1-6837-7269-815b-75d33ffd864f",
+      "name": "Collect-cbd",
+      "state_type": "COMPLETED",
+      "flow_run_id": "13c42d6e-f484-444c-87b1-bd7b8b02eaea"
+    }
+  ]
+}

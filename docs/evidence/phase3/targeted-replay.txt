@@ -1,0 +1,68 @@
+ Container deng-project-pipeline-run-cf6421cbdf4d Creating 
+ Container deng-project-pipeline-run-cf6421cbdf4d Created 
+07:31:01.373 | INFO    | Flow run 'light-bumblebee' - Beginning flow run 'light-bumblebee' for flow 'DENG MediaMarkt Batch'
+07:31:01.376 | INFO    | Flow run 'light-bumblebee' - View at http://prefect_server:4200/runs/flow-run/4a13334e-c2eb-460f-8b8d-a31eba7f51c7
+07:31:01.382 | INFO    | Task run 'Collect-7f6' - Finished in state Completed()
+07:31:01.388 | INFO    | Task run 'Transform-741' - Finished in state Completed()
+07:31:01.402 | INFO    | Task run 'Load-a20' - Finished in state Completed()
+07:31:01.404 | INFO    | Flow run 'light-bumblebee' - {
+  "files": 1,
+  "loaded": 0,
+  "duplicate": 1,
+  "rejected": 0,
+  "error": 0,
+  "results": [
+    {
+      "path": "/workspace/data/raw/mediamarkt/live-check/2230728_2026-10-15.json",
+      "status": "duplicate",
+      "reason": "Identical raw file already accepted"
+    }
+  ],
+  "accepted": 1,
+  "verification": {
+    "counts": {
+      "product": 9,
+      "retailer_product": 9,
+      "price_history": 16,
+      "invalid_prices": 0,
+      "duplicate_observations": 0,
+      "accepted_raw_files": 16,
+      "rejected_raw_files": 1,
+      "error_raw_files": 0
+    },
+    "raw_files": [
+      {
+        "status": "loaded",
+        "reason": null,
+        "files": 16
+      },
+      {
+        "status": "rejected",
+        "reason": "Scope excluded: excluded_hardware_or_condition",
+        "files": 1
+      }
+    ],
+    "categories": [
+      {
+        "category": "GPU",
+        "observations": 6
+      },
+      {
+        "category": "RAM",
+        "observations": 5
+      },
+      {
+        "category": "SSD",
+        "observations": 5
+      }
+    ],
+    "technically_valid": true,
+    "data_loaded": true,
+    "ok": true
+  },
+  "collection": {
+    "mode": "replay",
+    "exit_code": 0
+  }
+}
+07:31:02.385 | INFO    | Flow run 'light-bumblebee' - Finished in state Completed()

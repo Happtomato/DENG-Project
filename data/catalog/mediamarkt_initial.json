@@ -1,0 +1,16 @@
+{
+  "gpu": [
+    "https://www.mediamarkt.ch/de/product/_asus-rog-strix-geforce-rtx-5070-12gb-gddr7-nvidia-grafikkarte-2277758.html",
+    "https://www.mediamarkt.ch/de/product/_msi-geforce-rtx-5070-12g-ventus-2x-oc-white-nvidia-grafikkarte-2277995.html"
+  ],
+  "ram": [
+    "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+    "https://www.mediamarkt.ch/de/product/_kingston-ddr4-ram-fury-beast-3200-mhz-arbeitsspeicher-16-gb-ddr4-101374309.html",
+    "https://www.mediamarkt.ch/de/product/_gskill-2x8gb-12v-speicher-kit-16-gb-ddr4-107353786.html"
+  ],
+  "ssd": [
+    "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155505.html",
+    "https://www.mediamarkt.ch/de/product/_western-digital-wd-black-sn850p-nvme-ssd-für-ps5-konsolen-mit-kühlkörper-2199070.html",
+    "https://www.mediamarkt.ch/de/product/_samsung-990-pro-nvme-m-2-ssd-2155504.html"
+  ]
+}

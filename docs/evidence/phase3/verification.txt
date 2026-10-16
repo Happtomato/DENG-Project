@@ -1,0 +1,41 @@
+{
+  "counts": {
+    "product": 9,
+    "retailer_product": 9,
+    "price_history": 16,
+    "invalid_prices": 0,
+    "duplicate_observations": 0,
+    "accepted_raw_files": 16,
+    "rejected_raw_files": 1,
+    "error_raw_files": 0
+  },
+  "raw_files": [
+    {
+      "status": "loaded",
+      "reason": null,
+      "files": 16
+    },
+    {
+      "status": "rejected",
+      "reason": "Scope excluded: excluded_hardware_or_condition",
+      "files": 1
+    }
+  ],
+  "categories": [
+    {
+      "category": "GPU",
+      "observations": 6
+    },
+    {
+      "category": "RAM",
+      "observations": 5
+    },
+    {
+      "category": "SSD",
+      "observations": 5
+    }
+  ],
+  "technically_valid": true,
+  "data_loaded": true,
+  "ok": true
+}

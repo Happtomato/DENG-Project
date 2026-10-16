@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "source": "mediamarkt",
+  "products": {
+    "2230728": {
+      "retailer": "mediamarkt",
+      "retailer_sku": "2230728",
+      "product_url": "https://www.mediamarkt.ch/de/product/_corsair-vengeance-ddr5-2230728.html",
+      "title": "CORSAIR VENGEANCE (DDR5) - Arbeitsspeicher",
+      "category": "ram",
+      "status": "accepted",
+      "first_seen_at": "2026-10-15T06:43:21.348595+00:00",
+      "consecutive_errors": 0,
+      "last_discovered_at": "2026-10-15T06:43:21.348595+00:00",
+      "discovered_from": "manual_seed",
+      "reason": "in_scope",
+      "brand": "CORSAIR",
+      "ean": "0840006671732",
+      "mpn": "CMK64GX5M2B6000Z30",
+      "last_error": null,
+      "last_price_valid": true,
+      "last_attempt_at": "2026-10-15T17:52:10.857606+00:00",
+      "last_success_at": "2026-10-15T17:52:14.841956+00:00",
+      "last_record": "/workspace/data/raw/mediamarkt/live-check/2230728_2026-10-15.json"
+    }
+  },
+  "discovery": {}
+}

@@ -1,25 +1,16 @@
-FROM node:22-alpine AS builder
-
+FROM node:24-alpine AS build
 WORKDIR /app
-
-COPY package*.json ./
+COPY package.json package-lock.json ./
 RUN npm ci
-
 COPY . .
-RUN npm run build
+RUN npm run check && npm run build
 
-
-FROM node:22-alpine
-
+FROM node:24-alpine
+ENV NODE_ENV=production HOST=0.0.0.0 PORT=3000
 WORKDIR /app
-
-ENV NODE_ENV=production
-ENV HOST=0.0.0.0
-ENV PORT=3000
-
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/package.json ./package.json
-
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
+COPY --from=build /app/build ./build
+USER node
 EXPOSE 3000
-
 CMD ["node", "build"]

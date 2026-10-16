@@ -1,0 +1,40 @@
+ Container deng-project-pipeline-run-6d8e77e8f556 Creating 
+ Container deng-project-pipeline-run-6d8e77e8f556 Created 
+test_daily_rerun_makes_no_product_requests (test_pipeline.CatalogueTests.test_daily_rerun_makes_no_product_requests) ... Technical product data found for SKU 2230728 (23 features).
+ram 2230728: accepted (in_scope)
+ok
+test_error_keeps_url_and_next_product_continues (test_pipeline.CatalogueTests.test_error_keeps_url_and_next_product_continues) ... Failed 145381326: HTTP 404
+Technical product data found for SKU 2155505 (23 features).
+ssd 2155505: accepted (in_scope)
+ok
+test_listing_deduplicates_and_reports_pages (test_pipeline.CatalogueTests.test_listing_deduplicates_and_reports_pages) ... ok
+test_lock_and_atomic_catalogue (test_pipeline.CatalogueTests.test_lock_and_atomic_catalogue) ... ok
+test_pagination_cursor_is_saved_and_repeats_detected (test_pipeline.CatalogueTests.test_pagination_cursor_is_saved_and_repeats_detected) ... gpu: page 1/20, 12 product links
+ok
+test_recovers_observation_written_before_catalogue_commit (test_pipeline.CatalogueTests.test_recovers_observation_written_before_catalogue_commit) ... Technical product data found for SKU 2230728 (23 features).
+ram 2230728: accepted (in_scope)
+ok
+test_url_identity_and_domain (test_pipeline.CatalogueTests.test_url_identity_and_domain) ... ok
+test_blocked_requests_abort_without_retry (test_pipeline.HttpTests.test_blocked_requests_abort_without_retry) ... ok
+test_budget_stops_before_request (test_pipeline.HttpTests.test_budget_stops_before_request) ... ok
+test_redirect_checks_robots_at_each_hop (test_pipeline.HttpTests.test_redirect_checks_robots_at_each_hop) ... ok
+test_contradictory_source_is_reviewed (test_pipeline.ParsingTests.test_contradictory_source_is_reviewed) ... Technical product data found for SKU 145381326 (48 features).
+ok
+test_gpu_payload_and_clock_semantics (test_pipeline.ParsingTests.test_gpu_payload_and_clock_semantics) ... Technical product data found for SKU 2277751 (29 features).
+ok
+test_missing_product_cannot_use_recommendation (test_pipeline.ParsingTests.test_missing_product_cannot_use_recommendation) ... ok
+test_nonfinite_numbers_and_undefined_in_strings (test_pipeline.ParsingTests.test_nonfinite_numbers_and_undefined_in_strings) ... ok
+test_ram_kit_capacity_and_units (test_pipeline.ParsingTests.test_ram_kit_capacity_and_units) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_schema_keys_match_postgres (test_pipeline.ParsingTests.test_schema_keys_match_postgres) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_ssd_selects_correct_variant_and_converts_tb (test_pipeline.ParsingTests.test_ssd_selects_correct_variant_and_converts_tb) ... Technical product data found for SKU 2155505 (23 features).
+ok
+test_unsupported_product_and_unproven_condition (test_pipeline.ParsingTests.test_unsupported_product_and_unproven_condition) ... Technical product data found for SKU 2230728 (23 features).
+Technical product data found for SKU 2230728 (23 features).
+ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.045s
+
+OK

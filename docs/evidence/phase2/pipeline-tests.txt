@@ -1,0 +1,76 @@
+ Container deng-project-pipeline-run-7685366446ec Creating 
+ Container deng-project-pipeline-run-7685366446ec Created 
+test_failed_live_collection_loads_existing_then_fails (test_orchestration.OrchestrationTests.test_failed_live_collection_loads_existing_then_fails) ... ok
+test_replay_does_not_call_collector (test_orchestration.OrchestrationTests.test_replay_does_not_call_collector) ... {
+  "error": 0,
+  "accepted": 1,
+  "verification": {
+    "ok": true
+  },
+  "collection": {
+    "exit_code": 1
+  }
+}
+ok
+test_zero_accepted_files_fails_even_when_db_has_data (test_orchestration.OrchestrationTests.test_zero_accepted_files_fails_even_when_db_has_data) ... {
+  "error": 0,
+  "accepted": 0,
+  "verification": {
+    "ok": true
+  },
+  "collection": {
+    "exit_code": 0
+  }
+}
+ok
+test_backfill_preserves_original_time (test_pipeline.DatabaseTests.test_backfill_preserves_original_time) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_concurrent_rerun (test_pipeline.DatabaseTests.test_concurrent_rerun) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_conflicting_observation_not_overwritten (test_pipeline.DatabaseTests.test_conflicting_observation_not_overwritten) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_identifier_disagreement_rejected (test_pipeline.DatabaseTests.test_identifier_disagreement_rejected) ... Technical product data found for SKU 2276243 (27 features).
+Technical product data found for SKU 2277751 (29 features).
+ok
+test_missing_identifiers_do_not_merge_names (test_pipeline.DatabaseTests.test_missing_identifiers_do_not_merge_names) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_real_ingestion_sql_and_repeat (test_pipeline.DatabaseTests.test_real_ingestion_sql_and_repeat) ... Technical product data found for SKU 160229354 (37 features).
+Technical product data found for SKU 2155505 (23 features).
+Technical product data found for SKU 2199070 (25 features).
+Technical product data found for SKU 2230728 (23 features).
+Technical product data found for SKU 2276243 (27 features).
+Technical product data found for SKU 2277751 (29 features).
+ok
+test_rejected_file_does_not_stop_valid_file (test_pipeline.DatabaseTests.test_rejected_file_does_not_stop_valid_file) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_same_observation_different_file_no_duplicate (test_pipeline.DatabaseTests.test_same_observation_different_file_no_duplicate) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_same_price_next_day_is_new_observation (test_pipeline.DatabaseTests.test_same_price_next_day_is_new_observation) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_schema_repeat_and_empty_verification (test_pipeline.DatabaseTests.test_schema_repeat_and_empty_verification) ... ok
+test_technical_conflict_rolls_back (test_pipeline.DatabaseTests.test_technical_conflict_rolls_back) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_invalid_price_gtin_timestamp (test_pipeline.TransformationTests.test_invalid_price_gtin_timestamp) ... ok
+test_malformed_json_and_test_marker_rejected (test_pipeline.TransformationTests.test_malformed_json_and_test_marker_rejected) ... ok
+test_original_time_and_seller_preserved (test_pipeline.TransformationTests.test_original_time_and_seller_preserved) ... Technical product data found for SKU 160229354 (37 features).
+Technical product data found for SKU 2230728 (23 features).
+ok
+test_real_legacy_data_and_scope (test_pipeline.TransformationTests.test_real_legacy_data_and_scope) ... Technical product data found for SKU 160229354 (37 features).
+Technical product data found for SKU 2155505 (23 features).
+Technical product data found for SKU 2199070 (25 features).
+Technical product data found for SKU 2230728 (23 features).
+Technical product data found for SKU 2276243 (27 features).
+Technical product data found for SKU 2277751 (29 features).
+ok
+test_source_price_must_agree (test_pipeline.TransformationTests.test_source_price_must_agree) ... Technical product data found for SKU 2230728 (23 features).
+ok
+test_ssd_and_ram_transformations (test_pipeline.TransformationTests.test_ssd_and_ram_transformations) ... Technical product data found for SKU 2155505 (23 features).
+Technical product data found for SKU 2199070 (25 features).
+Technical product data found for SKU 2155505 (23 features).
+Technical product data found for SKU 2230728 (23 features).
+ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 2.207s
+
+OK
