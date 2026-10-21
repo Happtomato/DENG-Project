@@ -162,6 +162,9 @@ class CatalogueTests(unittest.TestCase):
             result=report()
             p.collect(catalog,client,args,CONFIG,result)
             self.assertEqual(len(result['errors']),1)
+            self.assertEqual(result['errors'][0]['kind'],'http')
+            self.assertIn('started_at',result['errors'][0])
+            self.assertIn('finished_at',result['errors'][0])
             self.assertEqual(result['accepted'],1)
             self.assertEqual(catalog['products']['mediamarkt:145381326']['status'],'candidate')
 
@@ -215,6 +218,15 @@ class CatalogueTests(unittest.TestCase):
 
 
 class HttpTests(unittest.TestCase):
+    def test_disconnection_is_network_error_without_automatic_retry(self):
+        c=p.Client()
+        c.session.get=Mock(side_effect=p.mm.requests.ConnectionError('remote closed'))
+        with self.assertRaises(p.FetchError) as caught:
+            c.request(url(RAM))
+        self.assertEqual(caught.exception.kind,'network')
+        self.assertEqual(c.session.get.call_count,1)
+        c.close()
+
     def test_blocked_requests_abort_without_retry(self):
         for status in (403,429,503):
             c=p.Client()

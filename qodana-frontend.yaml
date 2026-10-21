@@ -1,0 +1,10 @@
+version: "1.0"
+linter: qodana-js
+onlyDirectory: frontend
+profile:
+  name: qodana.recommended
+include:
+  - name: Eslint
+bootstrap: |
+  set -eu
+  npm --prefix frontend ci

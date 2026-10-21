@@ -98,7 +98,13 @@
 						: tx('Die Preisgeschichte wächst mit jeder echten Beobachtung.', prefs.lang)}
 				</p>
 			</div>
-			<div class="featured-chart"><PriceChart history={data.featured.history} height={275} /></div>
+			<div class="featured-chart">
+				<PriceChart
+					history={data.featured.history}
+					chartHistory={data.featured.chartHistory}
+					height={275}
+				/>
+			</div>
 		{:else}
 			<div class="empty">
 				<FlaskConical size={28} />

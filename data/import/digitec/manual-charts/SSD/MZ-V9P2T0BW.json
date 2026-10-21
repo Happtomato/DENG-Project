@@ -1,0 +1,4570 @@
+{
+	"data": {
+		"productById": {
+			"priceHistory": {
+				"points": [
+					{
+						"price": null,
+						"validFrom": "2022-09-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "306.00",
+								"parsedValue": 306
+							},
+							"amountExclusive": 284.12,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-09-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "331.00",
+								"parsedValue": 331
+							},
+							"amountExclusive": 307.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-09-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "329.00",
+								"parsedValue": 329
+							},
+							"amountExclusive": 305.48,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-09-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "313.00",
+								"parsedValue": 313
+							},
+							"amountExclusive": 290.62,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-09-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "329.00",
+								"parsedValue": 329
+							},
+							"amountExclusive": 305.48,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-09-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "323.00",
+								"parsedValue": 323
+							},
+							"amountExclusive": 299.91,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-09-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "324.00",
+								"parsedValue": 324
+							},
+							"amountExclusive": 300.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-09-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "323.00",
+								"parsedValue": 323
+							},
+							"amountExclusive": 299.91,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-09-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "311.00",
+								"parsedValue": 311
+							},
+							"amountExclusive": 288.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-10-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "299.00",
+								"parsedValue": 299
+							},
+							"amountExclusive": 277.62,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-10-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "309.00",
+								"parsedValue": 309
+							},
+							"amountExclusive": 286.91,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-11-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "299.00",
+								"parsedValue": 299
+							},
+							"amountExclusive": 277.62,
+							"currency": "CHF"
+						},
+						"validFrom": "2022-11-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "295.00",
+								"parsedValue": 295
+							},
+							"amountExclusive": 273.91,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-01-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "288.00",
+								"parsedValue": 288
+							},
+							"amountExclusive": 267.41,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-01-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "219.00",
+								"parsedValue": 219
+							},
+							"amountExclusive": 203.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-02-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "235.00",
+								"parsedValue": 235
+							},
+							"amountExclusive": {
+								"source": "218.20",
+								"parsedValue": 218.2
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-02-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "223.00",
+								"parsedValue": 223
+							},
+							"amountExclusive": 207.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-02-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "221.00",
+								"parsedValue": 221
+							},
+							"amountExclusive": {
+								"source": "205.20",
+								"parsedValue": 205.2
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-03-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "218.00",
+								"parsedValue": 218
+							},
+							"amountExclusive": 202.41,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-03-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "219.00",
+								"parsedValue": 219
+							},
+							"amountExclusive": 203.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-03-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "218.00",
+								"parsedValue": 218
+							},
+							"amountExclusive": 202.41,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-03-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "214.00",
+								"parsedValue": 214
+							},
+							"amountExclusive": {
+								"source": "198.70",
+								"parsedValue": 198.7
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-03-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "217.00",
+								"parsedValue": 217
+							},
+							"amountExclusive": 201.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-03-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "189.00",
+								"parsedValue": 189
+							},
+							"amountExclusive": 175.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-03-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "217.00",
+								"parsedValue": 217
+							},
+							"amountExclusive": 201.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-03-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "215.00",
+								"parsedValue": 215
+							},
+							"amountExclusive": 199.63,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-04-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "205.00",
+								"parsedValue": 205
+							},
+							"amountExclusive": 190.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-04-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "215.00",
+								"parsedValue": 215
+							},
+							"amountExclusive": 199.63,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-04-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "203.00",
+								"parsedValue": 203
+							},
+							"amountExclusive": 188.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-04-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "208.00",
+								"parsedValue": 208
+							},
+							"amountExclusive": 193.13,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-04-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "202.00",
+								"parsedValue": 202
+							},
+							"amountExclusive": 187.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-04-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "208.00",
+								"parsedValue": 208
+							},
+							"amountExclusive": 193.13,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-04-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "202.00",
+								"parsedValue": 202
+							},
+							"amountExclusive": 187.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-04-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "199.00",
+								"parsedValue": 199
+							},
+							"amountExclusive": 184.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-05-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": {
+								"source": "166.20",
+								"parsedValue": 166.2
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-05-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "189.00",
+								"parsedValue": 189
+							},
+							"amountExclusive": 175.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-05-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": {
+								"source": "166.20",
+								"parsedValue": 166.2
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-05-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 163.42,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": {
+								"source": "159.70",
+								"parsedValue": 159.7
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "170.00",
+								"parsedValue": 170
+							},
+							"amountExclusive": 157.85,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "171.00",
+								"parsedValue": 171
+							},
+							"amountExclusive": 158.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": {
+								"source": "159.70",
+								"parsedValue": 159.7
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "171.00",
+								"parsedValue": 171
+							},
+							"amountExclusive": 158.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": {
+								"source": "159.70",
+								"parsedValue": 159.7
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.63,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 162.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 163.42,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-19T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "171.00",
+								"parsedValue": 171
+							},
+							"amountExclusive": 158.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": {
+								"source": "159.70",
+								"parsedValue": 159.7
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "170.00",
+								"parsedValue": 170
+							},
+							"amountExclusive": 157.85,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "171.00",
+								"parsedValue": 171
+							},
+							"amountExclusive": 158.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-06-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 138.35,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-07-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "171.00",
+								"parsedValue": 171
+							},
+							"amountExclusive": 158.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-07-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 170.52,
+							"amountExclusive": 158.33,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-07-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 170.58,
+							"amountExclusive": 158.38,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-07-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "171.00",
+								"parsedValue": 171
+							},
+							"amountExclusive": 158.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-07-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 169.58,
+							"amountExclusive": 157.46,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-07-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "167.00",
+								"parsedValue": 167
+							},
+							"amountExclusive": 155.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-07-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.92,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-07-31T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "170.00",
+								"parsedValue": 170
+							},
+							"amountExclusive": 157.85,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.10",
+								"parsedValue": 165.1
+							},
+							"amountExclusive": {
+								"source": "153.30",
+								"parsedValue": 153.3
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 164.95,
+							"amountExclusive": 153.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "170.00",
+								"parsedValue": 170
+							},
+							"amountExclusive": 157.85,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 164.06,
+							"amountExclusive": 152.33,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 165.85,
+							"amountExclusive": 153.99,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 165.14,
+							"amountExclusive": 153.33,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 165.79,
+							"amountExclusive": 153.94,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 162.98,
+							"amountExclusive": 151.33,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 165.83,
+							"amountExclusive": 153.97,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "170.00",
+								"parsedValue": 170
+							},
+							"amountExclusive": 157.85,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-08-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 151.35,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-09-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.63,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-09-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 138.35,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-09-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "146.00",
+								"parsedValue": 146
+							},
+							"amountExclusive": 135.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-09-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.63,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-09-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": {
+								"source": "153.20",
+								"parsedValue": 153.2
+							},
+							"currency": "CHF"
+						},
+						"validFrom": "2023-09-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 150.42,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-09-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "139.00",
+								"parsedValue": 139
+							},
+							"amountExclusive": 129.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-10-19T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 150.42,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-10-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "151.0",
+								"parsedValue": 151
+							},
+							"amountExclusive": 140.2,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.92,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "150.00",
+								"parsedValue": 150
+							},
+							"amountExclusive": 139.28,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "150.00",
+								"parsedValue": 150
+							},
+							"amountExclusive": 139.28,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.92,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-19T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "150.00",
+								"parsedValue": 150
+							},
+							"amountExclusive": 139.28,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "151.0",
+								"parsedValue": 151
+							},
+							"amountExclusive": 140.2,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "151.0",
+								"parsedValue": 151
+							},
+							"amountExclusive": 140.2,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "153.00",
+								"parsedValue": 153
+							},
+							"amountExclusive": 142.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "153.00",
+								"parsedValue": 153
+							},
+							"amountExclusive": 142.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.92,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.92,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-11-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.0",
+								"parsedValue": 165
+							},
+							"amountExclusive": 153.2,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.0",
+								"parsedValue": 165
+							},
+							"amountExclusive": 153.2,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 161,
+							"amountExclusive": 161,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 161,
+							"amountExclusive": 161,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.0",
+								"parsedValue": 165
+							},
+							"amountExclusive": 153.2,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 166,
+							"amountExclusive": 166,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "161.00",
+								"parsedValue": 161
+							},
+							"amountExclusive": 149.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.0",
+								"parsedValue": 165
+							},
+							"amountExclusive": 153.2,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 169,
+							"amountExclusive": 169,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-19T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 169,
+							"amountExclusive": 169,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 179,
+							"amountExclusive": 179,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 179,
+							"amountExclusive": 179,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "167.00",
+								"parsedValue": 167
+							},
+							"amountExclusive": 155.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "167.00",
+								"parsedValue": 167
+							},
+							"amountExclusive": 155.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2023-12-31T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 169,
+							"amountExclusive": 169,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "177.00",
+								"parsedValue": 177
+							},
+							"amountExclusive": 163.74,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "177.00",
+								"parsedValue": 177
+							},
+							"amountExclusive": 163.74,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "168.00",
+								"parsedValue": 168
+							},
+							"amountExclusive": 155.41,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "168.00",
+								"parsedValue": 168
+							},
+							"amountExclusive": 155.41,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "158.00",
+								"parsedValue": 158
+							},
+							"amountExclusive": 146.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "152.00",
+								"parsedValue": 152
+							},
+							"amountExclusive": 140.61,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "152.00",
+								"parsedValue": 152
+							},
+							"amountExclusive": 140.61,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-01-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "157.00",
+								"parsedValue": 157
+							},
+							"amountExclusive": 145.24,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "157.00",
+								"parsedValue": 157
+							},
+							"amountExclusive": 145.24,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 162.81,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 162.81,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "167.00",
+								"parsedValue": 167
+							},
+							"amountExclusive": 154.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "167.00",
+								"parsedValue": 167
+							},
+							"amountExclusive": 154.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "158.00",
+								"parsedValue": 158
+							},
+							"amountExclusive": 146.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "164.00",
+								"parsedValue": 164
+							},
+							"amountExclusive": 151.71,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-02-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "157.00",
+								"parsedValue": 157
+							},
+							"amountExclusive": 145.24,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "155.00",
+								"parsedValue": 155
+							},
+							"amountExclusive": 143.39,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "155.00",
+								"parsedValue": 155
+							},
+							"amountExclusive": 143.39,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "158.00",
+								"parsedValue": 158
+							},
+							"amountExclusive": 146.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "158.00",
+								"parsedValue": 158
+							},
+							"amountExclusive": 146.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-19T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "156.00",
+								"parsedValue": 156
+							},
+							"amountExclusive": 144.31,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "156.00",
+								"parsedValue": 156
+							},
+							"amountExclusive": 144.31,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "156.00",
+								"parsedValue": 156
+							},
+							"amountExclusive": 144.31,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "155.00",
+								"parsedValue": 155
+							},
+							"amountExclusive": 143.39,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "158.00",
+								"parsedValue": 158
+							},
+							"amountExclusive": 146.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "156.00",
+								"parsedValue": 156
+							},
+							"amountExclusive": 144.31,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "167.00",
+								"parsedValue": 167
+							},
+							"amountExclusive": 154.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "161.00",
+								"parsedValue": 161
+							},
+							"amountExclusive": 148.94,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-03-31T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "170.00",
+								"parsedValue": 170
+							},
+							"amountExclusive": 157.26,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "170.00",
+								"parsedValue": 170
+							},
+							"amountExclusive": 157.26,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "171.00",
+								"parsedValue": 171
+							},
+							"amountExclusive": 158.19,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 162.81,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 162.81,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 162.81,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "164.00",
+								"parsedValue": 164
+							},
+							"amountExclusive": 151.71,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-19T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-04-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "155.00",
+								"parsedValue": 155
+							},
+							"amountExclusive": 143.39,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "155.00",
+								"parsedValue": 155
+							},
+							"amountExclusive": 143.39,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "157.00",
+								"parsedValue": 157
+							},
+							"amountExclusive": 145.24,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "157.00",
+								"parsedValue": 157
+							},
+							"amountExclusive": 145.24,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-05-31T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "164.00",
+								"parsedValue": 164
+							},
+							"amountExclusive": 151.71,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-06-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-06-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-06-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-06-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 161.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-06-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 161.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-06-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-06-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-06-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-07-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-07-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-07-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-07-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "183.00",
+								"parsedValue": 183
+							},
+							"amountExclusive": 169.29,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 161.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 161.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "178.00",
+								"parsedValue": 178
+							},
+							"amountExclusive": 164.66,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "168.00",
+								"parsedValue": 168
+							},
+							"amountExclusive": 155.41,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "168.00",
+								"parsedValue": 168
+							},
+							"amountExclusive": 155.41,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-08-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "170.00",
+								"parsedValue": 170
+							},
+							"amountExclusive": 157.26,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "177.00",
+								"parsedValue": 177
+							},
+							"amountExclusive": 163.74,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 162.81,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "176.00",
+								"parsedValue": 176
+							},
+							"amountExclusive": 162.81,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-09-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "135.00",
+								"parsedValue": 135
+							},
+							"amountExclusive": 124.88,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 161.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 161.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "154.00",
+								"parsedValue": 154
+							},
+							"amountExclusive": 142.46,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "154.00",
+								"parsedValue": 154
+							},
+							"amountExclusive": 142.46,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "153.00",
+								"parsedValue": 153
+							},
+							"amountExclusive": 141.54,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "144.00",
+								"parsedValue": 144
+							},
+							"amountExclusive": 133.21,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "144.00",
+								"parsedValue": 144
+							},
+							"amountExclusive": 133.21,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "153.00",
+								"parsedValue": 153
+							},
+							"amountExclusive": 141.54,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-19T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-10-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "129.00",
+								"parsedValue": 129
+							},
+							"amountExclusive": 119.33,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-11-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-11-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "166.00",
+								"parsedValue": 166
+							},
+							"amountExclusive": 153.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-12-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "166.00",
+								"parsedValue": 166
+							},
+							"amountExclusive": 153.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-12-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "139.00",
+								"parsedValue": 139
+							},
+							"amountExclusive": 128.58,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-12-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "139.00",
+								"parsedValue": 139
+							},
+							"amountExclusive": 128.58,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-12-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "166.00",
+								"parsedValue": 166
+							},
+							"amountExclusive": 153.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-12-19T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "166.00",
+								"parsedValue": 166
+							},
+							"amountExclusive": 153.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2024-12-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 161.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "175.00",
+								"parsedValue": 175
+							},
+							"amountExclusive": 161.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "174.00",
+								"parsedValue": 174
+							},
+							"amountExclusive": 160.96,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "172.00",
+								"parsedValue": 172
+							},
+							"amountExclusive": 159.11,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "161.00",
+								"parsedValue": 161
+							},
+							"amountExclusive": 148.94,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-01-31T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "161.00",
+								"parsedValue": 161
+							},
+							"amountExclusive": 148.94,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "161.00",
+								"parsedValue": 161
+							},
+							"amountExclusive": 148.94,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "161.00",
+								"parsedValue": 161
+							},
+							"amountExclusive": 148.94,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "161.00",
+								"parsedValue": 161
+							},
+							"amountExclusive": 148.94,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "166.00",
+								"parsedValue": 166
+							},
+							"amountExclusive": 153.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "158.00",
+								"parsedValue": 158
+							},
+							"amountExclusive": 146.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "158.00",
+								"parsedValue": 158
+							},
+							"amountExclusive": 146.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "163.00",
+								"parsedValue": 163
+							},
+							"amountExclusive": 150.79,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-02-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-03-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "165.00",
+								"parsedValue": 165
+							},
+							"amountExclusive": 152.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-03-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "167.00",
+								"parsedValue": 167
+							},
+							"amountExclusive": 154.49,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-03-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-03-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "162.00",
+								"parsedValue": 162
+							},
+							"amountExclusive": 149.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-03-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-03-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "160.00",
+								"parsedValue": 160
+							},
+							"amountExclusive": 148.01,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-03-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "166.00",
+								"parsedValue": 166
+							},
+							"amountExclusive": 153.56,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-03-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-04-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-04-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "154.00",
+								"parsedValue": 154
+							},
+							"amountExclusive": 142.46,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-04-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "154.00",
+								"parsedValue": 154
+							},
+							"amountExclusive": 142.46,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-04-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "156.00",
+								"parsedValue": 156
+							},
+							"amountExclusive": 144.31,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-04-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "156.00",
+								"parsedValue": 156
+							},
+							"amountExclusive": 144.31,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-04-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "155.00",
+								"parsedValue": 155
+							},
+							"amountExclusive": 143.39,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-04-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "155.00",
+								"parsedValue": 155
+							},
+							"amountExclusive": 143.39,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-05-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "154.00",
+								"parsedValue": 154
+							},
+							"amountExclusive": 142.46,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-05-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "154.00",
+								"parsedValue": 154
+							},
+							"amountExclusive": 142.46,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-05-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-05-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "159.00",
+								"parsedValue": 159
+							},
+							"amountExclusive": 147.09,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-05-17T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "147.00",
+								"parsedValue": 147
+							},
+							"amountExclusive": 135.99,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-06-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "147.00",
+								"parsedValue": 147
+							},
+							"amountExclusive": 135.99,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-06-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-06-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-06-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "145.00",
+								"parsedValue": 145
+							},
+							"amountExclusive": 134.14,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "145.00",
+								"parsedValue": 145
+							},
+							"amountExclusive": 134.14,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "150.00",
+								"parsedValue": 150
+							},
+							"amountExclusive": 138.76,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "142.00",
+								"parsedValue": 142
+							},
+							"amountExclusive": 131.36,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "142.00",
+								"parsedValue": 142
+							},
+							"amountExclusive": 131.36,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "144.00",
+								"parsedValue": 144
+							},
+							"amountExclusive": 133.21,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "144.00",
+								"parsedValue": 144
+							},
+							"amountExclusive": 133.21,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "145.00",
+								"parsedValue": 145
+							},
+							"amountExclusive": 134.14,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "146.00",
+								"parsedValue": 146
+							},
+							"amountExclusive": 135.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "146.00",
+								"parsedValue": 146
+							},
+							"amountExclusive": 135.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "146.20",
+								"parsedValue": 146.2
+							},
+							"amountExclusive": 135.25,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "147.00",
+								"parsedValue": 147
+							},
+							"amountExclusive": 135.99,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-25T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-07-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "152.00",
+								"parsedValue": 152
+							},
+							"amountExclusive": 140.61,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-08-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "152.00",
+								"parsedValue": 152
+							},
+							"amountExclusive": 140.61,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-08-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "156.00",
+								"parsedValue": 156
+							},
+							"amountExclusive": 144.31,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-08-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "148.00",
+								"parsedValue": 148
+							},
+							"amountExclusive": 136.91,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-08-31T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "148.00",
+								"parsedValue": 148
+							},
+							"amountExclusive": 136.91,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-09-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "153.00",
+								"parsedValue": 153
+							},
+							"amountExclusive": 141.54,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-09-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "143.00",
+								"parsedValue": 143
+							},
+							"amountExclusive": 132.28,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-09-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "143.00",
+								"parsedValue": 143
+							},
+							"amountExclusive": 132.28,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "144.00",
+								"parsedValue": 144
+							},
+							"amountExclusive": 133.21,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "144.00",
+								"parsedValue": 144
+							},
+							"amountExclusive": 133.21,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "146.00",
+								"parsedValue": 146
+							},
+							"amountExclusive": 135.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-11T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "146.00",
+								"parsedValue": 146
+							},
+							"amountExclusive": 135.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "147.00",
+								"parsedValue": 147
+							},
+							"amountExclusive": 135.99,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-14T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "147.00",
+								"parsedValue": 147
+							},
+							"amountExclusive": 135.99,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "149.00",
+								"parsedValue": 149
+							},
+							"amountExclusive": 137.84,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-10-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "169.00",
+								"parsedValue": 169
+							},
+							"amountExclusive": 156.34,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-11-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "173.00",
+								"parsedValue": 173
+							},
+							"amountExclusive": 160.04,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-11-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "179.00",
+								"parsedValue": 179
+							},
+							"amountExclusive": 165.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-11-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "183.00",
+								"parsedValue": 183
+							},
+							"amountExclusive": 169.29,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-11-28T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "186.00",
+								"parsedValue": 186
+							},
+							"amountExclusive": 172.06,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-11-29T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "198.00",
+								"parsedValue": 198
+							},
+							"amountExclusive": 183.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-12-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "202.00",
+								"parsedValue": 202
+							},
+							"amountExclusive": 186.86,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-12-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "215.00",
+								"parsedValue": 215
+							},
+							"amountExclusive": 198.89,
+							"currency": "CHF"
+						},
+						"validFrom": "2025-12-18T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "218.00",
+								"parsedValue": 218
+							},
+							"amountExclusive": 201.67,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-01-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "223.00",
+								"parsedValue": 223
+							},
+							"amountExclusive": 206.29,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-01-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "230.00",
+								"parsedValue": 230
+							},
+							"amountExclusive": 212.77,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-01-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "250.00",
+								"parsedValue": 250
+							},
+							"amountExclusive": 231.27,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-01-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "219.00",
+								"parsedValue": 219
+							},
+							"amountExclusive": 202.59,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-01-30T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "211.00",
+								"parsedValue": 211
+							},
+							"amountExclusive": 195.19,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-01-31T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "258.00",
+								"parsedValue": 258
+							},
+							"amountExclusive": 238.67,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "276.00",
+								"parsedValue": 276
+							},
+							"amountExclusive": 255.32,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-05T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 283.43,
+							"amountExclusive": 262.19,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-12T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 289.57,
+							"amountExclusive": 267.87,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-21T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 297.45,
+							"amountExclusive": 275.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-22T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 292.57,
+							"amountExclusive": 270.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-23T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 297.45,
+							"amountExclusive": 275.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-24T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 292.57,
+							"amountExclusive": 270.64,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-26T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 297.45,
+							"amountExclusive": 275.16,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-02-27T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 295.79,
+							"amountExclusive": 273.63,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-03-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 301.17,
+							"amountExclusive": 278.6,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-03-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 345.84,
+							"amountExclusive": 319.93,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-03-08T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 335.99,
+							"amountExclusive": 310.81,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-03-13T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": 345.84,
+							"amountExclusive": 319.93,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-03-15T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "299.0",
+								"parsedValue": 299
+							},
+							"amountExclusive": 276.6,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-03-16T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "292.00",
+								"parsedValue": 292
+							},
+							"amountExclusive": 270.12,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-03-20T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "289.00",
+								"parsedValue": 289
+							},
+							"amountExclusive": 267.35,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-04-09T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "288.00",
+								"parsedValue": 288
+							},
+							"amountExclusive": 266.42,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-06-02T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "289.00",
+								"parsedValue": 289
+							},
+							"amountExclusive": 267.35,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-06-03T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "290.00",
+								"parsedValue": 290
+							},
+							"amountExclusive": 268.27,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-06-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "293.00",
+								"parsedValue": 293
+							},
+							"amountExclusive": 271.05,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-06-06T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "296.00",
+								"parsedValue": 296
+							},
+							"amountExclusive": 273.82,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-06-10T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "298.00",
+								"parsedValue": 298
+							},
+							"amountExclusive": 275.67,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-07-07T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "295.0",
+								"parsedValue": 295
+							},
+							"amountExclusive": 272.9,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-07-31T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "305.00",
+								"parsedValue": 305
+							},
+							"amountExclusive": 282.15,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-08-01T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "319.0",
+								"parsedValue": 319
+							},
+							"amountExclusive": 295.1,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-08-04T12:00:00Z"
+					},
+					{
+						"price": {
+							"__typename": "VatMoney",
+							"amountInclusive": {
+								"source": "329.00",
+								"parsedValue": 329
+							},
+							"amountExclusive": 304.35,
+							"currency": "CHF"
+						},
+						"validFrom": "2026-10-17T12:00:00Z"
+					}
+				],
+				"hasHistoryOlderThan3Months": true
+			},
+			"id": "UHJvZHVjdApkMjIwOTc3MjE6MTo0MDY4MDI=",
+			"promotion": null,
+			"offers": {
+				"newOffers": {
+					"cheapestOffer": {
+						"product": {
+							"defaultCustomerPrice": {
+								"currency": "CHF",
+								"amountInclusive": {
+									"source": "329.00",
+									"parsedValue": 329
+								},
+								"amountExclusive": 304.35
+							},
+							"id": "UHJvZHVjdApkMjIwOTc3MjE6MTo0MDY4MDI="
+						}
+					}
+				}
+			},
+			"name": "990 Pro",
+			"price": {
+				"currency": "CHF",
+				"amountInclusive": {
+					"source": "329.00",
+					"parsedValue": 329
+				},
+				"amountExclusive": 304.35
+			}
+		}
+	}
+}

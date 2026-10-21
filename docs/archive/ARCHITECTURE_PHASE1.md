@@ -95,7 +95,7 @@ Pfadkonvention: `data/raw/<retailer>/...json`. Bei MediaMarkt-Batches ist der Na
 | `raw_payload`, `source_document`, `technical_payload` | Originaldaten und Extraktionsbelege |
 | `provenance` | Mapper-Version und bei Digitec Referenz zur erteilten Erlaubnis/Datenvereinbarung |
 
-Ein vollständiges Digitec-Austauschformat und Regeln stehen in `docs/DIGITEC_IMPORT.md`. Beispielwerte werden nicht als Produktionspreise geladen. Eine neue Parser-Auswertung alter HTML-Dateien ist keine neue Preisbeobachtung; der einfache `saved_html`-Modus wird deshalb von der Ingestion nicht als Tageserhebung akzeptiert.
+Ein damaliger Digitec-Austauschentwurf und Regeln stehen in [DIGITEC_IMPORT.md](DIGITEC_IMPORT.md). Beispielwerte werden nicht als Produktionspreise geladen. Eine neue Parser-Auswertung alter HTML-Dateien ist keine neue Preisbeobachtung; der einfache `saved_html`-Modus wird deshalb von der Ingestion nicht als Tageserhebung akzeptiert.
 
 ## G. Pipeline-Architektur
 

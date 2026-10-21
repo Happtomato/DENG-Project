@@ -1,343 +1,70 @@
-# Swiss Consumer Electronics Price Dataset
+# PC Price Lab — Swiss PC hardware prices
 
-**Data Engineering Project – HS26**
+**HSLU Data Engineering, autumn 2026 · Midterm deadline: 22 October 2026, 15:30 Europe/Zurich**
 
-## Project Overview
+This small batch pipeline collects evidenced Swiss prices for GPUs, desktop RAM, and internal NVMe SSDs. PostgreSQL is the data product; a read-only SvelteKit frontend lets us inspect products, retailer offers, and price histories. Cloud infrastructure is reserved for the final project.
 
-This project builds an end-to-end batch data pipeline for collecting,
-processing and analysing historical prices of consumer electronics in the
-Swiss market.
+## Start locally
 
-The dataset focuses on three product categories:
+Docker Desktop with Linux containers and Docker Compose are required. Node.js 24 and npm are needed only for local frontend checks; Compose builds the frontend in a container.
 
-- GPUs: NVIDIA RTX 30 series and newer, AMD RX 6000 series and newer
-- RAM: DDR4 and DDR5
-- SSDs: NVMe SSDs using PCIe 3.0–5.0
+```sh
+test -f .env || cp .env.example .env
+# On a fresh setup, choose a local POSTGRES_PASSWORD in .env.
+docker compose up -d --build
+docker compose ps
+docker compose run --rm --no-deps pipeline python -m backend.flow verify
+```
 
-The initial target is approximately 100 products per category.
+Verification correctly reports an empty database on a fresh install. To inspect the supplied, real-data snapshot immediately, import it **once into empty tables**:
 
-The project focuses on Swiss retailers such as Digitec, Interdiscount,
-Brack and MediaMarkt.
+```sh
+docker compose run --rm --no-deps pipeline python -m backend.flow seed-import
+docker compose run --rm --no-deps pipeline python -m backend.flow verify
+```
 
-Excluded products:
+The import validates checksums and row counts and refuses to overwrite populated tables. Alternatively, `replay` rebuilds MediaMarkt records from retained Raw JSON; this demonstrates the ingestion path itself. The [runbook](docs/RUN_COMMANDS.md) gives the exact commands and SQL checks. The frontend runs at [localhost:3000](http://localhost:3000), Prefect at [localhost:4200](http://localhost:4200). `make up`, `make verify`, `make check`, and `make test` are shortcuts; `make stop` preserves volumes.
 
-- Used or refurbished products
-- Enterprise/server hardware
-- DDR3 and older RAM
-- HDDs
-- External SSDs
+## Data flow and code map
 
+```text
+MediaMarkt HTML/JSON-LD → Raw JSON → validation and transformation → PostgreSQL
+                               Prefect: Collect → Transform → Load
+Manually captured Digitec files ────────────────→ checked offline import
+PostgreSQL → read-only SvelteKit views / explicit Parquet snapshot export
+```
 
-## Problem & Use Case
+The active Python backend has a small set of distinct responsibilities:
 
-Historical pricing information for Swiss computer components is fragmented
-across different retailers and is difficult to analyse consistently over time.
+| Path | Responsibility |
+| --- | --- |
+| `backend/flow.py` | One CLI entry point and Prefect flow; DISCOVER, INITIAL, DAILY, REPLAY, verification, and explicit seed commands |
+| `backend/retailers/mediamarkt/` | HTTP collection, listing discovery, JSON-LD parsing, and product scope |
+| `backend/retailers/digitec/importer.py` | Offline import of manually captured or explicitly authorized Digitec files; no Digitec scraper |
+| `backend/transform.py` | Validate and normalize Raw observations |
+| `backend/ingestion.py` | Transactional, idempotent PostgreSQL loading |
+| `backend/database.py` | Connection, schema migrations, and verification queries |
+| `backend/seed.py` | Explicit Parquet snapshot export/import for a fresh database; outside daily collection |
+| `backend/tests/` | Offline regression tests and saved fixtures |
 
-The goal of this project is to create a curated historical price dataset that
-makes Swiss component pricing more transparent.
+`data/raw/` contains source evidence and must keep its paths for replay and database provenance. `data/debug/` contains saved HTML used for diagnosis and Raw verification. `data/catalog/` holds selected URLs, discovery state, and run reports. `data/import/` holds manually supplied Digitec material. `data/migrations/` and `data/initialization.sql` define the schema; `data/queries/` contains reviewer SQL; `data/seed/` contains a checked Parquet snapshot. The `archive/` and `evidence/` subdirectories preserve earlier project decisions and test results. See the [architecture](docs/ARCHITECTURE.md) for the dependency map.
 
-The dataset should enable questions such as:
+## Collection modes and data meaning
 
-- How have product prices evolved over time?
-- How do prices differ between retailers?
-- How do different product generations compare?
-- How do product releases and market events affect prices?
-- What is the price per unit, such as CHF/GB, for comparable products?
+DISCOVER stores product links in the candidate catalog; it does not import prices. INITIAL validates selected new products and creates products, retailer offers, and first observations. DAILY reads already imported MediaMarkt URLs from PostgreSQL and records new observations. REPLAY reprocesses retained Raw files without HTTP. A repeated Raw file does not create another observation; a genuine new daily fetch with an unchanged price does. The scheduled Prefect deployment runs only DAILY at **03:00 Europe/Zurich**. New checkouts register it paused by default; this project's local deployment was enabled at the team's request on 20 October.
 
+The transformation checks identity, source timestamps, and positive CHF prices, and normalizes SSD terabytes and RAM kit capacity to GB. Missing technical values remain unknown. This makes price-per-capacity comparisons meaningful without inventing product facts.
 
-### Intended Users
+MediaMarkt Switzerland is the active HTML/JSON-LD source. The default batch attempts at most three products per category and 20 HTTP requests in total, with at least three seconds between requests and robots.txt checks. Digitec is a future preferred product-master source, but automated access has **not been authorized**. The current proof of concept uses manually saved evidence. Digitec `validFrom` points are historical **retailer price changes** in `retailer_price_change`, not our daily measurements in `price_history`; seven of eight example products therefore have no current Digitec price.
 
-The primary users are consumers and researchers interested in historical
-Swiss consumer-electronics pricing and market behaviour.
+## Verification, limitations, and submission
 
+The local read-only check on 21 October showed **26 products, 34 retailer offers, 75 actual price observations, and 3,752 separate historical Digitec price-change points**. The scheduled DAILY run added five MediaMarkt observations but was marked partial/failed because three other fetches disconnected; a later DAILY run added seven more. `verify` found no invalid CHF prices or duplicate offer/timestamp pairs. The bundled seed is an earlier 20 October snapshot with 63 observations. Counts change after new runs; use [verification SQL](data/queries/verification.sql) and the [midterm audit](docs/MIDTERM_AUDIT.md) for current checks.
 
-### Expected Data Product
+A sleeping laptop cannot reliably run a local schedule. The small request budget does not cover the entire catalog each day. Automatic Digitec scraping, BRACK, Interdiscount, Terraform, GCS, and BigQuery are outside this midterm scope. The Parquet bundle is a reproducibility snapshot, not a substitute for Raw evidence or a new fetch. The team still needs to test a fresh checkout on another computer, agree on retailer usage limits, prepare a commit/tag, and submit through ILIAS.
 
-The main data product will be a curated analytical dataset stored in BigQuery,
-containing standardized products, specifications, retailers and historical
-price observations.
-
-The curated data will support:
-
-- Historical price analysis
-- Retailer comparisons
-- Price-per-unit metrics
-- Volatility analysis
-- Release and market-event analysis
-- Dashboards and visualisations
-
-Price forecasting may be implemented as an additional analytical extension
-if sufficient historical data is available.
-
-
-## Data Sources
-
-The pipeline will collect product and pricing information from Swiss
-electronics retailers.
-
-Initial target retailers:
-
-- Digitec
-- Interdiscount
-- Brack
-- MediaMarkt
-
-Data will be obtained from available retailer APIs and/or website data.
-
-Expected source formats include:
-
-- JSON
-- XML
-- HTML
-
-Product information will be matched across sources primarily using EAN and
-MPN identifiers.
-
-The planned ingestion frequency is one batch per day.
-
-
-### Data Characteristics
-
-The main entities are:
-
-- Products
-- Brands
-- Retailers
-- Product specifications
-- Price history
-
-Each price observation will be associated with a canonical product and
-retailer.
-
-Relevant source-data risks include:
-
-- Missing or inconsistent EAN/MPN identifiers
-- Duplicate product listings
-- Missing specifications
-- Temporary product unavailability
-- Unexpected price jumps
-- Changes to retailer websites or source formats
-- Incomplete historical data
-
-
-## Ingestion Strategy
-
-The project uses batch ingestion.
-
-
-### Initial Full Load
-
-The initial load establishes the available products, specifications and
-available price history.
-
-
-### Incremental Daily Load
-
-After the initial load, the pipeline will run daily and append new price
-observations while preserving listings from multiple retailers.
-
-Retailer-specific ingestion logic will be implemented as modular Python
-components so individual sources can be changed without redesigning the
-entire pipeline.
-
-The pipeline will include validation, logging and failure handling.
-
-The planned workflow orchestration layer will coordinate dependencies and
-support retries and reruns/backfills where appropriate.
-
-
-## Data Quality
-
-Automated data-quality checks will be applied before data is published to the
-analytical layer.
-
-Planned checks include:
-
-- Price > 0
-- Valid product and retailer identifiers
-- Duplicate detection
-- EAN/MPN validation
-- Price-jump detection
-- Availability checks
-- Missing specification detection
-
-
-## Architecture v0.1
-
-The planned high-level pipeline is:
-
-    Retailer APIs / Websites
-              |
-              v
-      Python Batch Ingestion
-              |
-              v
-    Validation & Product Matching
-              |
-       +------+------+
-       |             |
-       v             v
-    PostgreSQL    Google Cloud Storage
-    (local)          (data lake)
-                         |
-                         v
-                   Transformations
-                         |
-                         v
-                      BigQuery
-                         |
-                         v
-                Analytics / Dashboard
-                         |
-                         v
-                Forecasting (optional)
-
-
-### Supporting Components
-
-- PostgreSQL for local development and testing
-- Docker / Docker Compose for reproducible local environments
-- Workflow orchestration for scheduling, dependencies, retries and backfills
-- Google Cloud Storage for cloud data-lake storage
-- BigQuery for curated analytical data
-- Terraform for reproducible Google Cloud infrastructure
-- GitHub for source control and project documentation
-
-This represents Architecture v0.1 and may evolve as implementation experience
-reveals new requirements or constraints.
-
-
-## Risks & Challenges
-
-### Data Availability
-
-Historical data may not be available for every product and retailer.
-
-**Mitigation:** Start with available data and clearly document coverage and
-gaps.
-
-
-### Website Changes
-
-Retailer websites and source structures may change.
-
-**Mitigation:** Use modular retailer connectors and monitoring.
-
-
-### Product Matching
-
-The same product may appear under different names at different retailers.
-
-**Mitigation:** Prefer EAN/MPN identifiers and review unmatched or ambiguous
-records.
-
-
-### Scope Creep
-
-Supporting too many product categories and retailers could make the project
-unmanageable.
-
-**Mitigation:** Maintain strict category and retailer boundaries.
-
-
-### Pipeline Reliability
-
-Individual sources or processing steps may fail.
-
-**Mitigation:** Implement tests, logging, validation, retries and reproducible
-deployments.
-
-
-## Responsibilities
-
-Both team members are expected to understand the complete architecture and
-end-to-end pipeline. Primary ownership is divided as follows:
-
-
-### Dominik
-
-- Develop the Digitec web scraper
-- Set up and configure the local PostgreSQL database
-
-
-### Diego
-
-- Contact and evaluate additional retailers as potential data sources
-- Develop the Python ingestion pipeline for Digitec
-
-
-### Shared
-
-- Architecture decisions
-- Data-quality strategy
-- Documentation
-- Testing and code review
-- Integration of individual components
-- Understanding of the complete end-to-end pipeline
-
-
-## Initial Project Plan / Backlog
-
-### Phase 1 – Foundation
-
-- [ ] Develop the initial Digitec web scraper
-- [ ] Implement the Digitec Python ingestion pipeline
-- [ ] Set up the PostgreSQL database
-- [ ] Define the PostgreSQL schema
-- [ ] Load the initial dataset
-- [ ] Create a reproducible local environment
-
-
-### Phase 2 – Expand & Validate
-
-- [ ] Contact and evaluate additional retailers
-- [ ] Add additional retailer connectors
-- [ ] Implement EAN/MPN product matching
-- [ ] Implement data-quality checks
-- [ ] Add validation and logging
-- [ ] Introduce workflow orchestration
-- [ ] Support retries and reruns/backfills
-
-
-### Phase 3 – Cloud Pipeline
-
-- [ ] Provision Google Cloud resources with Terraform
-- [ ] Configure Google Cloud Storage
-- [ ] Implement cloud ingestion
-- [ ] Build the transformation pipeline
-- [ ] Create curated BigQuery tables
-
-
-### Phase 4 – Analytics
-
-- [ ] Define analytical KPIs
-- [ ] Implement retailer comparisons
-- [ ] Implement historical price analysis
-- [ ] Implement price-per-unit metrics
-- [ ] Build dashboard / visualisations
-- [ ] Evaluate the feasibility of forecasting models
-
-
-## Current local implementation
-
-The midterm implementation uses the existing MediaMarkt collector, one Prefect
-flow and PostgreSQL. It supports manual discovery, initial collection from the
-catalogue, daily collection from stored product URLs and offline replay. The
-local [PC Price Lab frontend](frontend/README.md) reads this database
-without running a second pipeline. For exact pipeline commands see
-[docs/RUN_COMMANDS.md](docs/RUN_COMMANDS.md). The earlier architecture and
-project plan above record the original proposal; cloud components remain
-future work.
-
-Start the local stack, including the dashboard on [localhost:3000](http://localhost:3000),
-with `docker compose up -d --build` after setting the root `.env`.
-
-### TODO: controlled catalogue expansion
-
-Once MediaMarkt's terms and permitted request volume are clarified, reuse the
-existing discovery with bounded category pagination, save candidates in the
-catalogue, apply the existing hardware/manufacturer scope, and import
-validated candidates through INITIAL. The long-term goal is 200–300 distinct,
-fully validated products; do not add arbitrary products to reach a number.
-DAILY should then continue to use only stored PostgreSQL product URLs. No
-large crawl or access-control bypass is part of the frontend phase.
+- [Runbook](docs/RUN_COMMANDS.md): setup, collection, Prefect, seeds, SQL, and shutdown.
+- [Architecture v0.2](docs/ARCHITECTURE.md): components, schema, and failure behavior.
+- [MediaMarkt adapter](docs/MEDIAMARKT.md): parsing, scope, and collection limits.
+- [Frontend](frontend/README.md): views, API, and local development.
+- [Midterm audit](docs/MIDTERM_AUDIT.md): every checklist item and its evidence.

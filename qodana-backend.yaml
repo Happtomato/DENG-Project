@@ -1,0 +1,8 @@
+version: "1.0"
+linter: qodana-python-community
+onlyDirectory: backend
+profile:
+  name: qodana.recommended
+bootstrap: |
+  set -eu
+  python -m pip install --disable-pip-version-check -r backend/requirements.lock

@@ -4,14 +4,7 @@
 	import { project } from '$lib/identity';
 	import { usePreferences } from '$lib/preferences.svelte';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
-	import {
-		ArrowLeft,
-		ArrowRight,
-		ArrowUpRight,
-		Search,
-		SlidersHorizontal,
-		X
-	} from '@lucide/svelte';
+	import { ArrowLeft, ArrowRight, ArrowUpRight, Search, X } from '@lucide/svelte';
 	import { dateTime, money } from '$lib/format';
 	let { data }: { data: PageData } = $props();
 	const prefs = usePreferences();
@@ -19,6 +12,7 @@
 	let category = $state('');
 	let brand = $state('');
 	let retailer = $state('');
+	let digitecHistory = $state(false);
 	let min = $state('');
 	let max = $state('');
 	let sort = $state('recent');
@@ -28,6 +22,7 @@
 		category = data.filters.category;
 		brand = data.filters.brand;
 		retailer = data.filters.retailer;
+		digitecHistory = data.filters.digitec_history;
 		min = data.filters.min?.toString() ?? '';
 		max = data.filters.max?.toString() ?? '';
 		sort = data.filters.sort;
@@ -39,6 +34,7 @@
 		if (data.filters.category) p.set('category', data.filters.category);
 		if (data.filters.brand) p.set('brand', data.filters.brand);
 		if (data.filters.retailer) p.set('retailer', data.filters.retailer);
+		if (data.filters.digitec_history) p.set('history', 'digitec');
 		if (data.filters.min != null) p.set('min', String(data.filters.min));
 		if (data.filters.max != null) p.set('max', String(data.filters.max));
 		if (data.filters.sort !== 'recent') p.set('sort', data.filters.sort);
@@ -139,7 +135,12 @@
 		</div>
 	</div>
 	<div class="filter-actions">
-		<span><SlidersHorizontal size={14} /> {tx('Filter verfeinern', prefs.lang)}</span>
+		<label class="history-filter"
+			><input type="checkbox" name="history" value="digitec" bind:checked={digitecHistory} />{tx(
+				'Mit Digitec-Preisverlauf',
+				prefs.lang
+			)}</label
+		>
 		<div>
 			<a class="clear" href="/explore"><X size={13} /> {tx('Zurücksetzen', prefs.lang)}</a><button
 				class="btn primary"
@@ -172,7 +173,9 @@
 				href="/explore/{product.product_id}"
 				><div class="card-top">
 					<span class="category {product.category}">{product.category.toUpperCase()}</span
-					><ArrowUpRight size={16} />
+					>{#if product.digitec_history_count}<span class="history-tag"
+							>{tx('Digitec-Verlauf', prefs.lang)}</span
+						>{/if}<ArrowUpRight size={16} />
 				</div>
 				<div class="card-brand">{product.brand}</div>
 				<h3>{product.product_name}</h3>
@@ -277,12 +280,16 @@
 		padding-top: 13px;
 		border-top: 1px solid var(--line);
 	}
-	.filter-actions > span {
+	.history-filter {
 		display: flex;
 		gap: 7px;
 		align-items: center;
-		color: var(--muted);
+		color: var(--muted-high);
 		font-size: 10px;
+		cursor: pointer;
+	}
+	.history-filter input {
+		accent-color: var(--violet);
 	}
 	.filter-actions > div {
 		display: flex;
@@ -348,6 +355,17 @@
 		align-items: center;
 		margin-bottom: 21px;
 		color: var(--muted);
+	}
+	.history-tag {
+		margin-left: auto;
+		margin-right: 10px;
+		padding: 5px 7px;
+		border: 1px solid var(--surface-strong);
+		border-radius: 5px;
+		color: var(--teal, #6bd6d7);
+		font:
+			9px 'DM Mono',
+			monospace;
 	}
 	.product-card:hover .card-top :global(svg) {
 		color: var(--violet);
@@ -443,11 +461,9 @@
 		.loading-grid {
 			grid-template-columns: 1fr;
 		}
-		.filter-actions > span {
-			display: none;
-		}
 		.filter-actions {
-			justify-content: flex-end;
+			gap: 14px;
+			flex-wrap: wrap;
 		}
 	}
 </style>

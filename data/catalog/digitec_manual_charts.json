@@ -1,0 +1,9 @@
+[
+  {"file": "data/import/digitec/manual-charts/GPU/90YV0M81-M0NA00.json", "mediamarkt_sku": "2277758", "mpn": "90YV0M81-M0NA00", "source_name": "ROG Strix GeForce RTX 5070 OC"},
+  {"file": "data/import/digitec/manual-charts/GPU/V532-004R.json", "mediamarkt_sku": "2277995", "mpn": "V532-004R", "source_name": "GeForce RTX 5070 VENTUS 2X OC WHITE"},
+  {"file": "data/import/digitec/manual-charts/RAM/CMK64GX5M2B6000Z30.json", "mediamarkt_sku": "2230728", "mpn": "CMK64GX5M2B6000Z30", "source_name": "Vengeance"},
+  {"file": "data/import/digitec/manual-charts/RAM/G.Skill.json", "mediamarkt_sku": "107353786", "confirmed_by_team": true, "source_name": "Aegis"},
+  {"file": "data/import/digitec/manual-charts/RAM/kingston.json", "mediamarkt_sku": "101374309", "confirmed_by_team": true, "source_name": "FURY Beast"},
+  {"file": "data/import/digitec/manual-charts/SSD/MZ-V9P1T0BW.json", "mediamarkt_sku": "2155505", "mpn": "MZ-V9P1T0BW", "source_name": "990 Pro"},
+  {"file": "data/import/digitec/manual-charts/SSD/MZ-V9P2T0BW.json", "mediamarkt_sku": "2155504", "mpn": "MZ-V9P2T0BW", "source_name": "990 Pro"}
+]

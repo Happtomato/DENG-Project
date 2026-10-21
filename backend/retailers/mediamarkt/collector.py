@@ -31,9 +31,10 @@ class StopRun(mm.ScraperError):
 
 
 class FetchError(mm.ScraperError):
-    def __init__(self, message, status=None):
+    def __init__(self, message, status=None, kind=None):
         super().__init__(message)
         self.status = status
+        self.kind = kind or ('http' if status is not None else 'fetch')
 
 
 def canonical_url(url, *, product=False):
@@ -127,7 +128,7 @@ class Client:
         try:
             response = self.session.get(url, timeout=mm.TIMEOUT_SECONDS, allow_redirects=False)
         except mm.requests.RequestException as error:
-            raise FetchError(f"Request failed: {error}") from error
+            raise FetchError(f"Request failed: {error}", kind='network') from error
         if response.status_code in {401, 403, 429, 503}:
             raise StopRun(f"HTTP {response.status_code}: stopping; Retry-After={response.headers.get('Retry-After', 'unspecified')}")
         return response
@@ -431,7 +432,8 @@ def collect(catalog, client, args, config, report):
                 report['remaining_due'] += 1
                 continue
             attempted += 1
-            row['last_attempt_at'] = mm.utc_now().isoformat()
+            attempt_started = mm.utc_now()
+            row['last_attempt_at'] = attempt_started.isoformat()
             try:
                 record_path = args.output_dir / f"{row['retailer_sku']}_{today}.json"
                 existing_path = record_path
@@ -478,15 +480,22 @@ def collect(catalog, client, args, config, report):
                 if status == 'accepted' and price_valid:
                     report['validated_products'] = report.get('validated_products', 0) + 1
                     report.setdefault('raw_paths', []).append(str(record_path))
-                print(f"{category} {row['retailer_sku']}: {status} ({reason})")
+                elapsed = (mm.utc_now() - attempt_started).total_seconds()
+                print(f"{category} {row['retailer_sku']}: {status} ({reason}), elapsed={elapsed:.1f}s")
             except StopRun:
+                report['stopped_sku'] = row['retailer_sku']
+                report['stopped_at'] = mm.utc_now().isoformat()
                 raise
             except (FetchError, mm.ScraperError, ValueError) as error:
                 row['last_error'] = str(error)
                 row['consecutive_errors'] += 1
                 # Keep vanished/temporarily unavailable URLs for subsequent runs.
-                report['errors'].append({'sku': row['retailer_sku'], 'error': str(error)})
-                print(f"Failed {row['retailer_sku']}: {error}", file=sys.stderr)
+                finished_at = mm.utc_now()
+                kind = error.kind if isinstance(error, FetchError) else 'validation'
+                report['errors'].append({'sku': row['retailer_sku'], 'kind': kind,
+                                         'started_at': attempt_started.isoformat(),
+                                         'finished_at': finished_at.isoformat(), 'error': str(error)})
+                print(f"Failed {row['retailer_sku']} ({kind}, elapsed={(finished_at - attempt_started).total_seconds():.1f}s): {error}", file=sys.stderr)
             finally:
                 atomic_json(args.catalog, catalog)
 

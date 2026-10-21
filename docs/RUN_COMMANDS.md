@@ -1,154 +1,176 @@
-# Startbefehle — Midterm
+# Run, inspect, and verify
 
-Stand: 16.10.2026 (Phase 5). Alle Befehle im Projektroot ausführen. Ein Pipeline-Einstieg: `python -m backend.flow`. Die Container enthalten Python und alle Pakete; keine lokale Python-Installation nötig. Docker Desktop muss mit Linux-Containern laufen. Getestet: Mac/ARM64. Windows/amd64 ist noch unabhängig zu prüfen.
+Run all commands from the repository root. Docker Desktop must use Linux containers. Mac/ARM64 has been tested; Windows/amd64 still needs an independent check. Create a local `.env` from `.env.example` and keep credentials out of Git. Agree on MediaMarkt usage and volume limits before new live requests. The DISCOVER, INITIAL, and DAILY commands below document supported operation; they do not authorize additional requests.
 
-## First-time setup
-
-1. Docker Desktop starten. Nur wenn noch keine `.env` existiert, `.env.example` im Editor nach `.env` kopieren und DB-Name, Benutzer und Passwort setzen. Bei einem bestehenden Volume müssen die Werte zur vorhandenen Datenbank passen; Environment-Änderungen legen keine neuen DB-Benutzer an.
-2. Die folgenden Befehle ausführen:
+## First setup and services
 
 ```sh
+test -f .env || cp .env.example .env
+# On a fresh setup, set a local POSTGRES_PASSWORD in .env.
+docker compose config --quiet
 docker compose up -d --build
 docker compose ps
-docker compose run --rm pipeline python -m backend.flow verify
+# On an empty database, choose this Raw-file REPLAY OR the Parquet seed import below.
+docker compose run --rm --no-deps pipeline python -m backend.flow replay
+docker compose run --rm --no-deps pipeline python -m backend.flow verify
 ```
 
-`db_init` wendet die vorhandenen Migrationen beim ersten Compose-Start automatisch an und beendet sich danach. Der Befehl `up` startet PostgreSQL, Prefect Server, Pipeline Runner und das SvelteKit-Frontend über das gemeinsame Netzwerk. Dashboard: [localhost:3000](http://localhost:3000), Prefect: [localhost:4200](http://localhost:4200). Bestehende Daten und Volumes bleiben erhalten. Ein manueller erneuter Schema-Check ist mit `docker compose run --rm pipeline python -m backend.flow init` möglich.
-
-Für einen späteren erlaubten Live-Start stehen acht ausgewählte URLs in `data/catalog/mediamarkt_initial.json`: zwei GPU, drei RAM, drei SSD. Ein protokollierter kleiner INITIAL-Lauf vom 16.10. hat die beiden GPU-URLs und eine G.Skill-RAM-URL erfolgreich validiert und importiert. Vier früher importierte Produkte ausserhalb des neuen Marken-Scopes bleiben als historische Daten erhalten; neue DAILY-Läufe wählen sie nicht mehr aus. Der aktuelle Scope steht in `backend/retailers/mediamarkt/scope.json`.
-
-**Zugriffsgrenze:** Vor weiteren automatisierten Abrufen die zulässige Nutzung und das Volumen mit MediaMarkt klären. Die [Nutzungsbedingungen](https://www.mediamarkt.ch/de/legal/nutzungsbedingungen/mediamarkt) geben keine ausdrückliche Freigabe für systematische Sammlung. Bis dahin für Midterm-Verifikation den vorhandenen echten Raw-Bestand mit REPLAY verwenden. Die folgenden INITIAL-/DAILY-Befehle sind betriebsbereit, aber kein Auftrag für einen Massenabruf.
+`db_init` applies `data/initialization.sql` and active migrations idempotently. On an empty database, `verify` correctly exits with code 1 until data is loaded. Do not run both a full REPLAY and a seed import into the same populated database. Never use `down -v` when retaining data. The frontend is at [localhost:3000](http://localhost:3000) and Prefect at [localhost:4200](http://localhost:4200). A fresh checkout registers the DAILY deployment paused by default.
 
 ```sh
-docker compose run --rm pipeline python -m backend.flow initial --max-products 3 --max-requests 10 --delay 3
-docker compose run --rm pipeline python -m backend.flow verify
+docker compose logs --tail 80 pipeline
+docker compose logs --tail 80 frontend
 ```
 
-INITIAL erfasst hier nur die manuell ausgewählten URLs, speichert Raw-Dateien, transformiert und lädt sie. `--max-products` gilt pro Kategorie; `--max-requests` für den gesamten Abruf inklusive robots.txt und Redirects. Bei begrenztem Budget bleiben weitere URLs für einen späteren Lauf. Unzulässige oder widersprüchliche Produkte werden mit Begründung abgelehnt.
+## Catalog, selection, and Raw files
 
-## Discovery und INITIAL aus dem Katalog
+`data/catalog/mediamarkt.json` stores persistent discovery candidates and fetch states. `data/catalog/mediamarkt_initial.json` is an optional manual URL selection. **Only PostgreSQL confirms an imported product or offer**; a successful parse in the catalog is not proof of a DB load. `data/catalog/runs/` stores individual run reports. `data/raw/` and `data/debug/` hold replay and saved HTML evidence and must remain available at their recorded paths.
 
-**Catalog** (`data/catalog/mediamarkt.json`) enthält persistente URL-Kandidaten, Kategorien, Discovery-Cursor und Abrufzustände. **Selection** (`data/catalog/mediamarkt_initial.json`) ist eine optionale, manuell gepflegte URL-Auswahl für INITIAL. **PostgreSQL** enthält erst nach erfolgreichem Laden Produkte, Händlerangebote und Preisbeobachtungen. `last_success_at` im Catalog bedeutet, dass eine Produktseite geparst wurde; es beweist keinen Datenbankimport.
+The seven manually supplied Digitec chart files are organized under `data/import/digitec/manual-charts/{GPU,RAM,SSD}/` and mapped by `data/catalog/digitec_manual_charts.json`. The old Digitec mock is a test fixture under `backend/tests/fixtures/digitec/`. The one-off phase-2 live-test catalog is under `docs/evidence/phase2/`. No JSON was deleted during this cleanup.
 
-Die folgenden Befehle sind für einen späteren **kleinen, geklärten** Live-Test vorgesehen. Sie wurden in Phase 4B nur mit gespeicherten HTML-Seiten und Mock-Requests getestet. Listing-Seiten werden ausschliesslich durch den manuellen Befehl `discover` abgerufen; DAILY benötigt sie nicht.
+After agreeing on access and a small request budget:
 
 ```sh
-# Eine RAM-Kategorieseite, höchstens drei HTTP-Anfragen einschliesslich robots.txt/Redirects
+# Listing links from at most one RAM category page; no product details or DB load.
 docker compose run --rm pipeline python -m backend.flow discover --categories ram --max-pages 1 --max-requests 3 --delay 3
-# Alternativ alle drei Kategorien, je höchstens eine Seite
-docker compose run --rm pipeline python -m backend.flow discover --max-pages 1 --max-requests 5 --delay 3
-# Bekannte, versuchte, geparste und akzeptierte SKUs je Kategorie; dazu DB-Angebote
+# Show candidates and active PostgreSQL offers.
 docker compose run --rm pipeline python -m backend.flow catalog
-# Bis zu ein noch nicht importierter RAM-Kandidat; keine zweite Selection-Datei nötig
+# Try one not-yet-imported RAM candidate from the persistent catalog.
 docker compose run --rm pipeline python -m backend.flow initial --from-catalog --categories ram --max-products 1 --max-requests 3 --delay 3
-# Bewusste manuelle Auswahl bleibt weiterhin möglich
+# Or use the optional manual selection.
 docker compose run --rm pipeline python -m backend.flow initial --selection /workspace/data/catalog/mediamarkt_initial.json --max-products 3 --max-requests 10 --delay 3
-docker compose run --rm pipeline python -m backend.flow verify
 ```
 
-`discover` verwendet den bestehenden MediaMarkt-Adapter, speichert nur Links und einen Run-Bericht unter `data/catalog/runs/`; es führt weder Produktdetailabrufe noch Transform/Load aus. `--max-pages` gilt je Kategorie und startet beim gespeicherten Cursor. `initial --from-catalog` wählt `candidate`/`accepted`-Einträge ohne importiertes MediaMarkt-Angebot; eindeutig fremde Marken werden vor dem Detailabruf übersprungen. Fehlgeschlagene DB-Importe können aus vorhandenen Raw-Dateien nachgeholt werden. Der Ergebnisblock `outcome` zeigt neue URLs, HTTP-Anfragen, Auswahl, DB-Neuimporte und Null-Ergebnisse getrennt von alten Raw-Duplikaten.
+`--max-pages` and `--max-products` apply per category; `--max-requests` applies across categories, robots.txt, and redirects. Defaults are **three product attempts per category**, **20 total HTTP requests**, and at least **three seconds between requests**. Raising `--max-products` alone does not bypass the total request budget.
 
-Bei einer bereits vorhandenen Datenbank kann `--from-catalog` mit null neuen Kandidaten enden. Das ist ein ehrliches Leerergebnis. Der manuelle `--selection`-Weg bleibt für eine gezielte Stichprobe erhalten; die beiden JSON-Dateien sind nicht austauschbar.
-
-Ohne Live-Zugriff kann stattdessen zuerst der vorhandene echte Raw-Bestand importiert werden:
+## DAILY and Prefect
 
 ```sh
-docker compose run --rm pipeline python -m backend.flow replay
-docker compose run --rm pipeline python -m backend.flow verify
-```
-
-Die alten Raw-Dateien benötigen die mitgelieferten HTML-Belege unter `data/debug/`. Stand der Phase-3.5-Prüfung am 16.10.: 12 Produkte, 12 Angebote, 19 Beobachtungen; davon 8 Angebote im neuen Scope. Eine leere DB liefert bei `verify` Exit-Code 1, auch wenn keine ungültigen Preise vorliegen.
-
-## Daily operation
-
-Der Prefect-Zeitplan ist `0 3 * * *`/`Europe/Zurich`. Sein Aktivierungszustand kann sich durch manuelle Änderungen ändern; vor einem Compose-Start und vor Live-Abrufen den tatsächlichen Zustand in Prefect prüfen. Der `pipeline`-Dienst startet mit `docker compose up -d --build` und betreibt das DAILY-Deployment. Die folgenden Live-Befehle nur im geklärten Nutzungsumfang ausführen.
-
-```sh
-# Persistierte Angebote und letzter erfolgreicher Beobachtungszeitpunkt
-docker compose run --rm pipeline python -m backend.flow catalog
-# Tagesabruf mit denselben DB-Produkt-URLs
+# Database-based update of known, in-scope offers only.
 docker compose run --rm pipeline python -m backend.flow daily
-# Ergebnisse und Importstatus
+# Optional one-SKU manual check, after agreeing on live access.
+docker compose run --rm pipeline python -m backend.flow daily --categories ssd --sku 2199070 --max-products 1 --max-requests 3 --delay 3
+# Read-only database and deployment checks.
 docker compose run --rm pipeline python -m backend.flow verify
-# Nach Klärung des zulässigen Abrufumfangs: Zeitplan bedienen
-docker compose up -d pipeline
-docker compose logs --tail 50 pipeline
-docker compose ps
-```
-
-DAILY liest importierte MediaMarkt-Angebote mit Preisbeobachtung, unterstützter Kategorie und URL aus PostgreSQL und filtert sie nach dem aktuellen Marken-/GPU-Scope. Historische ausserhalb des Scopes liegende Angebote bleiben gespeichert. Neue Produkte kommen über die manuelle Auswahl oder `initial --from-catalog` hinzu. Nicht mehr erreichbare URLs werden protokolliert und bleiben im Katalog. Ein fehlgeschlagener Abruf erzeugt keinen Ersatzpreis und löscht keine Vergangenheit.
-
-Die konservativen Standardlimits sind **3 Produktversuche pro Kategorie und 20 HTTP-Requests insgesamt**, einschliesslich robots.txt und Redirects, mit mindestens 3 Sekunden Abstand. `catalog` zeigt bekannte, versuchte und erfolgreich geparste SKUs je Kategorie; der letzte Collector-Report enthält `remaining_due`, Fehler und Requestzahl. Nur nach geklärtem Nutzungsumfang können `--max-products`, `--max-requests` und `--delay` für einen manuellen Lauf oder `PIPELINE_MAX_PRODUCTS`, `PIPELINE_MAX_REQUESTS` und `PIPELINE_DELAY_SECONDS` in `.env` für den Prefect-Schedule angepasst werden. Ein grösseres Tagesziel ist mit den Standardlimits nicht vollständig abgedeckt.
-
-Bereits heute erfolgreich beobachtete Angebote werden ohne HTTP-Aufruf übersprungen. Ein neuer Tag erlaubt eine neue Preisbeobachtung, auch bei gleichem Preis. Abgelehnte/ungeklärte oder bei HTTP 404 verschwundene Produkte werden nicht künstlich als günstig, kostenlos oder verkauft gespeichert. `OutOfStock` mit einem belegten Preis kann als Beobachtung mit dieser Verfügbarkeit gespeichert werden.
-
-Prefect-UI: [localhost:4200](http://localhost:4200). Flow: `DENG MediaMarkt Batch`, Deployment: `mediamarkt-daily`. Bei INITIAL/DAILY/REPLAY müssen Collect, Transform und Load sowie der Gesamtstatus geprüft werden; reine Discovery endet nach Collect. Der Ergebnisblock `outcome` trennt neue Beobachtungen von wiederverarbeiteten Raw-Dateien. Ein fehlgeschlagener Abruf lässt den Gesamtflow scheitern, obwohl vorhandene gültige Raw-Dateien noch geladen werden können.
-
-Den Schedule ohne Änderung seines Zustands prüfen:
-
-```sh
 docker compose exec -T prefect_server env PREFECT_API_URL=http://localhost:4200/api prefect deployment inspect 'DENG MediaMarkt Batch/mediamarkt-daily' --output json
 ```
 
-Im Ergebnis müssen `mode: daily`, `0 3 * * *` und `Europe/Zurich` stehen. `paused` und `active` zeigen den tatsächlichen aktuellen Zustand; diese Anleitung setzt keinen festen Wert voraus. `serve` akzeptiert absichtlich nur DAILY.
+The schedule is `0 3 * * *` in `Europe/Zurich`. A fresh checkout starts with `PIPELINE_SCHEDULE_ENABLED=false`. The team explicitly enabled its **local** deployment on 20 October (`.env`: `PIPELINE_SCHEDULE_ENABLED=true`); inspection on 21 October confirmed `paused=false` and `active=true`. To enable it on another machine, set that variable in its `.env`, run `docker compose up -d --no-deps --force-recreate pipeline`, then inspect the deployment. The host must be awake and Docker running at execution time.
 
-`PIPELINE_CRON` in `.env` ändert den Zeitplan; danach `docker compose up -d pipeline` ausführen. Der Runner und Rechner müssen laufen. Während Schlafmodus/Stillstand ist eine pünktliche Ausführung nicht garantiert. Der frühere Modus `--mode live` bleibt als Alias für DAILY unterstützt; im normalen Betrieb die obigen Befehle nutzen.
+The scheduled 21 October run started at 03:50 rather than 03:00 because the Mac slept. It stored five new MediaMarkt observations, reported three disconnected product attempts, and ended `Failed/partial`. The Mac slept again from 03:50:10 to a brief wake at 04:49:38, which accounts for almost all of one apparent hour-long request. The 20-second socket-inactivity timeout does not wake a sleeping computer. See the [run report](../data/catalog/runs/20261021T015016086824Z.json).
 
-Falls der Zeitplan nach einem Neustart weiterhin pausiert ist, kann er nach der Zugriffsklärung mit `docker compose exec -T pipeline prefect deployment schedule resume --deployment_name 'DENG MediaMarkt Batch/mediamarkt-daily' --schedule_id <ID>` aktiviert werden. Die ID zuerst mit `docker compose exec -T pipeline prefect deployment inspect 'DENG MediaMarkt Batch/mediamarkt-daily' --output json` ablesen. Für reine Replay-Verifikation ist keine Aktivierung nötig.
+Starting the Prefect deployment manually without overriding parameters uses **DAILY**. REPLAY must be selected explicitly. The small per-category limit leaves other offers for a later run; it does not check the whole catalog every day. `--sku` is only for a manual DAILY run and refers to an already imported MediaMarkt SKU. In the Prefect UI, set `product_sku` with `mode=daily` and matching `categories` for a manual single-offer run. The scheduled run has no SKU filter. A changed current price appears only after a successful new product fetch and load; replaying an old file cannot discover it.
 
-## SQL-Verifikation
+Inspect the overall Prefect state **and all three tasks**. `Collect Completed` only means that the collection task returned a report. On per-product failures, Transform/Load still process successful Raw files. The result's `outcome` distinguishes new observations, failed attempts, and offers deferred by limits. A technically partial result is marked **Failed** in Prefect so the missing fetch is visible; successful DB rows remain. `RemoteDisconnected` is a network failure, not HTTP 403/429. HTTP 403/429 stops further requests. There are no automatic HTTP retries or backoff loops.
 
-```sh
-docker compose exec postgres sh
-```
+## REPLAY, backfill, and SQL
 
-Im Container:
-
-```sh
-psql -U "$POSTGRES_USER" -d "$POSTGRES_DB"
-```
-
-In psql:
-
-```sql
-SELECT category, count(DISTINCT product_id) AS products, count(*) AS observations
-FROM hardware_prices GROUP BY category ORDER BY category;
-SELECT product_name, platform, seller_name, price_chf, observed_at, raw_path
-FROM hardware_prices ORDER BY observed_at DESC;
-SELECT status, reason, count(*) FROM raw_import GROUP BY 1,2;
-SELECT retailer_product_id, collected_at, count(*)
-FROM price_history GROUP BY 1,2 HAVING count(*) > 1;
-```
-
-Die letzte Abfrage muss leer bleiben. `\q` beendet psql, `exit` die Container-Shell. Weitere SQL-Abfragen: [verification.sql](../data/queries/verification.sql).
-
-Der vollständige schreibgeschützte Katalogbericht (Kategorien, Marken, Verkäufer, Preisverlauf und Qualitätsprüfungen) läuft direkt aus dem Projektroot:
-
-```sh
-docker compose exec -T postgres sh -c 'psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" -P pager=off' < data/queries/catalog_stats.sql
-```
-
-## Replay und Backfill
+REPLAY makes **no HTTP requests**. It adds only observations not already imported and preserves the Raw file's original `collected_at` time.
 
 ```sh
 docker compose run --rm pipeline python -m backend.flow replay
+# A small backfill from saved, real Raw files.
 docker compose run --rm pipeline python -m backend.flow replay --input /workspace/data/raw/mediamarkt/live-check
+docker compose run --rm pipeline python -m backend.flow verify
 ```
 
-Der zweite Befehl zeigt einen gezielten Backfill/Replay mit vorhandenen echten Rohdaten. Für andere Bestände `--input` auf einen tatsächlichen Unterordner in `data/` setzen. Bereits bekannte Beobachtungen werden erkannt; der Originalzeitpunkt wird niemals durch das Importdatum ersetzt. Der Ordner `live-check` enthält den echten früheren RAM-Abruf, keine Demo-Daten.
+For read-only SQL checks:
 
-## Tests
+```sh
+docker compose exec -T postgres sh -c 'psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" -P pager=off' < data/queries/verification.sql
+docker compose exec -T postgres sh -c 'psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" -P pager=off' < data/queries/catalog_stats.sql
+```
+
+The duplicate offer/timestamp query must return no rows. `backend.flow verify` also checks invalid CHF prices and Raw import states.
+
+## Digitec: offline eight-product proof of concept
+
+There is no approval for automated Digitec access. The old mock is a test fixture, not an import source. The Digitec importer sends **no HTTP requests** and accepts locally saved HTML/JSON or a later explicitly authorized export. The proof of concept is limited to the eight products in `data/catalog/mediamarkt_initial.json`: GPU 2277758/2277995, RAM 2230728/101374309/107353786, SSD 2155505/2199070/2155504.
+
+For WD_BLACK, manually saved HTML and the full chart are under the locally ignored `data/import/digitec/manual/`. The page and price response agree on Digitec SKU 36108805, EAN 619659198053, and a Digitec retail price of CHF 269.00; that EAN matches MediaMarkt SKU 2199070. A cheaper marketplace offer is not treated as Digitec's own retail price. The 292 `validFrom` chart points are **historical retailer price changes**, not daily observations made by this project. They are stored separately in `retailer_price_change`; a point without price remains a gap. Only the evidenced current capture is in `price_history`.
+
+```sh
+# Preview: no database write.
+docker compose run --rm pipeline python -m backend.flow digitec-import \
+  --digitec-html /workspace/data/import/digitec/manual/wd_black_sn850p_2026-10-20.html \
+  --digitec-chart /workspace/data/import/digitec/manual/wd_black_sn850p_full_chart_2026-10-20.json \
+  --captured-at 2026-10-20T10:28:53+02:00 --digitec-category ssd
+# Apply the same checked evidence; rerunning it is idempotent.
+docker compose run --rm pipeline python -m backend.flow digitec-import \
+  --digitec-html /workspace/data/import/digitec/manual/wd_black_sn850p_2026-10-20.html \
+  --digitec-chart /workspace/data/import/digitec/manual/wd_black_sn850p_full_chart_2026-10-20.json \
+  --captured-at 2026-10-20T10:28:53+02:00 --digitec-category ssd --apply
+```
+
+For another product, first save its **own** matching page and response under `data/import/digitec/manual/`; supply its real capture time and category. The importer checks URL/SKU, EAN, retail seller, current CHF price, product ID, and unambiguous MediaMarkt match. It rejects price/time conflicts and invented capture times.
+
+Seven additional manually saved chart JSONs have **no matching product-page HTML**. They are mapped to the initial products in `data/catalog/digitec_manual_charts.json`; the team confirmed G.Skill and Kingston mappings, while the other five filenames contain matching MPNs. They add only historical chart changes. They do not prove an EAN, seller, or present-day price, so these seven products have no current Digitec observation. The Explorer labels them “Digitec history.”
+
+```sh
+# Preview chart-only imports; this does not write or fetch anything.
+docker compose run --rm --no-deps pipeline python -m backend.flow digitec-import \
+  --digitec-chart-manifest data/catalog/digitec_manual_charts.json
+# Explicit, idempotent import of the saved charts.
+docker compose run --rm --no-deps pipeline python -m backend.flow digitec-import \
+  --digitec-chart-manifest data/catalog/digitec_manual_charts.json --apply
+# Check retailer observations and chart changes separately.
+docker compose exec -T postgres sh -c 'psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" -P pager=off' < data/queries/digitec_poc.sql
+```
+
+A later authorized normalized export may be placed in the Digitec inbox with a genuine `permission_reference`, HTTPS product URL, SKU, EAN, brand, category, product name, seller, CHF price, and timezone-aware observation time. Unknown values must not be guessed. DAILY checks this **local inbox** but does not scrape Digitec. The frontend shows current offers from PostgreSQL and separately marked historical retailer changes; product history defaults to 90 days.
+
+## Tests and frontend
 
 ```sh
 docker compose run --rm pipeline python -m unittest discover -s backend/tests -v
+npm --prefix frontend ci
+npm --prefix frontend run check
+npm --prefix frontend run lint
+npm --prefix frontend run build
+DASHBOARD_TEST_URL=http://127.0.0.1:3000 npm --prefix frontend run test:integration
 ```
 
-HTTP-Tests verwenden Fixtures/Mocks. DB-Tests arbeiten nur in eigenen temporären Schemas. Die echten Daten im Standardschema werden nicht gelöscht. Phase 4B: 58 Tests erfolgreich, einschliesslich Discovery, Catalog-INITIAL und Raw-Wiederaufnahme. Nachweise und Einschränkungen: [PHASE3_5.md](PHASE3_5.md).
+Python DB tests use isolated temporary schemas, not a reset of the production schema. HTTP tests use saved fixtures and mocks. Frontend integration tests expect populated local PostgreSQL and Prefect.
 
-## Shutdown ohne Datenverlust
+For optional Qodana inspections, install the Qodana CLI and run these from the repository root:
 
 ```sh
+qodana scan --config qodana-backend.yaml
+qodana scan --config qodana-frontend.yaml
+```
+
+The two configurations inspect `backend/` and `frontend/` separately and install their locked dependencies before analysis. The Python Community linter can run without a Cloud token; the JavaScript linter requires a Qodana Ultimate project token supplied through `QODANA_TOKEN` in the environment. Do not put tokens in YAML or `.env.example`. Qodana complements the existing `make check` (including Svelte-specific checks); it does not replace the offline tests above.
+
+GitHub Actions runs the frontend checks, the full Python and frontend test suites, and both Qodana configurations on pushes and pull requests. The test job starts its own Docker Compose stack with the DAILY schedule disabled and restores `data/seed/midterm-2026-10-20/` into a fresh CI database; it never collects live retailer pages. Commit that complete seed bundle with the workflow, or the integration job will stop with a clear error. Python Qodana Community needs no secret. Frontend Qodana runs only after `QODANA_TOKEN_FRONTEND` is added as a GitHub repository secret for a Qodana Ultimate project; without it, the job explains the skip while the normal frontend checks still run. The workflow does not push fixes or change the local database.
+
+## Parquet seed for a new database
+
+`backend/seed.py` is called **manually via the pipeline container CLI**, not HTTP and not GitHub Actions. `make seed-export` creates a new timestamped `data/seed/.../` directory; `backend.flow seed-export --seed-dir <new-path>` is the direct form. It exports eleven business tables to Parquet and writes a row-count/SHA-256 manifest. It will not overwrite an existing bundle. This is a snapshot of existing data, not a new scrape or synthetic history.
+
+The included `data/seed/midterm-2026-10-20/` bundle contains 26 products, 34 offers, 63 own price observations, and 3,752 separate Digitec chart changes as of export. **Do not import it into the project's populated database.** Import requires an initialized schema with empty business tables and checks all hashes and rows before a transactional restore.
+
+```sh
+# Only after docker compose up -d --build on a fresh, empty database:
+docker compose run --rm --no-deps pipeline python -m backend.flow seed-import
+docker compose run --rm --no-deps pipeline python -m backend.flow verify
+# Export the current database to a NEW bundle directory:
+make seed-export
+# Or choose the new destination explicitly:
+docker compose run --rm --no-deps pipeline python -m backend.flow seed-export --seed-dir data/seed/my-new-snapshot
+```
+
+The existing bundle was also restored into an isolated empty test schema; a second import was rejected. Raw JSON remains the source evidence.
+
+## Troubleshooting and safe shutdown
+
+```sh
+docker compose ps
+docker compose logs --since 1h pipeline
+docker compose logs --since 1h prefect_server
+docker compose run --rm pipeline python -m backend.flow verify
 docker compose stop
 ```
 
-Volumen und Daten bleiben erhalten. Wiederstart: `docker compose up -d --wait`. Der Pipeline-Service bedient dann wieder den täglichen Schedule. Kein `down -v` verwenden, um Daten zu behalten.
+After a failed DAILY run, compare its `data/catalog/runs/<run_id>.json`, the overall Prefect state, all three tasks, and `verify`. The load's total `accepted` count may include old Raw duplicates; use `outcome.new_observations_from_selected_raw` for new observations from that run. `remaining_due` counts offers deferred by product limits; failed attempts are in `errors`.
+
+Docker images can be rebuilt from Dockerfiles. PostgreSQL and Prefect state is in the named `postgres_data` and `prefect_data` volumes; `./data` is a host-mounted directory. `docker compose stop` or `docker compose down` **without `-v`** retains them. Do not run `docker compose down -v` or `docker volume prune` while those data are needed.

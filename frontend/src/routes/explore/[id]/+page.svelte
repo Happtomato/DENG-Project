@@ -55,7 +55,9 @@
 		<p class="eyebrow">{tx('Produkt', prefs.lang).toUpperCase()} / #{detail.product.product_id}</p>
 		<div class="title-line">
 			<span class="category {detail.product.category}">{detail.product.category.toUpperCase()}</span
-			><span class="brand-name">{detail.product.brand}</span>
+			><span class="brand-name">{detail.product.brand}</span>{#if detail.chartHistory.length}<span
+					class="history-tag">{tx('Digitec-Verlauf', prefs.lang)}</span
+				>{/if}
 		</div>
 		<h1>{detail.product.product_name}</h1>
 		<p>
@@ -88,7 +90,12 @@
 	<section class="panel chart-panel">
 		<div class="panel-head">
 			<div>
-				<p class="section-kicker">{tx('ECHTE PREISMESSUNGEN', prefs.lang)}</p>
+				<p class="section-kicker">
+					{tx(
+						detail.chartHistory.length ? 'MESSUNGEN & HÄNDLERHISTORIE' : 'ECHTE PREISMESSUNGEN',
+						prefs.lang
+					)}
+				</p>
 				<h2>{tx('Preisverlauf', prefs.lang)}</h2>
 			</div>
 			<span class="chart-count"
@@ -97,10 +104,13 @@
 				{tx(
 					detail.history.length === 1 ? 'Messpunkt' : 'Messpunkte',
 					prefs.lang
-				).toUpperCase()}</span
+				).toUpperCase()}{#if detail.chartHistory.length}
+					· {detail.chartHistory.length} {tx('Preiswechsel', prefs.lang).toUpperCase()}{/if}</span
 			>
 		</div>
-		<div class="chart-inner"><PriceChart history={detail.history} /></div>
+		<div class="chart-inner">
+			<PriceChart history={detail.history} chartHistory={detail.chartHistory} />
+		</div>
 	</section>
 	<section class="panel spec-panel">
 		<div class="panel-head">
@@ -145,9 +155,13 @@
 				<div class="offer-icon"><Hash size={18} /></div>
 				<div class="offer-main">
 					<strong>{offer.retailer}</strong><small
-						>SKU {offer.retailer_sku} · {offer.availability
-							? availabilityLabel(offer.availability, prefs.lang)
-							: tx('Verfügbarkeit unbekannt', prefs.lang)}</small
+						>SKU {offer.retailer_sku} · {offer.price === null &&
+						offer.retailer === 'Digitec' &&
+						detail.chartHistory.length
+							? tx('Nur historischer Preisverlauf (manuell zugeordnet)', prefs.lang)
+							: offer.availability
+								? availabilityLabel(offer.availability, prefs.lang)
+								: tx('Verfügbarkeit unbekannt', prefs.lang)}</small
 					>
 				</div>
 				<div class="offer-price">
@@ -227,6 +241,15 @@
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		color: var(--violet);
+	}
+	.history-tag {
+		padding: 5px 7px;
+		border: 1px solid var(--surface-strong);
+		border-radius: 5px;
+		color: var(--teal, #6bd6d7);
+		font:
+			9px 'DM Mono',
+			monospace;
 	}
 	.detail-heading h1 {
 		font:

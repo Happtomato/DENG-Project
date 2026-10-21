@@ -1,0 +1,107 @@
+name: Code quality
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Tests and lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend dependencies
+        run: npm --prefix frontend ci
+      - name: Svelte, TypeScript, ESLint and formatting
+        run: |
+          npm --prefix frontend run check
+          npm --prefix frontend run lint
+          npm --prefix frontend run build
+      - name: Configure isolated CI database
+        run: |
+          cat > .env <<'EOF'
+          POSTGRES_DB=deng_ci
+          POSTGRES_USER=deng_ci
+          POSTGRES_PASSWORD=ci-only-local-password
+          PIPELINE_SCHEDULE_ENABLED=false
+          EOF
+      - name: Start the local stack without scheduled collection
+        run: docker compose up -d --build --wait
+      - name: Restore the checked test snapshot
+        run: |
+          test -f data/seed/midterm-2026-10-20/manifest.json || {
+            echo 'The checked Parquet seed bundle must be committed for frontend integration tests.' >&2
+            exit 1
+          }
+          docker compose run --rm --no-deps pipeline python -m backend.flow seed-import
+          docker compose run --rm --no-deps pipeline python -m backend.flow verify
+      - name: Wait for the Prefect DAILY deployment
+        run: |
+          for attempt in $(seq 1 30); do
+            if curl -fsS -X POST http://127.0.0.1:4200/api/deployments/filter \
+              -H 'content-type: application/json' -d '{"limit":20}' | grep -q 'mediamarkt-daily'; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker compose logs pipeline
+          exit 1
+      - name: Backend and frontend tests
+        run: make test
+      - name: Show service logs on failure
+        if: failure()
+        run: docker compose logs --tail=100 || true
+      - name: Stop containers
+        if: always()
+        run: docker compose down || true
+
+  qodana-backend:
+    name: Qodana Python
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Inspect backend
+        uses: JetBrains/qodana-action@v2026.2
+        with:
+          args: --config,qodana-backend.yaml
+          upload-result: true
+          artifact-name: qodana-backend
+          post-pr-comment: false
+          use-annotations: false
+
+  qodana-frontend:
+    name: Qodana JavaScript
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_FRONTEND }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Explain missing Qodana license
+        if: env.QODANA_TOKEN == ''
+        run: |
+          echo 'Frontend Qodana skipped: add the QODANA_TOKEN_FRONTEND repository secret (Qodana Ultimate).' >> "$GITHUB_STEP_SUMMARY"
+      - name: Inspect frontend
+        if: env.QODANA_TOKEN != ''
+        uses: JetBrains/qodana-action@v2026.2
+        with:
+          args: --config,qodana-frontend.yaml
+          upload-result: true
+          artifact-name: qodana-frontend
+          post-pr-comment: false
+          use-annotations: false

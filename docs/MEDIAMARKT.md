@@ -1,34 +1,32 @@
-# MediaMarkt-Adapter
+# MediaMarkt retailer adapter
 
-Aktive Dateien: `backend/retailers/mediamarkt/parser.py`, `collector.py` und `scope.json`. Der normale Einstieg bleibt [backend.flow](../backend/flow.py); Befehle stehen in [RUN_COMMANDS.md](RUN_COMMANDS.md).
+The active files are `backend/retailers/mediamarkt/collector.py`, `parser.py`, and `scope.json`. Use the central [backend flow](../backend/flow.py) CLI; runnable commands are in the [runbook](RUN_COMMANDS.md).
 
-## Produktseiten und Parsing
+## Product pages and parsing
 
-Der Adapter liest öffentliche deutsche Produktseiten auf `https://www.mediamarkt.ch/de/product/...-<SKU>.html`. `Client.get_html()` prüft Domain, SKU, robots.txt, Redirects und HTML-Content-Type. Pro Request gibt es einen Timeout und mindestens drei Sekunden Abstand; 401/403/429/503 beenden den Batch ohne aggressive Wiederholung.
+The adapter reads public German-language product pages at `https://www.mediamarkt.ch/de/product/...-<SKU>.html`. `Client.get_html()` checks the domain, SKU, robots.txt, redirects, and HTML content type. `Client.request()` uses a 20-second timeout for socket inactivity, no automatic retry, and at least a three-second delay or the longer robots.txt interval. HTTP 401/403/429/503 stops the batch. Host sleep can interrupt a request for much longer; the [daily audit](evidence/phase5_2/audit.md) documents an earlier case, and the [midterm audit](MIDTERM_AUDIT.md) covers 21 October.
 
-`parser.parse_html()` sucht exakt das Product-JSON-LD zur URL-SKU, einschliesslich verschachtelter Product-Objekte. Empfehlungen mit anderer SKU werden nicht als Zielprodukt verwendet. Preis, CHF-Währung und Verkäufer stammen aus dem ersten JSON-LD-Angebot. Technische Angaben werden aus dem zum selben Produkt gehörenden eingebetteten Apollo-Zustand gelesen, ohne JavaScript auszuführen oder interne APIs aufzurufen.
+`parser.parse_html()` selects the Product JSON-LD that matches the URL SKU, including nested Product objects. Recommendations with a different SKU are ignored. Price, CHF currency, and seller come from the selected JSON-LD offer. Specifications come from the embedded Apollo state for that same product, without executing JavaScript or calling private APIs. Category and details require source evidence; a title alone cannot justify an uncertain variant match.
 
-Kategorie und Details müssen durch Produktdaten/technische Felder bestätigt werden. Die Produktnamen allein reichen nicht für unsichere Varianten-Zusammenführungen. `scope_decision()` prüft zusätzlich:
+`scope_decision()` additionally requires:
 
-- GPU: Board-Marke AMD oder MSI oder ASUS mit bestätigter ROG-Serie; bestätigte GeForce-RTX-/Radeon-RX-Familie, mindestens RTX 3000 beziehungsweise RX 6000. „AMD“ als Chip-Hersteller einer Sapphire- oder ASUS-Karte genügt nicht. ASUS Prime/Dual/TUF gehört nicht zum gewählten ROG-Scope.
-- RAM: G.Skill, Kingston oder Corsair; DDR4/DDR5, Desktop-DIMM bestätigt, 8–64 GB; keine SO-DIMMs, Server-/ECC-Speicher.
-- SSD: Samsung, Western Digital oder Kingston; intern, NVMe, bestätigte PCIe-Generation 3.0/4.0/5.0, 256–4000 GB.
-- Zustand: neu; fehlende/konfliktbehaftete Belege bleiben review, unpassende Hardware excluded.
+- **GPU:** AMD or MSI board brands, or ASUS with a confirmed ROG line; confirmed GeForce RTX 3000+ or Radeon RX 6000+. An AMD chip in another board brand is insufficient; ASUS Prime/Dual/TUF is outside the chosen ROG scope.
+- **RAM:** G.Skill, Kingston, or Corsair; confirmed DDR4/DDR5 desktop DIMM, 8–64 GB. SO-DIMM and server/ECC memory are excluded.
+- **SSD:** Samsung, Western Digital, or Kingston; internal NVMe, confirmed PCIe 3.0/4.0/5.0, 256–4000 GB.
+- **Condition:** New. Missing or conflicting evidence is reviewed; clearly unsupported hardware is excluded.
 
-Die anschliessende Transformation prüft Hersteller, gültige Kennungen, Preise, Zeitpunkte und Detailfelder. Ein vom Collector akzeptiertes Produkt ist deshalb nicht automatisch erfolgreich in PostgreSQL geladen. Verkäufer und Plattform bleiben getrennt; ohne Verkäuferbeleg bleibt der Verkäufer unbekannt.
+Transformation checks identity, prices, timestamps, and technical fields again. A collector-level acceptance does not prove a successful PostgreSQL import. Retailer platform and actual seller remain separate; an unknown seller stays unknown.
 
-## URLs, Discovery und Pagination
+## URLs, discovery, and pagination
 
-Der Parser ist nicht auf eine einzelne feste URL beschränkt. Die feste GPU-URL im Parser dient weiterhin den bestehenden Tests. Im normalen Betrieb bestimmt INITIAL die URLs über `data/catalog/mediamarkt_initial.json`; DAILY verwendet PostgreSQL-Angebote.
+The parser is not limited to one URL; its fixed GPU example is a test fixture. Normal INITIAL uses the manual selection or candidates in `data/catalog/mediamarkt.json`; DAILY uses URLs from PostgreSQL. `discover()` reads product links and IDs from category pages. `listing()` checks completeness and the last page. Pagination uses `?page=N`, a saved cursor, and page signatures to detect repeated pages.
 
-Automatische Entdeckung existiert weiterhin als kleine optionale Adapterfunktion: `discover()` liest Kategorie-Links und Produkt-IDs aus gespeicherten/abgerufenen Kategorieseiten, `listing()` prüft die Vollständigkeit und liest die letzte Seitennummer. Pagination verwendet `?page=N`, einen gespeicherten Cursor und Seitensignaturen zur Erkennung wiederholter Seiten. Es wurde in Phase 3 kein neues umfangreiches Kategorie-Crawling durchgeführt.
+Six retained listing captures from 15 October cover two pages per category and yielded 24 distinct URLs in each category. Their advertised page counts (GPU 20, RAM 25, SSD 4) are historical source values, not a guarantee of current catalog size or successfully importable products. There has been no large category crawl for this project.
 
-Die vorhandenen sechs Aufzeichnungen von zwei Seiten je Kategorie belegen je 24 unterschiedliche automatisch entdeckte URLs. Die damaligen Seitennummern 20 (GPU), 25 (RAM), 4 (SSD) sind historische Quellangaben vom 15.10., keine aktuelle Zusage über den gesamten verfügbaren Katalog und keine Anzahl erfolgreich importierbarer Produkte.
+## INITIAL and DAILY
 
-## INITIAL und DAILY
+`select_initial()` registers only selected URLs; it does not fetch every discovered candidate. The manual selection contains two GPUs, three RAM products, and three SSDs. Listing titles are a conservative prefilter; the actual product page determines scope. The two GPU URLs were validated and imported during a small run on 16 October.
 
-`select_initial()` registriert nur die ausdrücklich ausgewählten URLs; nicht ausgewählte Kandidaten werden nicht nebenbei abgerufen. Die Auswahl umfasst zwei GPU-, drei RAM- und drei SSD-URLs. Die beiden GPU-URLs wurden in einem begrenzten Lauf am 16.10. validiert und importiert. Listing-Titel dienen nur als konservativer Vorfilter, die Produktseite entscheidet über den Scope.
+`select_daily()` uses offer membership, URLs, and the latest successful observation from PostgreSQL. It skips older offers now outside the active scope. The JSON catalog retains discovery candidates and fetch errors but does not define DAILY's product set. HTTP errors never delete offers or prices. A same-day rerun uses the same Raw file; a new day's successful fetch receives its real observation timestamp. REPLAY interprets saved Raw files under the scope recorded with them, preserving historical observations.
 
-`select_daily()` übernimmt Mitgliedschaft, URLs und letzten erfolgreichen Beobachtungszeitpunkt aus PostgreSQL und lässt frühere, heute ausserhalb des Scopes liegende Produkte aus. Die JSON-Katalogdatei behält Discovery-Kandidaten und Abruffehler, ist für DAILY aber nicht mehr die Quelle der Produktmenge. HTTP-Fehler löschen weder Angebote noch Preise. Bisheriger Tagesabruf und Wiederholung verwenden dieselbe Raw-Datei; ein neuer Tag bekommt einen neuen Originalzeitpunkt. REPLAY interpretiert alte Raw-Dateien unter dem damaligen Scope, damit historische Beobachtungen erhalten bleiben.
-
-Aktuelle, getrennt ausgewiesene Zahlen für bekannte, gefetchte, validierte und importierte Produkte stehen in [PHASE3_5.md](PHASE3_5.md). Raw-Dateien, alte HTML-Aufzeichnungen und Test-Fixtures sind erhalten. Der frühere Einzelprodukt-CLI und `inspect.py` wurden entfernt; ihre zweite Abruf-/Schreiblogik ist nicht mehr nötig.
+Historical counts for known, fetched, validated, and imported products are in [the phase 3.5 report](archive/PHASE3_5.md). For current counts, run `backend.flow catalog` and `backend.flow verify`. Raw files, saved HTML, and fixtures remain available. The former single-product CLI and `inspect.py` were removed when their duplicate fetch/write paths became unnecessary.

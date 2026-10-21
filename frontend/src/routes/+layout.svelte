@@ -130,7 +130,7 @@
 		<main id="content">{@render children()}</main>
 		<footer class="footer">
 			<span>{project.name} <span class="footer-muted">/</span> {project.credit}</span><span
-				>{tx('Nur echte Messungen', prefs.lang)} <FlaskConical size={13} /></span
+				>{tx('Echte Daten, klar gekennzeichnet', prefs.lang)} <FlaskConical size={13} /></span
 			>
 		</footer>
 	</div>
