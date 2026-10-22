@@ -2,6 +2,8 @@
 
 The active system consists of a MediaMarkt adapter, a small manual Digitec proof of concept, retained Raw files, PostgreSQL, one Prefect flow, and a read-only SvelteKit frontend. Cloud, Terraform, GCS, and BigQuery belong to the final phase.
 
+BRACK declined the team's data-access request without stating a reason. It is excluded from future retailer integration; this is a source-selection decision, not a claim about BRACK's technical systems or policies. Other retailers are only candidates until their product coverage, data access, and permitted request volume have been checked.
+
 ```mermaid
 flowchart LR
   MM[MediaMarkt public HTML] --> C[MediaMarkt collector]

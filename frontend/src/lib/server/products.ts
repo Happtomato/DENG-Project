@@ -14,6 +14,7 @@ export type ProductRow = {
 	collected_at: string | null;
 	observation_count: number;
 	digitec_history_count: number;
+	price_point_count: number;
 	spec: string | null;
 };
 
@@ -46,7 +47,9 @@ export function parseFilters(url: URL): Filters {
 		digitec_history: p.get('history') === 'digitec',
 		min: number('min'),
 		max: number('max'),
-		sort: ['recent', 'price_asc', 'price_desc', 'name'].includes(p.get('sort') || '')
+		sort: ['recent', 'price_asc', 'price_desc', 'points_desc', 'points_asc', 'name'].includes(
+			p.get('sort') || ''
+		)
 			? p.get('sort')!
 			: 'recent',
 		page: Math.min(10000, Math.max(1, Math.floor(Number(p.get('page')) || 1)))
@@ -69,6 +72,8 @@ const SELECT = `SELECT p.product_id::text,p.product_name,b.name AS brand,lower(c
  latest.price,latest.retailer,latest.retailer_product_id::text,latest.collected_at,
  (SELECT count(*)::int FROM price_history ph JOIN retailer_product rp ON rp.retailer_product_id=ph.retailer_product_id WHERE rp.product_id=p.product_id) AS observation_count,
  (SELECT count(*)::int FROM retailer_price_change rpc JOIN retailer_product rp USING(retailer_product_id) JOIN retailer r USING(retailer_id) WHERE rp.product_id=p.product_id AND r.name='Digitec') AS digitec_history_count,
+	(SELECT count(*)::int FROM price_history ph JOIN retailer_product rp ON rp.retailer_product_id=ph.retailer_product_id WHERE rp.product_id=p.product_id)
+	+ (SELECT count(*)::int FROM retailer_price_change rpc JOIN retailer_product rp USING(retailer_product_id) WHERE rp.product_id=p.product_id) AS price_point_count,
  CASE lower(c.name) WHEN 'gpu' THEN concat_ws(' · ',gpu.gpu_model, CASE WHEN gpu.vram_gb IS NOT NULL THEN gpu.vram_gb||' GB VRAM' END)
  WHEN 'ram' THEN concat_ws(' · ',ram.total_capacity_gb||' GB',ram.ram_type,ram.speed_mts||' MT/s')
  WHEN 'ssd' THEN concat_ws(' · ',ssd.capacity_gb||' GB',ssd.pcie_generation,ssd.form_factor) END AS spec `;
@@ -77,6 +82,8 @@ const sorts: Record<string, string> = {
 	recent: 'latest.collected_at DESC NULLS LAST,p.product_id DESC',
 	price_asc: 'latest.price ASC NULLS LAST,p.product_id DESC',
 	price_desc: 'latest.price DESC NULLS LAST,p.product_id DESC',
+	points_desc: 'price_point_count DESC,p.product_id DESC',
+	points_asc: 'price_point_count ASC,p.product_id DESC',
 	name: 'p.product_name ASC,p.product_id ASC'
 };
 

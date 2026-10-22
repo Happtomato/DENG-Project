@@ -17,6 +17,9 @@
 	let max = $state('');
 	let sort = $state('recent');
 	let loading = $state(false);
+	function applyFilter(event: Event) {
+		(event.currentTarget as HTMLInputElement | HTMLSelectElement).form?.requestSubmit();
+	}
 	$effect(() => {
 		search = data.filters.search;
 		category = data.filters.category;
@@ -61,7 +64,13 @@
 		{tx('Die Produktdatenbank ist momentan nicht erreichbar.', prefs.lang)}
 		{data.error}
 	</div>{/if}
-<form action="/explore" method="GET" class="filters panel" onsubmit={() => (loading = true)}>
+<form
+	id="explore-filters"
+	action="/explore"
+	method="GET"
+	class="filters panel"
+	onsubmit={() => (loading = true)}
+>
 	<div class="search-field">
 		<Search size={17} /><input
 			name="search"
@@ -76,6 +85,7 @@
 				id="category"
 				name="category"
 				bind:value={category}
+				onchange={applyFilter}
 				><option value="">{tx('Alle Kategorien', prefs.lang)}</option><option value="gpu"
 					>GPU</option
 				><option value="ram">RAM</option><option value="ssd">SSD</option></select
@@ -86,6 +96,7 @@
 				id="brand"
 				name="brand"
 				bind:value={brand}
+				onchange={applyFilter}
 				><option value="">{tx('Alle Hersteller', prefs.lang)}</option
 				>{#each data.options.brands as b (b)}<option value={b}>{b}</option>{/each}</select
 			>
@@ -95,6 +106,7 @@
 				id="retailer"
 				name="retailer"
 				bind:value={retailer}
+				onchange={applyFilter}
 				><option value="">{tx('Alle Händler', prefs.lang)}</option
 				>{#each data.options.retailers as r (r)}<option value={r}>{r}</option>{/each}</select
 			>
@@ -107,6 +119,7 @@
 				min="0"
 				step="0.01"
 				bind:value={min}
+				onchange={applyFilter}
 				placeholder="0"
 			/>
 		</div>
@@ -118,28 +131,20 @@
 				min="0"
 				step="0.01"
 				bind:value={max}
+				onchange={applyFilter}
 				placeholder="∞"
 			/>
-		</div>
-		<div class="field">
-			<label for="sort">{tx('Sortierung', prefs.lang)}</label><select
-				id="sort"
-				name="sort"
-				bind:value={sort}
-				><option value="recent">{tx('Zuletzt beobachtet', prefs.lang)}</option><option
-					value="price_asc">{tx('Preis aufsteigend', prefs.lang)}</option
-				><option value="price_desc">{tx('Preis absteigend', prefs.lang)}</option><option
-					value="name">{tx('Name A–Z', prefs.lang)}</option
-				></select
-			>
 		</div>
 	</div>
 	<div class="filter-actions">
 		<label class="history-filter"
-			><input type="checkbox" name="history" value="digitec" bind:checked={digitecHistory} />{tx(
-				'Mit Digitec-Preisverlauf',
-				prefs.lang
-			)}</label
+			><input
+				type="checkbox"
+				name="history"
+				value="digitec"
+				bind:checked={digitecHistory}
+				onchange={applyFilter}
+			/>{tx('Mit Digitec-Preisverlauf', prefs.lang)}</label
 		>
 		<div>
 			<a class="clear" href="/explore"><X size={13} /> {tx('Zurücksetzen', prefs.lang)}</a><button
@@ -154,12 +159,24 @@
 		<span class="section-kicker">{tx('IMPORTIERTE PRODUKTE', prefs.lang)}</span>
 		<h2>{tx('Ergebnisse', prefs.lang)} <span>({data.listing.total})</span></h2>
 	</div>
-	<span
-		>{tx('Seite', prefs.lang)}
-		{data.listing.page}
-		{tx('von', prefs.lang)}
-		{Math.max(1, Math.ceil(data.listing.total / data.listing.pageSize))}</span
-	>
+	<div class="results-controls">
+		<label for="sort">{tx('Sortierung', prefs.lang)}</label>
+		<select id="sort" name="sort" form="explore-filters" bind:value={sort} onchange={applyFilter}
+			><option value="recent">{tx('Zuletzt beobachtet', prefs.lang)}</option><option
+				value="price_asc">{tx('Preis aufsteigend', prefs.lang)}</option
+			><option value="price_desc">{tx('Preis absteigend', prefs.lang)}</option><option
+				value="points_desc">{tx('Meiste Preispunkte', prefs.lang)}</option
+			><option value="points_asc">{tx('Wenigste Preispunkte', prefs.lang)}</option><option
+				value="name">{tx('Name A–Z', prefs.lang)}</option
+			></select
+		>
+		<span
+			>{tx('Seite', prefs.lang)}
+			{data.listing.page}
+			{tx('von', prefs.lang)}
+			{Math.max(1, Math.ceil(data.listing.total / data.listing.pageSize))}</span
+		>
+	</div>
 </div>
 {#if loading}<div class="loading-grid" aria-label={tx('Lade Produkte', prefs.lang)}>
 		{#each [1, 2, 3, 4, 5, 6] as index (index)}<div class="panel">
@@ -194,6 +211,8 @@
 					</div>
 				</div>
 				<div class="card-date">
+					{product.price_point_count}
+					{tx('Preispunkte', prefs.lang)} ·
 					{product.collected_at
 						? `${tx('Zuletzt beobachtet', prefs.lang)} ${dateTime(product.collected_at, prefs.lang)}`
 						: tx('Noch keine Preisbeobachtung', prefs.lang)}
@@ -266,7 +285,7 @@
 	}
 	.filter-row {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr) repeat(2, 0.7fr) 1.2fr;
+		grid-template-columns: repeat(3, 1fr) repeat(2, 0.7fr);
 		gap: 10px;
 		margin: 15px 0;
 	}
@@ -322,11 +341,26 @@
 		color: var(--muted);
 		font-size: 13px;
 	}
-	.results-title > span {
+	.results-controls {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.results-controls label,
+	.results-controls > span {
 		color: var(--muted);
 		font:
 			10px 'DM Mono',
 			monospace;
+	}
+	.results-controls select {
+		min-width: 190px;
+		border: 1px solid var(--line-strong);
+		border-radius: 7px;
+		padding: 9px;
+		background: var(--surface);
+		color: var(--text);
+		cursor: pointer;
 	}
 	.product-grid,
 	.loading-grid {
@@ -454,6 +488,12 @@
 		}
 	}
 	@media (max-width: 650px) {
+		.results-title,
+		.results-controls {
+			align-items: flex-start;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
 		.filter-row {
 			grid-template-columns: repeat(2, 1fr);
 		}

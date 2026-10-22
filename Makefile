@@ -1,7 +1,8 @@
-.PHONY: help up status verify check test seed-export seed-import stop
+.PHONY: help up frontend-rebuild status verify check test seed-export seed-import stop
 
 help:
 	@echo "up          Build and start the local stack (DAILY schedule follows .env)"
+	@echo "frontend-rebuild Build and restart only the frontend service"
 	@echo "status      Show Compose services"
 	@echo "verify      Read-only PostgreSQL verification"
 	@echo "check       Python syntax, Svelte/TypeScript and frontend lint"
@@ -12,6 +13,10 @@ help:
 
 up:
 	docker compose up -d --build
+
+frontend-rebuild:
+	docker compose build frontend
+	docker compose up -d --no-deps --force-recreate frontend
 
 status:
 	docker compose ps
