@@ -239,6 +239,11 @@ def uncaptured_candidates(catalog_path: Path) -> tuple[list[dict], int]:
 
 def collect_rows(rows: list[dict], raw_dir: Path, max_products: int,
                  delay: float) -> dict:
+    """Capture each product at most once per Zurich day, including failed requests.
+
+    The dated request journal is written before HTTP. A crash during a request
+    leaves ``in_flight`` set and conservatively stops the rest of that day.
+    """
     if raw_dir.name != today() or max_products < 1 or delay < 3:
         raise ValueError('Live collection needs today, a positive limit and >=3 seconds delay')
     # When a conservative daily request cap is smaller than the selected set,
@@ -246,57 +251,89 @@ def collect_rows(rows: list[dict], raw_dir: Path, max_products: int,
     def last_capture(row):
         return max((path.parent.name for path in RAW.glob('*/' + row['slug'] + '.json')),
                    default='0000-00-00')
-    pending = [row for row in rows if not (raw_dir / (row['slug'] + '.json')).exists()]
-    reused = len(rows) - len(pending)
-    pending.sort(key=lambda row: (last_capture(row), row['category'], row['slug']))
-    if not pending:
-        return {'selected': len(rows), 'product_requests': 0, 'saved': 0,
-                'reused_today': reused,
-                'deferred': 0, 'errors': []}
-    session = requests.Session()
-    session.headers.update({'User-Agent': USER_AGENT, 'Accept-Language': 'de-CH,de;q=0.9'})
-    fetched, attempts, failures = 0, 0, []
-    try:
-        robots_response = session.get(ORIGIN + '/robots.txt', timeout=20, allow_redirects=False)
-        robots_response.raise_for_status()
-        robots = RobotFileParser()
-        robots.parse(robots_response.text.splitlines())
-        raw_dir.mkdir(parents=True, exist_ok=True)
-        for row in pending:
-            path = raw_dir / (row['slug'] + '.json')
-            if attempts >= max_products:
-                break
-            if not robots.can_fetch(USER_AGENT, row['url']):
-                failures.append({'slug': row['slug'], 'error': 'robots.txt disallows URL'})
-                continue
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    journal_path = raw_dir / '_request_attempts.json'
+    # The lock also prevents two concurrent DAILY runs from exceeding the
+    # once-per-day agreement. It is held for this small bounded batch.
+    with catalog_lock(journal_path):
+        journal = (json.loads(journal_path.read_text(encoding='utf-8'))
+                   if journal_path.exists() else {'date': raw_dir.name, 'attempted': [],
+                                                 'in_flight': None, 'blocked': None})
+        if journal.get('date') != raw_dir.name or not isinstance(journal.get('attempted'), list):
+            raise ValueError('Invalid SwissHardware request journal; refusing live requests')
+        attempted_today = set(journal['attempted'])
+        pending = [row for row in rows if not (raw_dir / (row['slug'] + '.json')).exists()
+                   and row['slug'] not in attempted_today]
+        reused = sum((raw_dir / (row['slug'] + '.json')).exists() for row in rows)
+        previously_attempted = len(rows) - reused - len(pending)
+        pending.sort(key=lambda row: (last_capture(row), row['category'], row['slug']))
+        blocked = journal.get('blocked') or (
+            'Previous request was interrupted' if journal.get('in_flight') else None)
+        if blocked or not pending:
+            return {'selected': len(rows), 'product_requests': 0, 'saved': 0,
+                    'reused_today': reused, 'already_attempted_today': previously_attempted,
+                    'deferred': len(pending), 'blocked_today': blocked,
+                    'errors': [{'error': f'SwissHardware requests paused today: {blocked}'}] if blocked else []}
+        session = requests.Session()
+        session.headers.update({'User-Agent': USER_AGENT, 'Accept-Language': 'de-CH,de;q=0.9'})
+        fetched, attempts, failures = 0, 0, []
+        try:
             try:
+                robots_response = session.get(ORIGIN + '/robots.txt', timeout=20,
+                                              allow_redirects=False)
+                robots_response.raise_for_status()
+            except requests.RequestException as error:
+                journal['blocked'] = f'robots.txt failed: {error}'
+                atomic_json(journal_path, journal)
+                return {'selected': len(rows), 'product_requests': 0, 'saved': 0,
+                        'reused_today': reused, 'already_attempted_today': previously_attempted,
+                        'deferred': len(pending), 'blocked_today': journal['blocked'],
+                        'errors': [{'error': journal['blocked']}]}
+            robots = RobotFileParser()
+            robots.parse(robots_response.text.splitlines())
+            for row in pending:
+                path = raw_dir / (row['slug'] + '.json')
+                if attempts >= max_products:
+                    break
+                if not robots.can_fetch(USER_AGENT, row['url']):
+                    failures.append({'slug': row['slug'], 'error': 'robots.txt disallows URL'})
+                    continue
                 time.sleep(delay)
                 attempts += 1
-                response = session.get(row['url'], timeout=25, allow_redirects=False)
-                if response.status_code != 200 or 'text/html' not in response.headers.get('Content-Type', ''):
-                    raise ValueError(f'HTTP {response.status_code} or non-HTML response')
-                captured_at = datetime.now(timezone.utc).isoformat()
-                # Preserve the original response; validation and DB import happen separately.
-                snapshot = {'source': 'swisshardware', 'access_method': 'public_html',
-                            'url': row['url'], 'category': row['category'],
-                            'captured_at': captured_at, 'html': response.text}
-                with path.open('x', encoding='utf-8') as saved:
-                    json.dump(snapshot, saved, ensure_ascii=False)
-                fetched += 1
-                print(f"SwissHardware {fetched}/{max_products}: saved {row['category']} {row['slug']}", flush=True)
-            except requests.RequestException as error:
-                failures.append({'slug': row['slug'], 'error': str(error)})
-            except ValueError as error:
-                failures.append({'slug': row['slug'], 'error': str(error)})
-                if response.status_code in (403, 429) or response.status_code >= 500:
+                journal['attempted'].append(row['slug'])
+                journal['in_flight'] = row['slug']
+                atomic_json(journal_path, journal)
+                try:
+                    response = session.get(row['url'], timeout=25, allow_redirects=False)
+                    if response.status_code != 200 or 'text/html' not in response.headers.get('Content-Type', ''):
+                        raise ValueError(f'HTTP {response.status_code} or non-HTML response')
+                    captured_at = datetime.now(timezone.utc).isoformat()
+                    # Preserve the original response; validation and DB import happen separately.
+                    snapshot = {'source': 'swisshardware', 'access_method': 'public_html',
+                                'url': row['url'], 'category': row['category'],
+                                'captured_at': captured_at, 'html': response.text}
+                    with path.open('x', encoding='utf-8') as saved:
+                        json.dump(snapshot, saved, ensure_ascii=False)
+                    fetched += 1
+                    print(f"SwissHardware {fetched}/{max_products}: saved {row['category']} {row['slug']}", flush=True)
+                except (requests.RequestException, ValueError) as error:
+                    failures.append({'slug': row['slug'], 'error': str(error)})
+                    if (isinstance(error, ValueError) and
+                            (response.status_code in (403, 429) or response.status_code >= 500)):
+                        journal['blocked'] = f'HTTP {response.status_code}'
+                # Leave in_flight set on an unexpected interruption. The next
+                # run then makes no more requests until the next Zurich day.
+                journal['in_flight'] = None
+                atomic_json(journal_path, journal)
+                if journal['blocked']:
                     break
-        return {'selected': len(rows), 'product_requests': attempts, 'saved': fetched,
-                'reused_today': reused,
-                'deferred': max(0, len(pending) - attempts -
-                                sum(1 for failure in failures if failure['error'].startswith('robots.txt'))),
-                'errors': failures}
-    finally:
-        session.close()
+            return {'selected': len(rows), 'product_requests': attempts, 'saved': fetched,
+                    'reused_today': reused, 'already_attempted_today': previously_attempted,
+                    'deferred': max(0, len(pending) - attempts -
+                                    sum(1 for failure in failures if failure['error'].startswith('robots.txt'))),
+                    'blocked_today': journal['blocked'], 'errors': failures}
+        finally:
+            session.close()
 
 
 def collect_selected(catalog_path: Path, raw_dir: Path, max_products: int = 3,

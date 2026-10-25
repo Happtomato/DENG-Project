@@ -8,6 +8,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from psycopg import sql
+from requests import HTTPError
 
 from backend.retailers.swisshardware.collector import (
     CATALOG, CATEGORIES, canonical_product_url, listing_pages, load_catalog, parse_listing,
@@ -190,6 +191,78 @@ class SwissHardwareCatalogTests(unittest.TestCase):
         self.assertEqual(report['deferred'], 1)
         self.assertEqual(len(report['errors']), 1)
         self.assertEqual(session.get.call_count, 2)  # robots.txt plus one product page
+
+    def test_failed_product_is_not_retried_on_same_day(self):
+        with tempfile.TemporaryDirectory() as directory:
+            raw = Path(directory) / '2026-10-22'
+            rows = [{'slug': 'test-swiss-a', 'category': 'gpu',
+                     'url': 'https://swisshw.ch/de/products/test-swiss-a'}]
+            session = Mock()
+            session.get.side_effect = [Mock(text='User-agent: *\nAllow: /'),
+                                       Mock(status_code=404, headers={'Content-Type': 'text/html'})]
+            with patch('backend.retailers.swisshardware.product.today', return_value='2026-10-22'), \
+                 patch('backend.retailers.swisshardware.product.requests.Session', return_value=session), \
+                 patch('backend.retailers.swisshardware.product.time.sleep'):
+                first = collect_rows(rows, raw, max_products=1, delay=3)
+                second = collect_rows(rows, raw, max_products=1, delay=3)
+            self.assertEqual(first['product_requests'], 1)
+            self.assertEqual(second['product_requests'], 0)
+            self.assertEqual(second['already_attempted_today'], 1)
+            self.assertEqual(session.get.call_count, 2)
+
+    def test_429_stops_remaining_products_and_all_same_day_reruns(self):
+        with tempfile.TemporaryDirectory() as directory:
+            raw = Path(directory) / '2026-10-22'
+            rows = [{'slug': slug, 'category': 'gpu',
+                     'url': f'https://swisshw.ch/de/products/{slug}'}
+                    for slug in ('test-swiss-a', 'test-swiss-b')]
+            session = Mock()
+            session.get.side_effect = [Mock(text='User-agent: *\nAllow: /'),
+                                       Mock(status_code=429, headers={'Content-Type': 'text/html'})]
+            with patch('backend.retailers.swisshardware.product.today', return_value='2026-10-22'), \
+                 patch('backend.retailers.swisshardware.product.requests.Session', return_value=session), \
+                 patch('backend.retailers.swisshardware.product.time.sleep'):
+                first = collect_rows(rows, raw, max_products=2, delay=3)
+                second = collect_rows(rows, raw, max_products=2, delay=3)
+            self.assertEqual(first['product_requests'], 1)
+            self.assertEqual(first['blocked_today'], 'HTTP 429')
+            self.assertEqual(second['product_requests'], 0)
+            self.assertEqual(second['blocked_today'], 'HTTP 429')
+            self.assertEqual(session.get.call_count, 2)
+
+    def test_interrupted_request_blocks_same_day_without_http(self):
+        with tempfile.TemporaryDirectory() as directory:
+            raw = Path(directory) / '2026-10-22'
+            raw.mkdir()
+            (raw / '_request_attempts.json').write_text(json.dumps({
+                'date': '2026-10-22', 'attempted': ['test-swiss-a'],
+                'in_flight': 'test-swiss-a', 'blocked': None,
+            }))
+            rows = [{'slug': 'test-swiss-b', 'category': 'gpu',
+                     'url': 'https://swisshw.ch/de/products/test-swiss-b'}]
+            with patch('backend.retailers.swisshardware.product.today', return_value='2026-10-22'), \
+                 patch('backend.retailers.swisshardware.product.requests.Session') as session:
+                report = collect_rows(rows, raw, max_products=1, delay=3)
+            self.assertEqual(report['product_requests'], 0)
+            self.assertEqual(report['deferred'], 1)
+            session.assert_not_called()
+
+    def test_robots_429_blocks_same_day_before_product_requests(self):
+        with tempfile.TemporaryDirectory() as directory:
+            raw = Path(directory) / '2026-10-22'
+            rows = [{'slug': 'test-swiss-a', 'category': 'gpu',
+                     'url': 'https://swisshw.ch/de/products/test-swiss-a'}]
+            robots = Mock()
+            robots.raise_for_status.side_effect = HTTPError('429 Too Many Requests')
+            session = Mock()
+            session.get.return_value = robots
+            with patch('backend.retailers.swisshardware.product.today', return_value='2026-10-22'), \
+                 patch('backend.retailers.swisshardware.product.requests.Session', return_value=session):
+                first = collect_rows(rows, raw, max_products=1, delay=3)
+                second = collect_rows(rows, raw, max_products=1, delay=3)
+            self.assertEqual(first['product_requests'], 0)
+            self.assertIn('robots.txt failed', second['blocked_today'])
+            self.assertEqual(session.get.call_count, 1)
 
     def test_daily_cap_counts_only_uncaptured_urls(self):
         with tempfile.TemporaryDirectory() as directory:

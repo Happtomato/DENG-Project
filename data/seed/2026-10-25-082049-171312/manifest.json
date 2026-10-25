@@ -1,0 +1,61 @@
+{
+  "format_version": 1,
+  "created_at": "2026-10-25T08:20:49.178180+00:00",
+  "tables": [
+    {
+      "name": "brand",
+      "rows": 11,
+      "sha256": "9edadff5d2adc29b9986da8e30ce08cab17d15b1fa97d695ffe8dc176bf2e4f3"
+    },
+    {
+      "name": "category",
+      "rows": 3,
+      "sha256": "26c2d74aab1da71e2b932beaf0214667ab9cee4b7946c212899f705790f38726"
+    },
+    {
+      "name": "retailer",
+      "rows": 3,
+      "sha256": "f720d52da775f8050fc4ec1f646720133a0266c0029be95208dfce75eb375b5d"
+    },
+    {
+      "name": "raw_import",
+      "rows": 650,
+      "sha256": "79dabec693e71d74efe3acef5574d56528a34616e611110e9b080e2e2410b071"
+    },
+    {
+      "name": "product",
+      "rows": 215,
+      "sha256": "ff99967a525a82eb269e6e4969853f8c724510636749d20c942f5911e7ffd559"
+    },
+    {
+      "name": "gpu_details",
+      "rows": 73,
+      "sha256": "587553d71656ba76953377bcf187146a04b1e31bdce8d69da192c38b006d32af"
+    },
+    {
+      "name": "ram_details",
+      "rows": 90,
+      "sha256": "850bd3f578a8ed807805779fa0368b5289ef48971c5b5455041e0519de1fb464"
+    },
+    {
+      "name": "ssd_details",
+      "rows": 52,
+      "sha256": "f621d97d41b9f988e320ebd04c6f7cea6094f4d9e1000b640953ff697ffb7b03"
+    },
+    {
+      "name": "retailer_product",
+      "rows": 229,
+      "sha256": "a9444ae91159ea03cef552e72bc2565ad9a6e0273a21c5a67cfb09b11e362775"
+    },
+    {
+      "name": "price_history",
+      "rows": 424,
+      "sha256": "beecafb0019da44fa32a9f09dbd11a980519af017810f9491f9e58452294c766"
+    },
+    {
+      "name": "retailer_price_change",
+      "rows": 3752,
+      "sha256": "1448b04c47a4943a09c6b17e0a3b2253c2ebbffb048b9a6a59597d4f7a6a29af"
+    }
+  ]
+}
