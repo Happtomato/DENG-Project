@@ -10,12 +10,10 @@ test -f .env || cp .env.example .env
 docker compose config --quiet
 docker compose up -d --build
 docker compose ps
-# On an empty database, choose this Raw-file REPLAY OR the Parquet seed import below.
-docker compose run --rm --no-deps pipeline python -m backend.flow replay
 docker compose run --rm --no-deps pipeline python -m backend.flow verify
 ```
 
-`db_init` applies `data/initialization.sql` and active migrations idempotently. On an empty database, `verify` correctly exits with code 1 until data is loaded. Do not run both a full REPLAY and a seed import into the same populated database. Never use `down -v` when retaining data. The frontend is at [localhost:3000](http://localhost:3000) and Prefect at [localhost:4200](http://localhost:4200). A fresh checkout registers the DAILY deployment paused by default.
+`db_init` applies the schema and migrations, then imports the newest `data/seed/*/manifest.json` bundle only if every business table is empty. It reports the selected bundle or `skipped_nonempty`. Without a bundle, the schema stays empty and `verify` exits with code 1 until data is loaded; a manual Raw-file REPLAY is then an option. Existing data is never replaced by a newer seed. Never use `down -v` when retaining data. The frontend is at [localhost:3000](http://localhost:3000) and Prefect at [localhost:4200](http://localhost:4200). Check `PIPELINE_SCHEDULE_ENABLED` in the copied `.env` before starting the deployment.
 
 ```sh
 docker compose logs --tail 80 pipeline
@@ -43,25 +41,75 @@ docker compose run --rm pipeline python -m backend.flow initial --selection /wor
 
 `--max-pages` and `--max-products` apply per category; `--max-requests` applies across categories, robots.txt, and redirects. Defaults are **three product attempts per category**, **20 total HTTP requests**, and at least **three seconds between requests**. Raising `--max-products` alone does not bypass the total request budget.
 
+## SwissHardware: provisional master data and daily prices
+
+SwissHardware Sàrl allowed automated access once per day. On 22 October 2026, the team captured all linked GPU, RAM, and SSD category pages: **6 + 4 + 4 pages**. The HTML is under `data/raw/swisshardware/listings/2026-10-22/`. The catalog contains **171 GPU, 111 RAM, and 113 SSD listing candidates**. Listing prices are not database observations. All **395 product pages** have now been captured once with at least three seconds between requests; 130 were already saved and only the 265 missing URLs were requested in the second pass. The detail-page manufacturer and technical checks found **184 currently in-scope offers**: 112 active with verified MPN (41 GPU, 38 RAM, 33 SSD), and 72 inactive without MPN (28 GPU, 32 RAM, 12 SSD). Another 11 offers imported under an earlier, looser RAM rule remain in PostgreSQL but are inactive with an explicit scope reason. All 395 captures are recorded in `raw_import`: 195 as loaded and 200 as rejected. The 200 rejected pages remain in Raw and the catalog with review reasons, without creating unverified product rows. Every imported offer retains its first real price observation and URL.
+
+```sh
+# Rebuild the pipeline image once after pulling the new adapter; no volume deletion.
+docker compose build pipeline
+# Reparse saved category HTML without any HTTP requests.
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.collector discover
+# Review candidates and their direct product links, optionally by category.
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.collector list gpu
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.collector list ram
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.collector list ssd
+# Manual overrides for a catalog candidate; active DAILY membership is held in PostgreSQL.
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.collector select PRODUCT-SLUG
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.collector deselect PRODUCT-SLUG
+```
+
+To refresh the category catalog on a **later** Zurich calendar day, run `discover --live --max-pages 10 --max-requests 20 --delay 3`. Existing listing HTML for that day is reused. Category discovery is manual and does not run at 03:00. It follows only numbered pages in the three approved categories, checks robots.txt and stops on denied or failed responses. INITIAL requests only product URLs that have never been captured on any date. It can be rerun without another product request after the current catalog is captured:
+
+```sh
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.product initial --max-products 20 --delay 3
+```
+
+The product collector stores HTML, URL, listing-derived category, and actual capture timestamp in `data/raw/swisshardware/products/YYYY-MM-DD/`. The importer checks canonical URL, seller, CHF price, manufacturer and technical scope, and explicitly labelled manufacturer MPN; the shop's JSON-LD `brand` names the shop and its JSON-LD `mpn` is a variant ID, so neither is used as manufacturer evidence. An explicit `Fabricant` on the page takes precedence; ASUS TUF and Kingston FURY Beast are recognized from their titles when that field is absent. Repeated imports are idempotent. Exact EAN and MPN can link an existing MediaMarkt master without overwriting conflicting technical descriptions. An offer without verified MPN is retained with `is_active=false` and a reason; it receives no later DAILY fetch. The 22 October Raw files can be replayed without HTTP:
+
+```sh
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.product initial --raw-dir data/raw/swisshardware/products/2026-10-22 --max-products 1
+# On a new Zurich calendar day, fetch active PostgreSQL offer URLs and import their observations:
+docker compose run --rm --no-deps pipeline python -m backend.retailers.swisshardware.product daily --max-products 200 --delay 3
+```
+
+DAILY reads active SwissHardware offers from PostgreSQL; the catalog's `selected` flag records INITIAL review. The current cap of 200 covers all 112 active offers, with a three-second minimum delay, and reports any deferred offers if the active set later exceeds the cap. A stopped or sleeping host misses the 03:00 run. The first *next-day* SwissHardware HTTP run is still unverified. Digitec enrichment after permission will require extending its current eight-product importer and exact MPN/EAN matching; unknown identities must not be merged by similar names.
+
 ## DAILY and Prefect
 
 ```sh
-# Database-based update of known, in-scope offers only.
+# Database-based MediaMarkt update plus the selected SwissHardware URLs.
 docker compose run --rm pipeline python -m backend.flow daily
 # Optional one-SKU manual check, after agreeing on live access.
 docker compose run --rm pipeline python -m backend.flow daily --categories ssd --sku 2199070 --max-products 1 --max-requests 3 --delay 3
 # Read-only database and deployment checks.
 docker compose run --rm pipeline python -m backend.flow verify
-docker compose exec -T prefect_server env PREFECT_API_URL=http://localhost:4200/api prefect deployment inspect 'DENG MediaMarkt Batch/mediamarkt-daily' --output json
+docker compose exec -T prefect_server env PREFECT_API_URL=http://localhost:4200/api prefect deployment inspect 'DENG Product Price Pipeline/fetch-product-prices-daily' --output json
 ```
 
-The schedule is `0 3 * * *` in `Europe/Zurich`. A fresh checkout starts with `PIPELINE_SCHEDULE_ENABLED=false`. The team explicitly enabled its **local** deployment on 20 October (`.env`: `PIPELINE_SCHEDULE_ENABLED=true`); inspection on 21 October confirmed `paused=false` and `active=true`. To enable it on another machine, set that variable in its `.env`, run `docker compose up -d --no-deps --force-recreate pipeline`, then inspect the deployment. The host must be awake and Docker running at execution time.
+The schedule is `0 3 * * *` in `Europe/Zurich`. Compose's fallback is `PIPELINE_SCHEDULE_ENABLED=false`, while the current `.env.example` sets it to `true`; review the copied `.env` before launching on another machine. The team's **local** `.env` enables the deployment. On 24 October, Prefect listed only `DENG Product Price Pipeline/fetch-product-prices-daily`, with `paused=false` and `active=true`; older run history remains visible without the old deployment. DAILY runs MediaMarkt collection, the local authorised Digitec inbox import, and active SwissHardware product URLs from PostgreSQL. SwissHardware category discovery remains manual and is never scheduled. To change schedule activation, set the variable in `.env`, run `docker compose up -d --no-deps --force-recreate pipeline`, then inspect the deployment. The host must be awake and Docker running at execution time.
+
+Prefect's run form now shows typed default values and a description for every parameter. The deployment uses these current values unless overridden:
+
+| Parameter | Default | Meaning |
+| --- | --- | --- |
+| `mode` | `daily` | Run the daily workflow. Other modes are manual CLI operations. |
+| `input_dir` | `/workspace/data/raw/mediamarkt` | MediaMarkt Raw JSON directory. |
+| `catalog` | `/workspace/data/catalog/mediamarkt.json` | MediaMarkt candidate catalog. |
+| `max_products` | `3` | MediaMarkt attempts **per category**; SwissHardware separately caps at 200 active offers. |
+| `max_requests` | `20` | Maximum MediaMarkt HTTP requests in this run. |
+| `selection` | `/workspace/data/catalog/mediamarkt_initial.json` | Manual MediaMarkt INITIAL URL selection; unused by DAILY. |
+| `delay` | `3.0` seconds | Minimum delay between requests for both retailers. |
+| `categories` | `gpu`, `ram`, `ssd` | MediaMarkt categories; SwissHardware DAILY uses all active DB offers. |
+| `max_pages` | `1` | MediaMarkt listing pages for manual DISCOVER; unused by DAILY. |
+| `from_catalog` | `false` | MediaMarkt INITIAL catalog selection; unused by DAILY. |
+| `product_sku` | `null` | No MediaMarkt SKU restriction; a targeted manual SKU run skips SwissHardware. |
 
 The scheduled 21 October run started at 03:50 rather than 03:00 because the Mac slept. It stored five new MediaMarkt observations, reported three disconnected product attempts, and ended `Failed/partial`. The Mac slept again from 03:50:10 to a brief wake at 04:49:38, which accounts for almost all of one apparent hour-long request. The 20-second socket-inactivity timeout does not wake a sleeping computer. See the [run report](../data/catalog/runs/20261021T015016086824Z.json).
 
 Starting the Prefect deployment manually without overriding parameters uses **DAILY**. REPLAY must be selected explicitly. The small per-category limit leaves other offers for a later run; it does not check the whole catalog every day. `--sku` is only for a manual DAILY run and refers to an already imported MediaMarkt SKU. In the Prefect UI, set `product_sku` with `mode=daily` and matching `categories` for a manual single-offer run. The scheduled run has no SKU filter. A changed current price appears only after a successful new product fetch and load; replaying an old file cannot discover it.
 
-Inspect the overall Prefect state **and all three tasks**. `Collect Completed` only means that the collection task returned a report. On per-product failures, Transform/Load still process successful Raw files. The result's `outcome` distinguishes new observations, failed attempts, and offers deferred by limits. A technically partial result is marked **Failed** in Prefect so the missing fetch is visible; successful DB rows remain. `RemoteDisconnected` is a network failure, not HTTP 403/429. HTTP 403/429 stops further requests. There are no automatic HTTP retries or backoff loops.
+Inspect the overall Prefect state **and every task**. `Collect Completed` only means that the collection task returned a report. On per-product failures, Transform/Load still process successful Raw files. The result's `outcome` distinguishes new observations, failed attempts, and offers deferred by limits. A technically partial result is marked **Failed** in Prefect so the missing fetch is visible; successful DB rows remain. `RemoteDisconnected` is a network failure, not HTTP 403/429. HTTP 403/429 stops further requests. There are no automatic HTTP retries or backoff loops.
 
 ## REPLAY, backfill, and SQL
 
@@ -141,23 +189,24 @@ qodana scan --config qodana-frontend.yaml
 
 The two configurations inspect `backend/` and `frontend/` separately and install their locked dependencies before analysis. The Python Community linter can run without a Cloud token; the JavaScript linter requires a Qodana Ultimate project token supplied through `QODANA_TOKEN` in the environment. Do not put tokens in YAML or `.env.example`. Qodana complements the existing `make check` (including Svelte-specific checks); it does not replace the offline tests above.
 
-GitHub Actions runs the frontend checks, the full Python and frontend test suites, and both Qodana configurations on pushes and pull requests. The test job starts its own Docker Compose stack with the DAILY schedule disabled and restores `data/seed/midterm-2026-10-20/` into a fresh CI database; it never collects live retailer pages. Commit that complete seed bundle with the workflow, or the integration job will stop with a clear error. Python Qodana Community needs no secret. Frontend Qodana runs only after `QODANA_TOKEN_FRONTEND` is added as a GitHub repository secret for a Qodana Ultimate project; without it, the job explains the skip while the normal frontend checks still run. The workflow does not push fixes or change the local database.
+GitHub Actions runs the frontend checks, the full Python and frontend test suites, and both Qodana configurations on pushes and pull requests. The test job starts its own Docker Compose stack with the DAILY schedule disabled; `db_init` restores the newest committed seed into its fresh CI database. It never collects live retailer pages. Commit at least one complete seed bundle with the workflow, or the integration job will stop with a clear error. Python Qodana Community needs no secret. Frontend Qodana runs only after `QODANA_TOKEN_FRONTEND` is added as a GitHub repository secret for a Qodana Ultimate project; without it, the job explains the skip while the normal frontend checks still run. The workflow does not push fixes or change the local database.
 
 ## Parquet seed for a new database
 
-`backend/seed.py` is called **manually via the pipeline container CLI**, not HTTP and not GitHub Actions. `make seed-export` creates a new timestamped `data/seed/.../` directory; `backend.flow seed-export --seed-dir <new-path>` is the direct form. It exports eleven business tables to Parquet and writes a row-count/SHA-256 manifest. It will not overwrite an existing bundle. This is a snapshot of existing data, not a new scrape or synthetic history.
+`make seed-export` creates a new timestamped `data/seed/.../` directory; `backend.flow seed-export --seed-dir <new-path>` is the direct form. It exports eleven business tables to Parquet and writes a row-count/SHA-256 manifest with a UTC creation time. The next **fresh, empty** database chooses the newest manifest automatically, regardless of directory name. Older bundles without a creation time use the date in their directory name. A malformed newest bundle fails startup rather than silently falling back to an older one. This is a snapshot of existing data, not a new scrape or synthetic history.
 
-The included `data/seed/midterm-2026-10-20/` bundle contains 26 products, 34 offers, 63 own price observations, and 3,752 separate Digitec chart changes as of export. **Do not import it into the project's populated database.** Import requires an initialized schema with empty business tables and checks all hashes and rows before a transactional restore.
+The included `data/seed/midterm-2026-10-20/` bundle currently contains 26 products, 34 offers, 79 own price observations, and 3,752 separate Digitec chart changes. **Do not import it into the project's populated database.** Import requires an initialized schema with empty business tables and checks all hashes and rows before a transactional restore.
 
 ```sh
-# Only after docker compose up -d --build on a fresh, empty database:
-docker compose run --rm --no-deps pipeline python -m backend.flow seed-import
+# Import is automatic during the first docker compose up on an empty database.
 docker compose run --rm --no-deps pipeline python -m backend.flow verify
 # Export the current database to a NEW bundle directory:
 make seed-export
 # Or choose the new destination explicitly:
 docker compose run --rm --no-deps pipeline python -m backend.flow seed-export --seed-dir data/seed/my-new-snapshot
 ```
+
+`backend.flow seed-import` remains available for an initialized **empty** database or isolated test schema; `--seed-dir` selects a particular bundle. It refuses populated tables. Exporting a newer bundle never modifies the current database and takes effect only on a future fresh database.
 
 The existing bundle was also restored into an isolated empty test schema; a second import was rejected. Raw JSON remains the source evidence.
 

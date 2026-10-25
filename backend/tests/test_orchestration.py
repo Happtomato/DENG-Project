@@ -1,15 +1,28 @@
 import unittest
 import inspect
 from unittest.mock import patch
+from prefect.utilities.callables import parameter_schema
 from backend import flow as module
 
 
 class OrchestrationTests(unittest.TestCase):
     def test_parameterless_prefect_run_defaults_to_daily(self):
-        self.assertEqual(inspect.signature(module.mediamarkt_pipeline.fn).parameters['mode'].default,'daily')
+        self.assertEqual(inspect.signature(module.product_price_pipeline.fn).parameters['mode'].default,'daily')
+
+    def test_prefect_form_has_typed_defaults_and_explanations(self):
+        self.assertEqual(module.product_price_pipeline.name, 'DENG Product Price Pipeline')
+        properties = parameter_schema(module.product_price_pipeline.fn).model_dump()['properties']
+        self.assertEqual(properties['mode']['default'], 'daily')
+        self.assertEqual(properties['categories']['default'], ['gpu', 'ram', 'ssd'])
+        self.assertEqual(properties['max_products']['default'], 3)
+        self.assertEqual(properties['max_requests']['default'], 20)
+        self.assertEqual(properties['delay']['default'], 3.0)
+        for field in properties.values():
+            self.assertIn('default', field)
+            self.assertTrue(field.get('description'))
 
     def test_manual_commands_route_to_the_same_flow(self):
-        with patch.object(module,'mediamarkt_pipeline') as pipeline:
+        with patch.object(module,'product_price_pipeline') as pipeline:
             self.assertEqual(module.main(['discover','--categories','gpu','--max-pages','1',
                                           '--max-requests','3']),0)
             self.assertEqual(pipeline.call_args.kwargs['mode'],'discover')
@@ -34,27 +47,27 @@ class OrchestrationTests(unittest.TestCase):
         with patch.object(module,'collect',return_value=collection), \
              patch.object(module,'transform') as transform, patch.object(module,'load') as load, \
              patch.object(module,'connect') as connect:
-            result=module.mediamarkt_pipeline.fn('discover')
+            result=module.product_price_pipeline.fn('discover')
         self.assertEqual(result['outcome']['new_urls'],2)
         transform.assert_not_called();load.assert_not_called();connect.assert_not_called()
 
     def test_serve_rejects_discovery_and_initial(self):
         for mode in ('discover','initial','replay'):
-            with self.subTest(mode=mode), patch.object(module.mediamarkt_pipeline,'serve') as serve:
+            with self.subTest(mode=mode), patch.object(module.product_price_pipeline,'serve') as serve:
                 with self.assertRaises(SystemExit) as error:
                     module.main(['serve','--mode',mode])
                 self.assertEqual(error.exception.code,2)
                 serve.assert_not_called()
         with patch.dict('os.environ',{'PIPELINE_SCHEDULE_ENABLED':'false'}), \
-             patch.object(module.mediamarkt_pipeline,'serve') as serve:
+             patch.object(module.product_price_pipeline,'serve') as serve:
             module.main(['serve','--mode','live'])
             self.assertEqual(serve.call_args.kwargs['parameters']['mode'],'daily')
             self.assertTrue(serve.call_args.kwargs['paused'])
         with patch.dict('os.environ',{'PIPELINE_SCHEDULE_ENABLED':'true'}), \
-             patch.object(module.mediamarkt_pipeline,'serve') as serve:
+             patch.object(module.product_price_pipeline,'serve') as serve:
             module.main(['serve'])
             self.assertFalse(serve.call_args.kwargs['paused'])
-        with patch.object(module.mediamarkt_pipeline,'serve') as serve:
+        with patch.object(module.product_price_pipeline,'serve') as serve:
             with self.assertRaises(SystemExit):
                 module.main(['discover','--serve'])
             serve.assert_not_called()
@@ -67,7 +80,7 @@ class OrchestrationTests(unittest.TestCase):
         with patch.object(module,'collect',return_value=collection), \
              patch.object(module,'transform',return_value=[]), \
              patch.object(module,'load',return_value=loaded):
-            result=module.mediamarkt_pipeline.fn('initial')
+            result=module.product_price_pipeline.fn('initial')
         self.assertEqual(result['outcome']['new_offers_from_selection'],0)
         self.assertEqual(result['outcome']['already_imported'],1)
         self.assertEqual(result['outcome']['http_requests'],0)
@@ -87,16 +100,20 @@ class OrchestrationTests(unittest.TestCase):
              patch.object(module,'transform',return_value=[]), \
              patch.object(module,'load',return_value=loaded), \
              patch.object(module,'import_digitec_files',return_value={'loaded':1,'rejected':0,'error':0}) as digitec, \
+             patch.object(module,'collect_swisshardware',return_value={'collection':{'errors':[]},'import':{'loaded':0,'rejected':0,'error':0}}) as swiss, \
              patch.object(module,'connect') as connect, \
              patch.object(module,'verification',return_value={'ok':True}), \
              patch.object(module,'print'):
-            result=module.mediamarkt_pipeline.fn('daily')
+            result=module.product_price_pipeline.fn('daily')
             self.assertEqual(result['outcome']['digitec_import']['loaded'],1)
+            swiss.assert_called_once()
             digitec.assert_called_once()
             connect.assert_called_once()
             digitec.reset_mock()
-            module.mediamarkt_pipeline.fn('replay')
+            swiss.reset_mock()
+            module.product_price_pipeline.fn('replay')
             digitec.assert_not_called()
+            swiss.assert_not_called()
 
     def test_manual_daily_sku_filters_database_products_before_collection(self):
         products=[{'retailer_sku':'2199070'},{'retailer_sku':'2155505'}]
@@ -111,7 +128,7 @@ class OrchestrationTests(unittest.TestCase):
 
     def test_manual_sku_cannot_be_used_for_scheduled_or_replay_runs(self):
         for command in (['serve','--sku','2199070'],['replay','--sku','2199070']):
-            with self.subTest(command=command), patch.object(module.mediamarkt_pipeline,'serve') as serve:
+            with self.subTest(command=command), patch.object(module.product_price_pipeline,'serve') as serve:
                 with self.assertRaises(SystemExit):
                     module.main(command)
                 serve.assert_not_called()
@@ -119,8 +136,10 @@ class OrchestrationTests(unittest.TestCase):
     def test_failed_live_collection_loads_existing_then_fails(self):
         with patch.object(module,'collect',return_value={'exit_code':1}), \
              patch.object(module,'transform',return_value=[]) as transform, \
+             patch.object(module,'import_digitec_files',return_value={'loaded':0,'rejected':0,'error':0}), \
+             patch.object(module,'collect_swisshardware',return_value={'collection':{'errors':[]},'import':{'loaded':0,'rejected':0,'error':0}}), \
              patch.object(module,'load',return_value={'error':0,'accepted':1,'verification':{'ok':True}}) as load:
-            with self.assertRaises(RuntimeError):module.mediamarkt_pipeline.fn('live',input_dir='/tmp')
+            with self.assertRaises(RuntimeError):module.product_price_pipeline.fn('live',input_dir='/tmp')
             transform.assert_called_once();load.assert_called_once()
 
     def test_partial_daily_reports_fresh_imports_before_failed_state(self):
@@ -132,10 +151,12 @@ class OrchestrationTests(unittest.TestCase):
                 'verification':{'ok':True}}
         with patch.object(module,'collect',return_value=collection), \
              patch.object(module,'transform',return_value=[]), \
+             patch.object(module,'import_digitec_files',return_value={'loaded':0,'rejected':0,'error':0}), \
+             patch.object(module,'collect_swisshardware',return_value={'collection':{'errors':[]},'import':{'loaded':0,'rejected':0,'error':0}}), \
              patch.object(module,'load',return_value=loaded), \
              patch.object(module,'print') as output:
             with self.assertRaisesRegex(RuntimeError,'DAILY partial: 1 new observations'):
-                module.mediamarkt_pipeline.fn('daily')
+                module.product_price_pipeline.fn('daily')
         report=next(call.args[0] for call in output.call_args_list if '"run_result"' in call.args[0])
         self.assertIn('"run_result": "partial"',report)
         self.assertIn('"failed_product_attempts": 1',report)
@@ -144,4 +165,4 @@ class OrchestrationTests(unittest.TestCase):
         with patch.object(module,'collect',return_value={'exit_code':0}), \
              patch.object(module,'transform',return_value=[]), \
              patch.object(module,'load',return_value={'error':0,'accepted':0,'verification':{'ok':True}}):
-            with self.assertRaises(RuntimeError):module.mediamarkt_pipeline.fn('replay')
+            with self.assertRaises(RuntimeError):module.product_price_pipeline.fn('replay')

@@ -19,7 +19,8 @@ def entity(conn, table, name, **extra):
     return conn.execute(query, [name, *extra.values()]).fetchone()[table + '_id']
 
 
-def resolve_product(conn, v, brand_id, category_id, retailer_id):
+def resolve_product(conn, v, brand_id, category_id, retailer_id,
+                    allow_cross_source_details=False):
     matches = set()
     if v['ean']:
         matches.update(r['product_id'] for r in conn.execute(
@@ -31,6 +32,7 @@ def resolve_product(conn, v, brand_id, category_id, retailer_id):
         'SELECT product_id FROM retailer_product WHERE retailer_id=%s AND retailer_sku=%s', (retailer_id,v['sku'])))
     if len(matches)>1:
         raise InvalidRecord('GTIN, manufacturer/MPN and listing point to different products')
+    matched_existing = bool(matches)
     if matches:
         product = conn.execute('SELECT * FROM product WHERE product_id=%s', (matches.pop(),)).fetchone()
         if product['brand_id'] != brand_id or product['category_id'] != category_id:
@@ -53,10 +55,21 @@ def resolve_product(conn, v, brand_id, category_id, retailer_id):
             (brand_id,category_id,v['name'],v['ean'],v['mpn'])).fetchone()['product_id']
     table = sql.Identifier(v['category'] + '_details')
     old = conn.execute(sql.SQL('SELECT * FROM {} WHERE product_id=%s').format(table), (pid,)).fetchone()
+    # Exact EAN AND manufacturer MPN establish identity across retailers. Keep
+    # existing specifications when sources describe the same value differently;
+    # the new retailer's original HTML remains in Raw for later review.
+    retain_existing_details = bool(
+        old and allow_cross_source_details and v['ean'] and v['mpn'] and
+        product['ean'] and product['mpn'] and
+        product['ean'].zfill(14) == v['ean'] and
+        product['mpn'].strip().upper() == v['mpn'] and
+        conn.execute('''SELECT 1 FROM retailer_product rp JOIN retailer r USING(retailer_id)
+            WHERE rp.product_id=%s AND r.name<>'SwissHardware' LIMIT 1''', (pid,)).fetchone()
+    ) if matched_existing else False
     if old:
         for key,value in v['details'].items():
             same = old[key].casefold() == value.casefold() if isinstance(old[key],str) and isinstance(value,str) else old[key] == value
-            if value is not None and old[key] is not None and not same:
+            if value is not None and old[key] is not None and not same and not retain_existing_details:
                 raise InvalidRecord('Conflicting technical attribute: ' + key)
     conn.execute(sql.SQL('INSERT INTO {}(product_id) VALUES (%s) ON CONFLICT(product_id) DO NOTHING').format(table), (pid,))
     for key,value in v['details'].items():
@@ -65,19 +78,23 @@ def resolve_product(conn, v, brand_id, category_id, retailer_id):
     return pid
 
 
-def load_observation(conn, v, raw_sha):
+def load_observation(conn, v, raw_sha, retailer_name='MediaMarkt', website='https://www.mediamarkt.ch',
+                     active=True, tracking_reason=None):
     bid = entity(conn,'brand',v['brand'])
     cid = entity(conn,'category',v['category'].upper())
-    rid = entity(conn,'retailer','MediaMarkt',website='https://www.mediamarkt.ch')
-    pid = resolve_product(conn,v,bid,cid,rid)
+    rid = entity(conn,'retailer',retailer_name,website=website)
+    pid = resolve_product(conn,v,bid,cid,rid,allow_cross_source_details=retailer_name=='SwissHardware')
     listing = conn.execute('''INSERT INTO retailer_product
-        (product_id,retailer_id,retailer_sku,retailer_product_name,product_url,first_seen_at,last_seen_at)
-        VALUES (%s,%s,%s,%s,%s,%s,%s)
+        (product_id,retailer_id,retailer_sku,retailer_product_name,product_url,first_seen_at,last_seen_at,
+         is_active,tracking_reason)
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
         ON CONFLICT(retailer_id,retailer_sku) DO UPDATE SET
           first_seen_at=LEAST(retailer_product.first_seen_at,EXCLUDED.first_seen_at),
-          last_seen_at=GREATEST(retailer_product.last_seen_at,EXCLUDED.last_seen_at)
+          last_seen_at=GREATEST(retailer_product.last_seen_at,EXCLUDED.last_seen_at),
+          is_active=EXCLUDED.is_active,tracking_reason=EXCLUDED.tracking_reason
         RETURNING retailer_product_id''',
-        (pid,rid,v['sku'],v['name'],v['source_url'],v['observed'],v['observed'])).fetchone()['retailer_product_id']
+        (pid,rid,v['sku'],v['name'],v['source_url'],v['observed'],v['observed'],
+         active,tracking_reason)).fetchone()['retailer_product_id']
     previous = conn.execute('SELECT * FROM price_history WHERE retailer_product_id=%s AND collected_at=%s', (listing,v['observed'])).fetchone()
     if previous:
         for field,key in [('price_chf','price'),('original_price_chf','original'),('seller_name','seller_name'),('availability','availability')]:
@@ -92,8 +109,10 @@ def load_observation(conn, v, raw_sha):
 
 
 def ingest_file(conn, path, source='mediamarkt', *, transformed=None):
-    if source != 'mediamarkt':
-        raise ValueError('Only MediaMarkt is active in the Midterm')
+    if source not in ('mediamarkt', 'swisshardware'):
+        raise ValueError('Unsupported retailer source')
+    if source == 'swisshardware' and transformed is None:
+        raise ValueError('SwissHardware requires a validated transformed observation')
     item = transformed if transformed is not None else transform_file(path)
     status, reason = 'rejected', item.get('rejection')
     with conn.transaction():
@@ -109,7 +128,12 @@ def ingest_file(conn, path, source='mediamarkt', *, transformed=None):
         if 'observation' in item:
             try:
                 with conn.transaction():
-                    status = load_observation(conn,item['observation'],item['sha256'])
+                    if source == 'swisshardware':
+                        status = load_observation(conn,item['observation'],item['sha256'],
+                                                  'SwissHardware','https://swisshw.ch',
+                                                  item.get('active', True),item.get('tracking_reason'))
+                    else:
+                        status = load_observation(conn,item['observation'],item['sha256'])
             except InvalidRecord as error:
                 status,reason = 'rejected',str(error)
             except psycopg.Error as error:

@@ -96,7 +96,7 @@ class DatabaseTests(unittest.TestCase):
 
     def test_schema_repeat_and_empty_verification(self):
         migrate(self.conn)
-        self.assertEqual(self.count('schema_migration'),3)
+        self.assertEqual(self.count('schema_migration'),4)
         result=verification(self.conn)
         self.assertTrue(result['technically_valid'])
         self.assertFalse(result['data_loaded'])

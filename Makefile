@@ -8,7 +8,7 @@ help:
 	@echo "check       Python syntax, Svelte/TypeScript and frontend lint"
 	@echo "test        Offline Python tests and frontend integration tests"
 	@echo "seed-export Export an offline Parquet snapshot to a new directory"
-	@echo "seed-import Restore the bundled snapshot into an empty schema only"
+	@echo "seed-import Restore the newest snapshot into an empty schema only"
 	@echo "stop        Stop services without deleting volumes"
 
 up:
@@ -34,7 +34,7 @@ test:
 	DASHBOARD_TEST_URL=http://127.0.0.1:3000 npm --prefix frontend run test:integration
 
 seed-export:
-	docker compose run --rm --no-deps pipeline python -m backend.flow seed-export --seed-dir data/seed/$(shell date +%Y-%m-%d-%H%M%S)
+	docker compose run --rm --no-deps pipeline python -m backend.flow seed-export
 
 seed-import:
 	docker compose run --rm --no-deps pipeline python -m backend.flow seed-import

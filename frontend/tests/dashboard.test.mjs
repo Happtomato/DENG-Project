@@ -143,6 +143,12 @@ test('product API paginates and filters real database rows', async () => {
 	assert.equal(all.response.status, 200);
 	assert.ok(all.body.total > 0);
 	assert.ok(all.body.rows.length <= 18);
+	const expanded = await get('/api/products?pageSize=36');
+	assert.equal(expanded.response.status, 200);
+	assert.equal(expanded.body.pageSize, 36);
+	assert.equal(expanded.body.rows.length, Math.min(expanded.body.total, 36));
+	const bounded = await get('/api/products?pageSize=9999');
+	assert.equal(bounded.body.pageSize, 18);
 	const gpu = await get('/api/products?category=gpu&retailer=MediaMarkt&sort=price_asc');
 	assert.equal(gpu.response.status, 200);
 	assert.ok(gpu.body.rows.every((row) => row.category === 'gpu' && row.retailer === 'MediaMarkt'));
@@ -153,6 +159,16 @@ test('product API paginates and filters real database rows', async () => {
 	const injected = await get('/api/products?search=%27%20OR%201%3D1%20--');
 	assert.equal(injected.response.status, 200);
 	assert.equal(injected.body.total, 0);
+});
+
+test('explore keeps selected page size and view across filtered results', async () => {
+	const response = await fetch(origin + '/explore?category=ssd&pageSize=36&view=list');
+	assert.equal(response.status, 200);
+	const html = await response.text();
+	assert.match(html, /name="pageSize"/);
+	assert.match(html, /name="view" value="list"/);
+	assert.match(html, /class="product-list\b/);
+	assert.match(html, /pageSize=36/);
 });
 
 test('product detail preserves offer-specific history and handles missing IDs', async () => {
@@ -258,13 +274,13 @@ test('pipeline page reports Prefect state and no live start controls', async () 
 	const response = await fetch(origin + '/pipelines');
 	assert.equal(response.status, 200);
 	const html = await response.text();
-	assert.match(html, /mediamarkt-daily/);
+	assert.match(html, /fetch-product-prices-daily/);
 	const deployments = await fetch('http://127.0.0.1:4200/api/deployments/filter', {
 		method: 'POST',
 		headers: { 'content-type': 'application/json' },
 		body: JSON.stringify({ limit: 20 })
 	}).then((result) => result.json());
-	const daily = deployments.find((item) => item.name === 'mediamarkt-daily');
+	const daily = deployments.find((item) => item.name === 'fetch-product-prices-daily');
 	assert.ok(daily);
 	const expected =
 		daily.paused || !daily.schedules.some((schedule) => schedule.active) ? 'Pausiert' : 'Aktiv';

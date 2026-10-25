@@ -28,6 +28,8 @@ export type Filters = {
 	max: number | null;
 	sort: string;
 	page: number;
+	pageSize: number;
+	view: 'cards' | 'list';
 };
 
 export function parseFilters(url: URL): Filters {
@@ -52,7 +54,9 @@ export function parseFilters(url: URL): Filters {
 		)
 			? p.get('sort')!
 			: 'recent',
-		page: Math.min(10000, Math.max(1, Math.floor(Number(p.get('page')) || 1)))
+		page: Math.min(10000, Math.max(1, Math.floor(Number(p.get('page')) || 1))),
+		pageSize: [18, 36, 72].includes(Number(p.get('pageSize'))) ? Number(p.get('pageSize')) : 18,
+		view: p.get('view') === 'list' ? 'list' : 'cards'
 	};
 }
 
@@ -107,8 +111,14 @@ export async function listProducts(filters: Filters) {
 	];
 	const [rows, count] = await Promise.all([
 		query<ProductRow>(
-			`${SELECT} ${listBase} ${where} ORDER BY ${sorts[filters.sort]} LIMIT 18 OFFSET $9`,
-			[...params, filters.retailer, filters.digitec_history, (filters.page - 1) * 18]
+			`${SELECT} ${listBase} ${where} ORDER BY ${sorts[filters.sort]} LIMIT $9 OFFSET $10`,
+			[
+				...params,
+				filters.retailer,
+				filters.digitec_history,
+				filters.pageSize,
+				(filters.page - 1) * filters.pageSize
+			]
 		),
 		query<{ total: number }>(`SELECT count(*)::int AS total ${listBase} ${where}`, [
 			...params,
@@ -116,7 +126,12 @@ export async function listProducts(filters: Filters) {
 			filters.digitec_history
 		])
 	]);
-	return serialize({ rows, total: count[0]?.total ?? 0, page: filters.page, pageSize: 18 });
+	return serialize({
+		rows,
+		total: count[0]?.total ?? 0,
+		page: filters.page,
+		pageSize: filters.pageSize
+	});
 }
 
 export async function filterOptions() {
@@ -143,9 +158,12 @@ export async function getProduct(id: string) {
 			price: number | null;
 			collected_at: string | null;
 			availability: string | null;
+			is_active: boolean;
+			tracking_reason: string | null;
 		}>(
 			`SELECT rp.retailer_product_id::text,r.name AS retailer,rp.retailer_sku,rp.product_url,
-		latest.price_chf::float8 AS price,latest.collected_at,latest.availability
+		latest.price_chf::float8 AS price,latest.collected_at,latest.availability,
+		rp.is_active,rp.tracking_reason
 		FROM retailer_product rp JOIN retailer r USING(retailer_id)
 		LEFT JOIN LATERAL (SELECT price_chf,collected_at,availability FROM price_history WHERE retailer_product_id=rp.retailer_product_id ORDER BY collected_at DESC,price_id DESC LIMIT 1) latest ON true
 		WHERE rp.product_id=$1 ORDER BY r.name,rp.retailer_product_id`,

@@ -155,13 +155,20 @@
 				<div class="offer-icon"><Hash size={18} /></div>
 				<div class="offer-main">
 					<strong>{offer.retailer}</strong><small
-						>SKU {offer.retailer_sku} · {offer.price === null &&
-						offer.retailer === 'Digitec' &&
-						detail.chartHistory.length
-							? tx('Nur historischer Preisverlauf (manuell zugeordnet)', prefs.lang)
-							: offer.availability
-								? availabilityLabel(offer.availability, prefs.lang)
-								: tx('Verfügbarkeit unbekannt', prefs.lang)}</small
+						>SKU {offer.retailer_sku} · {!offer.is_active
+							? tx('Nicht täglich beobachtet', prefs.lang) +
+								': ' +
+								(offer.tracking_reason?.startsWith('No verified manufacturer MPN on product page')
+									? tx(
+											'Keine verifizierte Hersteller-MPN; Händlervergleich nicht eindeutig möglich',
+											prefs.lang
+										)
+									: offer.tracking_reason || '')
+							: offer.price === null && offer.retailer === 'Digitec' && detail.chartHistory.length
+								? tx('Nur historischer Preisverlauf (manuell zugeordnet)', prefs.lang)
+								: offer.availability
+									? availabilityLabel(offer.availability, prefs.lang)
+									: tx('Verfügbarkeit unbekannt', prefs.lang)}</small
 					>
 				</div>
 				<div class="offer-price">

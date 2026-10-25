@@ -1,0 +1,126 @@
+{
+  "run_id": "20261025T033114263566Z",
+  "command": "daily",
+  "pages": 0,
+  "accepted": 4,
+  "review": 0,
+  "excluded": 0,
+  "skipped_today": 0,
+  "missing_price": 0,
+  "remaining_due": 14,
+  "skipped_scope": 0,
+  "errors": [
+    {
+      "sku": "2277758",
+      "kind": "network",
+      "started_at": "2026-10-25T03:31:14.263759+00:00",
+      "finished_at": "2026-10-25T03:31:22.809768+00:00",
+      "error": "Request failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "sku": "172981973",
+      "kind": "network",
+      "started_at": "2026-10-25T03:31:24.347534+00:00",
+      "finished_at": "2026-10-25T04:55:02.329111+00:00",
+      "error": "Request failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "sku": "108276144",
+      "kind": "network",
+      "started_at": "2026-10-25T04:55:03.193890+00:00",
+      "finished_at": "2026-10-25T04:55:06.284565+00:00",
+      "error": "Request failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "sku": "2155504",
+      "kind": "network",
+      "started_at": "2026-10-25T04:55:09.586155+00:00",
+      "finished_at": "2026-10-25T04:55:17.316846+00:00",
+      "error": "Request failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    }
+  ],
+  "scope": {
+    "gpu": {
+      "category_url": "https://www.mediamarkt.ch/de/category/grafikkarten-751073.html",
+      "brands": [
+        "AMD",
+        "ASUS ROG",
+        "MSI"
+      ],
+      "families": [
+        "rtx",
+        "rx"
+      ],
+      "nvidia_min_model": 3000,
+      "amd_min_model": 6000
+    },
+    "ram": {
+      "category_url": "https://www.mediamarkt.ch/de/category/arbeitsspeicher-ram-751074.html",
+      "brands": [
+        "G.SKILL",
+        "KINGSTON",
+        "CORSAIR"
+      ],
+      "types": [
+        "DDR4",
+        "DDR5"
+      ],
+      "min_gb": 8,
+      "max_gb": 64
+    },
+    "ssd": {
+      "category_url": "https://www.mediamarkt.ch/de/category/interne-ssd-751115.html",
+      "brands": [
+        "SAMSUNG",
+        "WESTERN DIGITAL",
+        "KINGSTON"
+      ],
+      "min_gb": 256,
+      "max_gb": 4000,
+      "pcie_generations": [
+        "3.0",
+        "4.0",
+        "5.0"
+      ]
+    }
+  },
+  "new_urls": 0,
+  "known_urls": 0,
+  "duplicate_links": 0,
+  "validated_products": 4,
+  "raw_paths": [
+    "/workspace/data/raw/mediamarkt/2277995_2026-10-25.json",
+    "/workspace/data/raw/mediamarkt/106325768_2026-10-25.json",
+    "/workspace/data/raw/mediamarkt/2155505_2026-10-25.json",
+    "/workspace/data/raw/mediamarkt/2199070_2026-10-25.json"
+  ],
+  "catalog_source": "postgresql",
+  "selected_products": 22,
+  "selected_skus": [
+    "101374309",
+    "106325768",
+    "107353786",
+    "108276144",
+    "108276231",
+    "123032310",
+    "172981973",
+    "2155504",
+    "2155505",
+    "2155520",
+    "2155530",
+    "2155531",
+    "2179288",
+    "2179289",
+    "2199070",
+    "2199071",
+    "2199072",
+    "2207540",
+    "2207541",
+    "2230728",
+    "2277758",
+    "2277995"
+  ],
+  "already_imported": null,
+  "requests": 9,
+  "finished_at": "2026-10-25T04:55:18.363117+00:00"
+}

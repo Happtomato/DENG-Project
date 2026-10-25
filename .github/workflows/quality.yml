@@ -35,21 +35,21 @@ jobs:
           POSTGRES_PASSWORD=ci-only-local-password
           PIPELINE_SCHEDULE_ENABLED=false
           EOF
-      - name: Start the local stack without scheduled collection
-        run: docker compose up -d --build --wait
-      - name: Restore the checked test snapshot
+      - name: Check the seed required by the fresh stack
         run: |
-          test -f data/seed/midterm-2026-10-20/manifest.json || {
+          test -n "$(find data/seed -mindepth 2 -maxdepth 2 -name manifest.json -print -quit)" || {
             echo 'The checked Parquet seed bundle must be committed for frontend integration tests.' >&2
             exit 1
           }
-          docker compose run --rm --no-deps pipeline python -m backend.flow seed-import
+      - name: Start the local stack and import the newest seed automatically
+        run: |
+          docker compose up -d --build --wait
           docker compose run --rm --no-deps pipeline python -m backend.flow verify
       - name: Wait for the Prefect DAILY deployment
         run: |
           for attempt in $(seq 1 30); do
             if curl -fsS -X POST http://127.0.0.1:4200/api/deployments/filter \
-              -H 'content-type: application/json' -d '{"limit":20}' | grep -q 'mediamarkt-daily'; then
+              -H 'content-type: application/json' -d '{"limit":20}' | grep -q 'fetch-product-prices-daily'; then
               exit 0
             fi
             sleep 2

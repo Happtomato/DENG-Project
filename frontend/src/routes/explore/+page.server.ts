@@ -9,7 +9,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	} catch (error) {
 		return {
 			filters,
-			listing: { rows: [], total: 0, page: 1, pageSize: 18 },
+			listing: { rows: [], total: 0, page: 1, pageSize: filters.pageSize },
 			options: { brands: [], retailers: [] },
 			error: String(error)
 		};

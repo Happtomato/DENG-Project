@@ -23,7 +23,9 @@
 	let verifying = $state(false);
 	let verification = $state<Record<string, unknown> | null>(null);
 	let verifyError = $state('');
-	const deployment = $derived(data.prefect.deployments.find((d) => d.name === 'mediamarkt-daily'));
+	const deployment = $derived(
+		data.prefect.deployments.find((d) => d.name === 'fetch-product-prices-daily')
+	);
 	onMount(() => {
 		const timer = setInterval(() => invalidateAll(), 15000);
 		return () => clearInterval(timer);

@@ -4,7 +4,7 @@
 	import { project } from '$lib/identity';
 	import { usePreferences } from '$lib/preferences.svelte';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
-	import { ArrowLeft, ArrowRight, ArrowUpRight, Search, X } from '@lucide/svelte';
+	import { ArrowLeft, ArrowRight, ArrowUpRight, LayoutGrid, List, Search, X } from '@lucide/svelte';
 	import { dateTime, money } from '$lib/format';
 	let { data }: { data: PageData } = $props();
 	const prefs = usePreferences();
@@ -16,6 +16,7 @@
 	let min = $state('');
 	let max = $state('');
 	let sort = $state('recent');
+	let pageSize = $state('18');
 	let loading = $state(false);
 	function applyFilter(event: Event) {
 		(event.currentTarget as HTMLInputElement | HTMLSelectElement).form?.requestSubmit();
@@ -29,9 +30,10 @@
 		min = data.filters.min?.toString() ?? '';
 		max = data.filters.max?.toString() ?? '';
 		sort = data.filters.sort;
+		pageSize = String(data.filters.pageSize);
 		loading = false;
 	});
-	function pageHref(n: number) {
+	function pageHref(n: number, view: 'cards' | 'list' = data.filters.view) {
 		const p = new SvelteURLSearchParams();
 		if (data.filters.search) p.set('search', data.filters.search);
 		if (data.filters.category) p.set('category', data.filters.category);
@@ -41,6 +43,8 @@
 		if (data.filters.min != null) p.set('min', String(data.filters.min));
 		if (data.filters.max != null) p.set('max', String(data.filters.max));
 		if (data.filters.sort !== 'recent') p.set('sort', data.filters.sort);
+		if (data.filters.pageSize !== 18) p.set('pageSize', String(data.filters.pageSize));
+		if (view === 'list') p.set('view', 'list');
 		p.set('page', String(n));
 		return '/explore?' + p.toString();
 	}
@@ -71,6 +75,7 @@
 	class="filters panel"
 	onsubmit={() => (loading = true)}
 >
+	<input type="hidden" name="view" value={data.filters.view} />
 	<div class="search-field">
 		<Search size={17} /><input
 			name="search"
@@ -160,16 +165,49 @@
 		<h2>{tx('Ergebnisse', prefs.lang)} <span>({data.listing.total})</span></h2>
 	</div>
 	<div class="results-controls">
-		<label for="sort">{tx('Sortierung', prefs.lang)}</label>
-		<select id="sort" name="sort" form="explore-filters" bind:value={sort} onchange={applyFilter}
-			><option value="recent">{tx('Zuletzt beobachtet', prefs.lang)}</option><option
-				value="price_asc">{tx('Preis aufsteigend', prefs.lang)}</option
-			><option value="price_desc">{tx('Preis absteigend', prefs.lang)}</option><option
-				value="points_desc">{tx('Meiste Preispunkte', prefs.lang)}</option
-			><option value="points_asc">{tx('Wenigste Preispunkte', prefs.lang)}</option><option
-				value="name">{tx('Name A–Z', prefs.lang)}</option
-			></select
-		>
+		<div class="control-field">
+			<label for="sort">{tx('Sortierung', prefs.lang)}</label>
+			<select id="sort" name="sort" form="explore-filters" bind:value={sort} onchange={applyFilter}
+				><option value="recent">{tx('Zuletzt beobachtet', prefs.lang)}</option><option
+					value="price_asc">{tx('Preis aufsteigend', prefs.lang)}</option
+				><option value="price_desc">{tx('Preis absteigend', prefs.lang)}</option><option
+					value="points_desc">{tx('Meiste Preispunkte', prefs.lang)}</option
+				><option value="points_asc">{tx('Wenigste Preispunkte', prefs.lang)}</option><option
+					value="name">{tx('Name A–Z', prefs.lang)}</option
+				></select
+			>
+		</div>
+		<div class="control-field">
+			<label for="page-size">{tx('Produkte pro Seite', prefs.lang)}</label>
+			<select
+				id="page-size"
+				name="pageSize"
+				form="explore-filters"
+				bind:value={pageSize}
+				onchange={applyFilter}
+			>
+				<option value="18">18</option><option value="36">36</option><option value="72">72</option>
+			</select>
+		</div>
+		<div class="control-field">
+			<span class="control-label">{tx('Ansicht', prefs.lang)}</span>
+			<div class="view-switch" role="group" aria-label={tx('Ansicht', prefs.lang)}>
+				<a
+					href={pageHref(data.listing.page, 'cards')}
+					class:active={data.filters.view === 'cards'}
+					aria-label={tx('Karten', prefs.lang)}
+					aria-current={data.filters.view === 'cards' ? 'true' : undefined}
+					title={tx('Karten', prefs.lang)}><LayoutGrid size={16} /></a
+				>
+				<a
+					href={pageHref(data.listing.page, 'list')}
+					class:active={data.filters.view === 'list'}
+					aria-label={tx('Liste', prefs.lang)}
+					aria-current={data.filters.view === 'list' ? 'true' : undefined}
+					title={tx('Liste', prefs.lang)}><List size={16} /></a
+				>
+			</div>
+		</div>
 		<span
 			>{tx('Seite', prefs.lang)}
 			{data.listing.page}
@@ -184,7 +222,9 @@
 				<div class="skeleton" style="height:11px;width:40%;margin-top:16px"></div>
 				<div class="skeleton" style="height:30px;width:45%;margin-top:28px"></div>
 			</div>{/each}
-	</div>{:else if data.listing.rows.length}<div class="product-grid">
+	</div>{:else if data.listing.rows.length && data.filters.view === 'cards'}<div
+		class="product-grid"
+	>
 		{#each data.listing.rows as product (product.product_id)}<a
 				class="product-card panel"
 				href="/explore/{product.product_id}"
@@ -218,6 +258,37 @@
 						: tx('Noch keine Preisbeobachtung', prefs.lang)}
 				</div></a
 			>{/each}
+	</div>{:else if data.listing.rows.length}<div class="product-list">
+		{#each data.listing.rows as product (product.product_id)}
+			<a class="product-row panel" href="/explore/{product.product_id}">
+				<div class="list-identity">
+					<div class="list-tags">
+						<span class="category {product.category}">{product.category.toUpperCase()}</span
+						>{#if product.digitec_history_count}<span class="history-tag"
+								>{tx('Digitec-Verlauf', prefs.lang)}</span
+							>{/if}
+					</div>
+					<span class="card-brand">{product.brand}</span>
+					<h3>{product.product_name}</h3>
+					<span class="card-spec"
+						>{product.spec ||
+							product.model ||
+							tx('Technische Details nicht vorhanden', prefs.lang)}</span
+					>
+				</div>
+				<div class="list-price">
+					<strong>{money(product.price, prefs.lang)}</strong><span>{product.retailer || '—'}</span>
+				</div>
+				<div class="list-observations">
+					<strong>{product.price_point_count} {tx('Preispunkte', prefs.lang)}</strong><span
+						>{product.collected_at
+							? dateTime(product.collected_at, prefs.lang)
+							: tx('Noch keine Preisbeobachtung', prefs.lang)}</span
+					>
+				</div>
+				<ArrowUpRight size={17} />
+			</a>
+		{/each}
 	</div>{:else}<div class="panel empty">
 		{tx(
 			'Keine Produkte mit diesen Filtern gefunden. Prüfe Suchbegriff oder Preisbereich.',
@@ -344,9 +415,17 @@
 	.results-controls {
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		gap: 14px;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+	.control-field {
+		display: flex;
+		align-items: center;
+		gap: 8px;
 	}
 	.results-controls label,
+	.control-label,
 	.results-controls > span {
 		color: var(--muted);
 		font:
@@ -354,7 +433,7 @@
 			monospace;
 	}
 	.results-controls select {
-		min-width: 190px;
+		min-width: 70px;
 		border: 1px solid var(--line-strong);
 		border-radius: 7px;
 		padding: 9px;
@@ -362,17 +441,45 @@
 		color: var(--text);
 		cursor: pointer;
 	}
+	#sort {
+		min-width: 175px;
+	}
+	.view-switch {
+		display: flex;
+		padding: 3px;
+		border: 1px solid var(--line-strong);
+		border-radius: 7px;
+		background: var(--surface);
+	}
+	.view-switch a {
+		display: grid;
+		place-items: center;
+		width: 33px;
+		height: 30px;
+		border-radius: 5px;
+		color: var(--muted);
+	}
+	.view-switch a.active {
+		background: var(--violet);
+		color: var(--bg, #111);
+	}
+	.view-switch a:hover {
+		color: var(--text);
+	}
 	.product-grid,
 	.loading-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 14px;
+	}
+	.loading-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 	.product-card {
 		display: flex;
 		flex-direction: column;
 		padding: 20px;
-		min-height: 246px;
+		min-height: 265px;
 		transition:
 			0.2s transform,
 			0.2s border-color,
@@ -463,6 +570,69 @@
 		font-size: 10px;
 		margin-top: 13px;
 	}
+	.product-list {
+		display: grid;
+		gap: 9px;
+	}
+	.product-row {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(105px, 140px) minmax(130px, 185px) 20px;
+		align-items: center;
+		gap: 20px;
+		padding: 16px 20px;
+		transition:
+			border-color 0.2s,
+			background 0.2s;
+	}
+	.product-row:hover {
+		border-color: var(--violet);
+		background: var(--panel);
+	}
+	.list-identity {
+		min-width: 0;
+	}
+	.list-tags {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		margin-bottom: 7px;
+	}
+	.list-tags .history-tag {
+		margin: 0;
+	}
+	.product-row h3 {
+		font:
+			600 14px/1.35 'Space Grotesk',
+			sans-serif;
+		margin: 4px 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.product-row .card-spec {
+		display: block;
+	}
+	.list-price,
+	.list-observations {
+		display: grid;
+		gap: 6px;
+	}
+	.list-price strong {
+		font:
+			600 16px 'Space Grotesk',
+			sans-serif;
+	}
+	.list-observations strong {
+		font-size: 11px;
+	}
+	.list-price span,
+	.list-observations span {
+		color: var(--muted);
+		font-size: 10px;
+	}
+	.product-row > :global(svg) {
+		color: var(--muted);
+	}
 	.loading-grid .panel {
 		padding: 22px;
 		min-height: 220px;
@@ -482,7 +652,6 @@
 		.filter-row {
 			grid-template-columns: repeat(3, 1fr);
 		}
-		.product-grid,
 		.loading-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
@@ -500,6 +669,22 @@
 		.product-grid,
 		.loading-grid {
 			grid-template-columns: 1fr;
+		}
+		.product-row {
+			grid-template-columns: minmax(0, 1fr) auto;
+			gap: 8px 12px;
+		}
+		.list-identity {
+			grid-column: 1 / -1;
+		}
+		.list-observations {
+			grid-column: 1;
+		}
+		.product-row > :global(svg) {
+			display: none;
+		}
+		.results-controls {
+			justify-content: flex-start;
 		}
 		.filter-actions {
 			gap: 14px;
